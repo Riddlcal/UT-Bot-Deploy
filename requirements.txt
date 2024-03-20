@@ -1,5 +1,5 @@
-Flask==2.1.0
-langchain-community==0.0.29
-langchain==0.1.0
+Flask==3.0.2
+langchain-community==0.0.24
+langchain==0.1.9
 pinecone-client==3.1.0
-langchain-openai==0.1.0
+langchain-openai==0.0.8
