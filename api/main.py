@@ -16,7 +16,7 @@ import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 
 # Initialize Flask app
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 
 # Load documents from text file
 file_path = os.path.join(app.static_folder, "UT Bot.txt")  # Adjusted file path to read from the static folder
