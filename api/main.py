@@ -108,7 +108,10 @@ def ask():
         for url in urls:
             # Create a new anchor tag
             new_tag = soup.new_tag('a', href=url, target='_blank', rel='noopener noreferrer')
-            new_tag.append('Click here')  # Set link text
+            # Append icon to the link
+            icon_tag = BeautifulSoup('<i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 10px;"></i>', 'html.parser')
+            new_tag.append('Click here ')
+            new_tag.append(icon_tag)
             # Replace the URL with the anchor tag
             soup = BeautifulSoup(str(soup).replace(url, str(new_tag)), 'html.parser')
 
