@@ -16,7 +16,7 @@ import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 
 # Initialize Flask app
-app = Flask(__name__)
+app = Flask(__name__, template_folder='/UT-Bot-Deploy/templates')
 
 # Specify the file path to UT Bot.txt
 file_path = "UT Bot.txt"
