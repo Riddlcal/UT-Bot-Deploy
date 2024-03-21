@@ -119,8 +119,8 @@ def ask():
         for email_link in soup.find_all('a', href=re.compile(r'^mailto:')):
             email_link.append(BeautifulSoup('<i class="fa-solid fa-envelope" style="margin-left: 10px;"></i>', 'html.parser'))
 
-        # Convert back to string
-        answer_with_links = str(soup)
+        # Convert back to string and remove any loose characters after links
+        answer_with_links = str(soup).strip().rstrip('/')
 
         # Add line breaks
         answer_with_line_breaks = answer_with_links.replace('\n', '<br>')
