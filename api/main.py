@@ -88,7 +88,7 @@ def ask():
     time.sleep(0.5)
 
     # Remove labels like '[Label]' from the answer
-    answer = re.sub(r'\[([^\[\]]+)\]\((https?://\S+)\)', r'\1', answer)
+    answer = re.sub(r'\[[^\[\]]+\]', '', answer)
 
     # Check if the answer contains iframe HTML
     if 'iframe' in answer:
