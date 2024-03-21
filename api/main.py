@@ -91,9 +91,9 @@ def ask():
     if 'iframe' in answer:
         return render_template('iframe.html', iframe_html=answer)
     else:
-        # Handle links
+       # Handle links
         answer_with_links = re.sub(r'(https?://\S+)', r'<a href="\1" target="_blank" rel="noopener noreferrer">Click here<i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 10px;"></i></a>', answer)
-
+        
         # Handle email addresses as links
         answer_with_links = re.sub(r'(\S+@\S+)', r'<a href="mailto:\1">Contact<i class="fa-solid fa-envelope" style="margin-left: 10px;"></i></a>', answer_with_links)
 
