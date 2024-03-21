@@ -7,8 +7,8 @@ from langchain_openai import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
 from langchain_community.retrievers import BM25Retriever
 from langchain.prompts.prompt import PromptTemplate
+from bs4 import BeautifulSoup
 import time
-import re
 import os
 import warnings
 
@@ -94,11 +94,21 @@ def ask():
     if 'iframe' in answer:
         return render_template('iframe.html', iframe_html=answer)
     else:
+        # Initialize Beautiful Soup
+        soup = BeautifulSoup(answer, 'html.parser')
+
         # Handle links
-        answer_with_links = re.sub(r'(https?://\S+)', r'<a href="\1" target="_blank" rel="noopener noreferrer">Click here<i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 10px;"></i></a>', answer)
+        for link in soup.find_all('a'):
+            link['target'] = '_blank'
+            link['rel'] = 'noopener noreferrer'
+            link.append(BeautifulSoup('<i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 10px;"></i>', 'html.parser'))
 
         # Handle email addresses as links
-        answer_with_links = re.sub(r'(\S+@\S+)', r'<a href="mailto:\1">Contact<i class="fa-solid fa-envelope" style="margin-left: 10px;"></i></a>', answer_with_links)
+        for email_link in soup.find_all('a', href=re.compile(r'^mailto:')):
+            email_link.append(BeautifulSoup('<i class="fa-solid fa-envelope" style="margin-left: 10px;"></i>', 'html.parser'))
+
+        # Convert back to string
+        answer_with_links = str(soup)
 
         # Add line breaks
         answer_with_line_breaks = answer_with_links.replace('\n', '<br>')
