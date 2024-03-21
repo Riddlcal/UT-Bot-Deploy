@@ -87,6 +87,9 @@ def ask():
     # Sleepy time
     time.sleep(0.5)
 
+    # Remove labels like '[Label]' from the answer
+    answer = re.sub(r'\[[^\[\]]+\]', '', answer)
+
     # Check if the answer contains iframe HTML
     if 'iframe' in answer:
         return render_template('iframe.html', iframe_html=answer)
