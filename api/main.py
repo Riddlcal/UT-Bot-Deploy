@@ -104,7 +104,7 @@ def ask():
             link['rel'] = 'noopener noreferrer'
             link.append(BeautifulSoup('<i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 10px;"></i>', 'html.parser'))
             link_text = link.get_text(strip=True)
-            link.string = f'Click here {link_text}'
+            link.string = f'Click here {link_text}'  # Include link text within anchor tag
 
         # Handle email addresses as links
         for email_link in soup.find_all('a', href=re.compile(r'^mailto:')):
