@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 import time
 import os
 import warnings
+import re
 
 # Suppress UserWarnings
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -86,6 +87,9 @@ def ask():
 
     # Sleepy time
     time.sleep(0.5)
+
+    # Remove labels like '[Label]' from the answer
+    answer = re.sub(r'\[[^\[\]]+\]', '', answer)
     
     # Check if the answer contains iframe HTML
     if 'iframe' in answer:
