@@ -98,15 +98,16 @@ def ask():
         # Initialize Beautiful Soup
         soup = BeautifulSoup(answer, 'html.parser')
 
-        # Handle links
-        for link in soup.find_all('a'):
-            link_url = link['href']  # Get the URL
-            link['href'] = link_url  # Set the href attribute to the URL
-            link['target'] = '_blank'
-            link['rel'] = 'noopener noreferrer'
-            link.append(BeautifulSoup('<i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 10px;"></i>', 'html.parser'))
-            link_text = link.get_text(strip=True)
-            link.string = f'Click here {link_text}'  # Include link text within anchor tag
+        # Find all URLs in the text
+        urls = re.findall(r'(https?://\S+)', str(soup))
+    
+        # Replace each URL with an anchor tag
+        for url in urls:
+            # Create a new anchor tag
+            new_tag = soup.new_tag('a', href=url, target='_blank', rel='noopener noreferrer')
+            new_tag.string = f'Click here {url}'  # Set link text
+            # Replace the URL with the anchor tag
+            soup = BeautifulSoup(str(soup).replace(url, str(new_tag)), 'html.parser')
 
         # Handle email addresses as links
         for email_link in soup.find_all('a', href=re.compile(r'^mailto:')):
