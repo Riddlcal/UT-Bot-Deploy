@@ -85,7 +85,7 @@ def ask():
     answer = result['answer']
 
     # Sleepy time
-    time.sleep(0.5)
+    time.sleep(1)
 
     # Check if the answer contains iframe HTML
     if 'iframe' in answer:
