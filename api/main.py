@@ -100,6 +100,8 @@ def ask():
 
         # Handle links
         for link in soup.find_all('a'):
+            link_url = link['href']  # Get the URL
+            link['href'] = link_url  # Set the href attribute to the URL
             link['target'] = '_blank'
             link['rel'] = 'noopener noreferrer'
             link.append(BeautifulSoup('<i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 10px;"></i>', 'html.parser'))
