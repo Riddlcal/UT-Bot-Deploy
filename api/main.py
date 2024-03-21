@@ -95,9 +95,12 @@ def ask():
     if 'iframe' in answer:
         return render_template('iframe.html', iframe_html=answer)
     else:
+        # Remove unnecessary characters such as parentheses
+        cleaned_answer = re.sub(r'[()\[\]]', '', answer)
+    
         # Initialize Beautiful Soup
-        soup = BeautifulSoup(answer, 'html.parser')
-
+        soup = BeautifulSoup(cleaned_answer, 'html.parser')
+    
         # Find all URLs in the text
         urls = re.findall(r'\bhttps?://\S+\b', str(soup))
     
