@@ -99,13 +99,13 @@ def ask():
         soup = BeautifulSoup(answer, 'html.parser')
 
         # Find all URLs in the text
-        urls = re.findall(r'(https?://\S+)', str(soup))
+        urls = re.findall(r'\bhttps?://\S+\b', str(soup))
     
         # Replace each URL with an anchor tag
         for url in urls:
             # Create a new anchor tag
             new_tag = soup.new_tag('a', href=url, target='_blank', rel='noopener noreferrer')
-            new_tag.string = f'Click here {url}'  # Set link text
+            new_tag.append('Click here')  # Set link text
             # Replace the URL with the anchor tag
             soup = BeautifulSoup(str(soup).replace(url, str(new_tag)), 'html.parser')
 
