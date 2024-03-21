@@ -56,7 +56,7 @@ if index_name not in pc.list_indexes().names():
 retriever = BM25Retriever.from_documents(chunked_documents, k=2)
 
 # Initialize Chat models
-llm_name = 'gpt-4-turbo'
+llm_name = 'gpt-4'
 qa = ConversationalRetrievalChain.from_llm(
     ChatOpenAI(openai_api_key=openai_api_key, model=llm_name),
     retriever,
