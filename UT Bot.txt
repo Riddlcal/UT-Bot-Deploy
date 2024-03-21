@@ -8,7 +8,6 @@ Our beautiful Tyler campus features more than 200 acres nestled along a lake and
 
 Question: Where is UT Tyler located?
 Answer: UT Tyler is located at 3900 University Blvd, Tyler, TX 75799. Here's the location on Google Maps:
-
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2881.0561191117126!2d-95.25286244795798!3d32.31480757299257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8649cd17e83f9399%3A0xb0ab28a921956fd6!2sThe%20University%20of%20Texas%20at%20Tyler!5e1!3m2!1sen!2sus!4v1709406946624!5m2!1sen!2sus" width="175" height="175" style="border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 --------------------------------------------------------------
@@ -58,7 +57,6 @@ Undergraduate and Graduate Contacts:
 Undergraduate Admissions
 3900 University Blvd.
 Tyler, Tx 75799
-
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2881.0561191117126!2d-95.25286244795798!3d32.31480757299257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8649cd17e83f9399%3A0xb0ab28a921956fd6!2sThe%20University%20of%20Texas%20at%20Tyler!5e1!3m2!1sen!2sus!4v1709406946624!5m2!1sen!2sus" width="175" height="175" style="border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 Office Hours:
@@ -72,7 +70,6 @@ Fx: 903.566.7183
 Graduate Admissions
 3900 University Blvd.
 Tyler, Tx 75799
-
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2881.0561191117126!2d-95.25286244795798!3d32.31480757299257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8649cd17e83f9399%3A0xb0ab28a921956fd6!2sThe%20University%20of%20Texas%20at%20Tyler!5e1!3m2!1sen!2sus!4v1709406946624!5m2!1sen!2sus" width="175" height="175" style="border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 Office Hours:
