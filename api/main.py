@@ -116,8 +116,8 @@ def ask():
             soup = BeautifulSoup(str(soup).replace(url, str(new_tag)), 'html.parser')
 
         # Handle email addresses as links
-        for email_link in soup.find_all('a', href=re.compile(r'^mailto:')):
-            email_link.append(BeautifulSoup('<i class="fa-solid fa-envelope" style="margin-left: 10px;"></i>', 'html.parser'))
+        for email_link in soup.find_all(string=re.compile(r'[\w\.-]+@[\w\.-]+')):
+            email_link.replace_with(BeautifulSoup(f'<a href="mailto:{email_link}" target="_blank">{email_link}</a><i class="fa-solid fa-envelope" style="margin-left: 10px;"></i>', 'html.parser'))
 
         # Convert back to string and remove any loose characters after links
         answer_with_links = str(soup).strip().rstrip('/')
