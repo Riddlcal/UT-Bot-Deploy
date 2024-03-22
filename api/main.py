@@ -116,7 +116,7 @@ def ask():
             soup = BeautifulSoup(str(soup).replace(url, str(new_tag)), 'html.parser')
 
         # Find and replace email addresses with anchor tags
-        for email_link in soup.find_all(string=re.compile(r'[\w\.-]+@[\w\.-]+')):
+        for email_link in soup.find_all(string=re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')):
             email_address = email_link.strip()
             email_link.replace_with(BeautifulSoup(f'<a href="mailto:{email_address}" target="_blank">{email_address}</a> <i class="fa-solid fa-envelope" style="margin-left: 10px;"></i>', 'html.parser'))
         
