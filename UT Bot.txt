@@ -2025,6 +2025,100 @@ A graduate program is under no obligation to provide feedback to unsuccessful ap
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Question: The Faculty of the HRD Department:
+Answer:
+Kim Nimon
+Interim Chair, PHD Coordinator, Professor
+Email: knimon@uttyler.edu
+Phone: 903.566.7310
+Office: COB 315.14
+
+Yonjoo Cho
+Professor
+Email: ycho@uttyler.edu
+Phone: 903.566.7260
+Office: COB 315.21
+
+Andrea Ellinger
+Professor Emeritus
+Phone: 903.566.7310
+
+Rochell McWhorter
+Associate Professor
+Email: rmcwhorter@uttyler.edu
+Phone: 903.566.7330
+Office: COB 315.15
+
+Paul Roberts
+Professor and Bachelor of Science in HRD Program Coordinator
+Email: proberts@uttyler.edu
+Phone: 903.566.7334
+Office: COB 315.19
+
+Judy Sun
+Associate Professor and Master of Science in HRD Program Coordinator
+Email: jsun@uttyler.edu
+Phone: 903.565.5912
+Office: COB 315.18
+
+Greg Wang
+Professor
+Email: gwang@uttyler.edu
+Phone: 903.565.5910
+Office: COB 315.13
+
+Sangok Yoo
+Assistant Professor
+Email: syoo@uttyler.edu
+Phone: 903.565.5646
+Office: COB 315.17
+
+Afton Barber
+Adjunct Lecturer
+
+Robert Carpenter
+Executive in Residence and Adjunct Lecturer
+
+Sam Carrell
+Adjunct Lecturer
+
+Sharon Cathcart
+Adjunct Lecturer
+
+Janice Chretien
+Adjunct Lecturer
+
+David Conley
+Adjunct Lecturer
+
+Rosemary Cooper
+Adjunct Lecturer
+
+Ashley Kutach
+Adjunct Lecturer
+
+Nandini Mcclurg
+Adjunct Lecturer
+
+Lacey Monarch
+Adjunct Lecturer
+
+Elizabeth Nesuda
+Adjunct Lecturer
+
+Joanna Norman
+Adjunct Lecturer
+
+Susan O'Sullivan
+Adjunct Lecturer
+
+David Silberman
+Adjunct Lecturer
+
+John Turner
+Adjunct Lecturer
+
+Cara Wreyford
+Adjunct Lecturer
 
 Department of Human Resource Development
 Faculty
@@ -2325,6 +2419,840 @@ Adjunct Lecturer
 
 Cara Wreyford
 Adjunct Lecturer
+
+Course Syllabi
+UT Tyler Department of Human Resource Development
+ 
+
+ 
+
+ 
+
+ 
+Spring 2024
+Course Prefix 
+Course # 
+Course Title 
+Faculty 
+GENB
+2300.001
+Business Statistics
+Yoo
+GENB
+2300 .060
+Business Statistics
+S. Taylor
+HRD
+3306.001
+Team Building 
+McWhorter
+HRD
+3306.068
+Team Building
+M. Taylor
+HRD
+3312.060
+Training and Development 
+McWhorter
+HRD
+3333.001
+Human Relations
+Yoo
+HRD
+4301.060
+Supervision 
+McWhorter
+HRD
+4320.060
+Job Analysis and Design 
+Roberts 
+HRD
+4370.060
+Undergraduate Internship in HRD
+McWhorter
+HRD
+5307.060
+Measurement & Evaluation in HRD/Technology Education
+Yoo
+HRD
+5308.060
+Needs Assesment in HRD
+Cho
+HRD
+5343.060
+Foundations of Human Resource Development 
+Roberts
+HRD
+5347.060
+Performance Consulting
+Sun
+HRD
+5347.701
+Performance Consulting
+Sun
+HRD
+5352.060
+Organization Development 
+Silberman
+HRD
+6310.001
+Adv Theoretical Found of Human Resource Development 
+Allen
+HRD
+6312.001
+Contemporary Issues in Human Resource Development
+Cho
+HRD
+6355.001
+Multivariate Statistics
+Nimon
+HRD
+6359.001
+Advanced Research Seminar Human Resource Development 
+Nimon
+HRD
+6366.001
+Seminar On Org Change and Development
+Carpenter
+HRD
+6377.001
+Leadership Thoery and Practice 
+Turner
+Fall 2023
+Course Prefix 
+Course # 
+Course Title 
+Faculty 
+GENB
+2300.001, .060
+Business Statistics 001
+Business Statistics 060
+Yoo
+HRD
+3301.060 
+Introduction to HRD and Performance Management Systems 
+Roberts
+HRD
+3306.060
+Team Building  
+McWhorter
+HRD
+3342.060
+Career Development and Human Resource Planning 
+Cooper
+HRD
+4301.069
+Supervision
+Taylor
+HRD
+4320.001
+Job Analysis and Design 
+Roberts 
+HRD
+4331.001
+Workforce and Organizational Development
+Yoo
+HRD
+4372.001
+Capstone in HRD
+McWhorter
+HRD
+5316.060
+Career Development in Orgs
+Silberman
+HRD
+5317.0060
+Training Design 
+Cho
+HRD
+5336.060 
+Adult Learning 
+Sun
+HRD
+5343.060
+Foundations of Human Resource Development 
+Wang
+HRD
+5344.060, .001
+Conflict Resolution .060
+Conflict Resolution .001
+McClurg 
+HRD
+5350.060
+Leadership and Ethics in Human Resource Development
+McWhorter 
+HRD
+5352.060
+Organization Development 
+Sun
+HRD
+6334.001
+Organizational Consulting 
+Chretien
+HRD
+6350.001
+Disciplined Inquiry in Human Resource Development 
+Wang
+HRD
+6351.001
+Univariate Statistics
+Nimon
+HRD
+6352.001
+Structural Equation Modeling
+Nimon 
+HRD
+6353.001
+Qualitative Research in HRD
+Cho
+HRD
+6388.001
+Talent Management and Development 
+Carpenter
+Summer 2023
+Course Prefix 
+Course # 
+Course Title 
+Faculty 
+GENB
+2300
+Business Statistics
+Yoo
+HRD
+3333
+HUMAN RELATIONS
+Yoo
+HRD
+4301
+SUPERVISION
+Taylor
+HRD
+4320
+JOB ANALYSIS AND DESIGN
+Roberts
+HRD
+4370
+UNDERGRAD INTERNSHIP PROGRAM
+McWhorter
+HRD
+5306
+QUANTITATIVE METHODS IN HRD
+Nimon/Yoo
+HRD
+5307
+MSMT & EVAL IN HRD/TECH EDUC
+Wang
+HRD
+5336
+ADULT LEARNING
+Sun
+HRD
+5343
+FOUNDATIONS OF HRD
+Wang
+HRD
+5347
+PERFORMANCE CONSULTING
+Sun
+HRD
+5350
+LEADERSHIP AND ETHICS IN HRD
+McWhorter
+HRD
+5352
+ORGANIZATION DEVELOPMENT
+Silberman
+HRD
+6314
+ORGANIZATIONAL INTERVENTION APPROACHES
+Roberts
+HRD
+6343
+FOUND OF QUALITATIVE RESEARCH
+McWhorter
+HRD
+6360
+PROPOSAL DEVELOPMENT
+Cho
+HRD
+6391
+ADVANCED TOPICS IN HRD
+Allen
+Spring 2023
+Course Prefix 
+Course # 
+Course Title 
+Faculty 
+GENB
+2300.001,
+Business Statistics
+Yoo
+GENB
+2300 .060
+Business Statistics
+Yoo
+HRD
+3306.060
+Team Building 
+McWhorter
+HRD
+3306.068
+Team Building
+Norman
+HRD
+3312.060
+Training and Development 
+McWhorter
+HRD
+3333.060
+Human Relations
+Yoo
+HRD
+4301.060
+Supervision 
+McWhorter
+HRD
+4320.060
+Job Analysis and Design 
+Roberts 
+HRD
+4370.060
+Undergraduate Internship in HRD
+McWhorter
+HRD
+5307.060
+Measurement & Evaluation in HRD/Technology Education
+Wang
+HRD
+5308.060
+Needs Assesment in HRD
+Cho
+HRD
+5343.060
+Foundations of Human Resource Development 
+Roberts
+HRD
+5347.060
+Performance Consulting
+Sun
+HRD
+5352.060
+Organization Development 
+Sun
+HRD
+6310.001
+Adv Theoretical Found of Human Resource Development 
+Wang
+HRD
+6312.001
+Contemporary Issues in Human Resource Development
+Cho
+HRD
+6355.001
+Multivariate Statistics
+Nimon
+HRD
+6359.001
+Advanced Research Seminar Human Resource Development 
+Nimon
+HRD
+6366.001
+Seminar On Org Change and Development
+Carpenter
+HRD
+6377.001
+Leadership Thoery and Practice 
+Turner
+Fall 2022
+Course Prefix 
+Course # 
+Course Title 
+Faculty 
+GENB
+2300.001, .060
+Business Statistics 001
+Business Statistics 060
+Yoo
+HRD
+3301.060 
+Introduction to HRD and Performance Management Systems 
+Roberts 
+HRD
+3306.060
+Team Building  
+McWhorter
+HRD
+3342.060
+Career Development and Human Resource Planning 
+Wreyford
+HRD
+4301.069
+Supervision
+Norman
+HRD
+4320.001
+Job Analysis and Design 
+Roberts 
+HRD
+4331.060 
+Workforce and Organizational Development
+Yoo
+HRD
+4372.001
+Capstone in HRD
+McWhorter
+HRD
+5316.060
+Career Development in Orgs
+Silberman
+HRD
+5317.0060
+Training Design 
+Cho
+HRD
+5336.060 
+Adult Learning 
+Sun
+HRD
+5343.060
+Foundations of Human Resource Development 
+Cho
+HRD
+5344.060
+Conflict Resolution 
+McClurg 
+HRD
+5350.060
+Leadership and Ethics in Human Resource Development
+McWhorter 
+HRD
+5352.060
+Organization Development 
+Wang
+HRD
+6334.001
+Organizational Consulting 
+Chretien
+HRD
+6350.001
+Disciplined Inquiry in Human Resource Development 
+Wang
+HRD
+6351.001
+Univariate Statistics
+Nimon
+HRD
+6352.001
+Structural Equation Modeling
+Nimon 
+HRD
+6353.001
+Qualitative Research in HRD
+Sun
+HRD
+6388.001
+Talent Management and Development 
+Carpenter
+Summer 2022
+Course Prefix 
+Course # 
+Course Title 
+Faculty 
+HRD
+3333
+HUMAN RELATIONS
+Conley
+HRD
+4301
+SUPERVISION
+Norman
+HRD
+4320
+JOB ANALYSIS AND DESIGN
+Roberts
+HRD
+4370
+UNDERGRAD INTERNSHIP PROGRAM
+McWhorter
+HRD
+5306
+QUANTITATIVE METHODS IN HRD
+Chretien 
+HRD
+5307
+MSMT & EVAL IN HRD/TECH EDUC
+Wang
+HRD
+5336
+ADULT LEARNING
+Cathcart
+HRD
+5343
+FOUNDATIONS OF HRD
+Cho
+HRD
+5347
+PERFORMANCE CONSULTING
+Cooper
+HRD
+5350
+LEADERSHIP AND ETHICS IN HRD
+McWhorter
+HRD
+5352
+ORGANIZATION DEVELOPMENT
+Silberman
+HRD
+5370
+GRADUATE INTERNSHIP 
+Sun
+HRD
+6314
+ORGANIZATIONAL INTERVENTION APPROACHES
+Roberts
+HRD
+6343
+FOUND OF QUALITATIVE RESEARCH
+McWhorter
+HRD
+6360
+PROPOSAL DEVELOPMENT
+Wang
+HRD
+6391
+ADVANCED TOPICS IN HRD
+Carpenter 
+Spring 2022
+Course Prefix 
+Course # 
+Course Title 
+Faculty 
+GENB
+2300.060
+Business Statistics
+Nesuda
+HRD
+3306.060
+Team Building 
+McWhorter
+HRD
+3306.068
+Team Building
+Monarch
+HRD
+3312.060
+Training and Development 
+McWhorter
+HRD
+3333.060
+Human Relations
+Conley
+HRD
+4301.060
+Supervision 
+McWhorter
+HRD
+4320.060
+Job Analysis and Design 
+Roberts 
+HRD
+4370.060
+Undergraduate Internship in HRD
+McWhorter
+HRD
+4399.060
+Independent Study 
+McWhorter
+HRD
+5307.060
+Measurement & Evaluation in HRD/Technology Education
+Wang
+HRD
+5308.060
+Needs Assesment in HRD
+Cho
+HRD
+5343.060
+Foundations of Human Resource Development 
+Roberts
+HRD
+5344.060
+Conflict Resolution 
+McClurg
+HRD
+5347.060
+Performance Consulting
+Sun
+HRD
+5352.060
+Organization Development 
+Sun
+HRD
+6310.001
+Adv Theoretical Found of Human Resource Development 
+Wang
+HRD
+6312.001
+Contemporary Issues in Human Resource Development
+Cho
+HRD
+6355.001
+Multivariate Statistics
+Nimon
+HRD
+6359.001
+Advanced Research Seminar Human Resource Development 
+Nimon
+HRD
+6366.001
+Seminar On Org Change and Development
+Carpenter
+HRD
+6377.001
+Leadership Thoery and Practice 
+Turner
+Fall 2021
+Course Prefix 
+Course # 
+Course Title 
+Faculty 
+GENB
+2300.060
+Business Statistics
+Nesuda
+GENB
+2300.001
+Business Statistics
+Chretien 
+HRD
+3301.002 
+Introduction to HRD and Performance Management Systems 
+Roberts
+HRD
+3306.060
+Team Building  
+McWhorter & Baskin
+HRD
+3342.060
+Career Development and Human Resource Planning 
+McWhorter
+HRD
+4301.069
+Supervision
+Monarch
+HRD
+4320.001
+Job Analysis and Design 
+Roberts 
+HRD
+4331.060 
+Workforce and Organizational Development
+Conley
+HRD
+5316.060
+Career Development in Orgs
+Sun
+HRD
+5317.0060
+Training Design 
+Cho
+HRD
+5336.060 
+Adult Learning 
+Cathcart 
+HRD
+5343.060
+Foundations of Human Resource Development 
+Cho
+HRD
+5344.060
+Conflict Resolution 
+McClurg 
+HRD
+5350.060
+Leadership and Ethics in Human Resource Development
+McWhorter 
+HRD
+5352.060
+Organization Development 
+Silberman
+HRD
+6334.001
+Organizational Consulting 
+Chretien
+HRD
+6350.001
+Disciplined Inquiry in Human Resource Development 
+Wang
+HRD
+6351.001
+Univariate Statistics
+Nimon
+HRD
+6352.001
+Structural Equation Modeling
+Nimon 
+HRD
+6353.001
+Qualitative Research in HRD
+Sun
+HRD
+6360.001
+Proposal Development 
+Wang 
+HRD
+6388.001
+Talent Management and Development 
+Kutach
+
+UT Tyler Soules College of Business
+Human Resource Development Advisory Council
+Dr. Kim Nimon
+Interim Department Chair, Professor of Human Resource Development
+Department of Human Resource Development
+
+Dr. Gary Bouse
+Director of Development
+Soules College of Business
+
+Brandy Smith 
+Administrative Assistant II
+Department of Human Resource Development
+
+ 
+
+Executive Officers
+
+Dr. Rob Carpenter, Chair (2024-2025)
+CEO
+Advanta Genetics
+
+Cindy Klein, Vice-Chair
+Cheif Operating Officer
+HealthFirst Companies
+
+Ashlea Smith, Secretary
+Senior Vice President of HR
+Heartland Insurance Security Group
+
+Members
+
+Courtney Miller, M.Ed
+504 Specialist
+Legacy High School 
+
+Martin Wonsiewicz
+Principal
+Wons Global Publishing
+
+Jason Trimble
+Vice President - Business Development Officer
+Texas Bank and Trust
+
+Barbara Grubbs
+Vice President Human Resource
+Diamon C Trailers
+
+David Silberman 
+Department of Management
+Boston University
+
+Angela Driggs
+Executive Director
+Smith County Medical Society
+
+Felicia Beam
+Human Resources & Safety
+John Soules Foods
+
+Kristen Stovall
+Dean - Business, Entrepreneurship & Information Technology
+Kilgore College
+
+Whitney Scoggins
+Human Resource Business Partner
+Trane Technoogies
+
+Cindy Ownes
+Principal
+Frankston High School
+
+Paula Anthony
+Chief Strategy Officer
+UT Health East Texas
+
+Human Resource Development BS Degree
+Be Ready to Lead in Tomorrow’s Changing Workplace
+A bachelor’s degree in human resource development from The University of Texas at Tyler prepares you to move into this dynamic field and create a satisfying, productive work environment for employees and your organization. HRD graduates find positions in business, nonprofit organizations, educational institutions and government.
+
+Take advantage of one of the nation’s few bachelor’s programs in human resource development—available right here in East Texas.
+Develop skills used in both human resource development and human resource management through a mix of HRD and management courses.
+Careers in this field are available in business, nonprofit, educational and government settings.
+
+Bachelor’s in HRD: Practical. Timely.
+
+Earn a degree that prepares you for various career paths, such as corporate management, supervisory roles in human resources or graduate studies in the HRD field.
+Learn how to design and implement human resource development plans that best use employee skills and abilities in a dynamic work environment.
+Complete an internship in HRD departments at East Texas companies to gain the on-the-job experience valued by employers.
+Join the student chapter of the Society of Human Resources Management, the largest HRM organization in the world, for networking and professional development.
+Find out more about the human resource development BS degree.
+
+Master of Science in Human Resource Development (HRD) Degree
+UT Tyler Soules College of Business
+Master of Science in HRD Degree Plan
+
+About the M.S. in HRD Program
+
+Total Semester Credit Hours = 36
+
+Non-Thesis
+
+Human Resource Development (HRD) is a process of developing human expertise through organization development and personnel training and development so that individual improvement enhances corporate performance. Careers in this field are available in business, nonprofit, educational and government, and the military settings.
+
+The HRD program provides students the opportunity to combine study and related experiences to develop, apply, analyze, synthesize and evaluate knowledge of the purposes, practices, issues and problems of private for profit and public not-for-profit organizations. Students also have the opportunity to learn how to design, deliver and evaluate effective training programs. This program is delivered completely online.
+
+General Graduate Admission Requirements
+
+Apply Online.
+Pay the application fee.
+Submit official and unofficial transcripts to the Office of Graduate Admissions.
+Admission to the degree program is determined primarily on the basis of predictors of success in graduate study:
+a baccalaureate degree from an accredited institution,
+grade point average computed on the last 60 undergraduate hours and
+satisfactory score on the Graduate Management Admissions Test (GMAT). In rare instances the Graduate Record Examination (GRE) may be accepted in lieu of the GMAT.
+Submit official and unofficial GMAT scores to the Office of Graduate Admissions.
+There are additional requirements for students with international course work such as a detailed international
+transcript evaluation which determines an applicant's degree comparability to a US bachelor's degree (UT Tyler does NOT evaluate international transcripts).
+Applicants with three or more years of extensive managerial work experience (earned in the U.S. or with a U.S. government entity) may request to have the GMAT requirement waived by the Program Advisor. This decision is made on a case-by-case basis; "extensive managerial experience" will typically mean a full-time supervisory or managerial position held for a significant period of time after completing the bachelor's degree as demonstrated with a resume.
+See the Graduate School Calendar for deadlines
+M.S. in HRD Additional Admission Requirements
+
+Leveling Courses
+
+There are no leveling courses for admission, and the program is flexible enough to accommodate applicants with a bachelor's degree in any discipline.
+
+GMAT Scores
+
+Successful applicants have a GMAT and GPA figured as follows:
+Last 60 hr GPA x 200 + GMAT score = 1000 or greater.
+If a student's last 60 hour GPA = 3.25 or higher, the GMAT can be waived.
+
+Provisional Admission
+
+Provisionally accepted students may enroll in one semester for a maximum of nine hours before being required to submit a GMAT score. After this semester is completed, a hold will be placed on a student's account until GMAT scores are submitted to the Office of Graduate Admissions.
+
+Transfer Coursework
+
+Subject to approval by the coordinator of graduate programs and the dean of the Soules College of Business, students may transfer up to nine hours of graduate credit earned at an approved university.
+
+Master's FAQ's
+
+Department of Human Resource Development
+
+Graduate Programs Advising
+903.565.5836
+Soulesgradadvising@uttyler.edu
+
 
 ------------------------------------------------------------------
 
