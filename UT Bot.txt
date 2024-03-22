@@ -2023,8 +2023,8 @@ The submission of documents in support of applications for admission and fellows
 
 A graduate program is under no obligation to provide feedback to unsuccessful applicants.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Question: The Faculty of the HRD Department:
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question: The Faculty of the HRD Department? Can you show me the factuly of the Human Development Department?
 Answer:
 Kim Nimon
 Interim Chair, PHD Coordinator, Professor
@@ -2119,6 +2119,8 @@ Adjunct Lecturer
 
 Cara Wreyford
 Adjunct Lecturer
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Department of Human Resource Development
 Faculty
