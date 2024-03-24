@@ -126,12 +126,10 @@ def ask():
             new_tag.append(icon_tag)
             # Replace the email with the anchor tag
             email_tag_str = str(new_tag)
-            if email_tag_str.endswith('.'):
-                email_tag_str = email_tag_str[:-1]
             soup = BeautifulSoup(str(soup).replace(email, email_tag_str), 'html.parser')
         
         # Convert back to string and remove any loose characters after links
-        answer_with_links = str(soup).strip().rstrip('/')
+        answer_with_links = str(soup).strip().rstrip('/. ')
         
         # Add line breaks
         answer_with_line_breaks = answer_with_links.replace('\n', '<br>')
