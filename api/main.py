@@ -120,9 +120,15 @@ def ask():
         for email in emails:
             # Create a new anchor tag
             new_tag = soup.new_tag('a', href='mailto:' + email)
-            new_tag.string = email
+            new_tag.append('Contact ')
+            # Append icon to the link
+            icon_tag = BeautifulSoup('<i class="fa-solid fa-envelope" style="margin-left: 10px;"></i>', 'html.parser')
+            new_tag.append(icon_tag)
             # Replace the email with the anchor tag
-            soup = BeautifulSoup(str(soup).replace(email, str(new_tag)), 'html.parser')
+            email_tag_str = str(new_tag)
+            if email_tag_str.endswith('.'):
+                email_tag_str = email_tag_str[:-1]
+            soup = BeautifulSoup(str(soup).replace(email, email_tag_str), 'html.parser')
         
         # Convert back to string and remove any loose characters after links
         answer_with_links = str(soup).strip().rstrip('/')
