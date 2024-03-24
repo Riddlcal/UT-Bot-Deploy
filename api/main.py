@@ -78,7 +78,7 @@ If you don't know the answer, say simply that you cannot help with the question 
 def home():
     return render_template('index.html')
 
-# Define route for chat interaction
+# Sample route for handling POST requests
 @app.route('/ask', methods=['POST'])
 def ask():
     user_input = request.form['question']
@@ -101,9 +101,10 @@ def ask():
         # Initialize Beautiful Soup
         soup = BeautifulSoup(cleaned_answer, 'html.parser')
     
-        # Find all URLs in the text
+        # Find all URLs and email addresses in the text
         urls = re.findall(r'\bhttps?://\S+\b', str(soup))
-    
+        emails = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', str(soup))
+        
         # Replace each URL with an anchor tag
         for url in urls:
             # Create a new anchor tag
@@ -114,17 +115,21 @@ def ask():
             new_tag.append(icon_tag)
             # Replace the URL with the anchor tag
             soup = BeautifulSoup(str(soup).replace(url, str(new_tag)), 'html.parser')
-
-        # Handle email addresses as links
-        for email_link in soup.find_all('a', href=re.compile(r'^mailto:')):
-            email_link.append(BeautifulSoup('<i class="fa-solid fa-envelope" style="margin-left: 10px;"></i>', 'html.parser'))
+        
+        # Replace each email address with a mailto link
+        for email in emails:
+            # Create a new anchor tag
+            new_tag = soup.new_tag('a', href='mailto:' + email)
+            new_tag.string = email
+            # Replace the email with the anchor tag
+            soup = BeautifulSoup(str(soup).replace(email, str(new_tag)), 'html.parser')
         
         # Convert back to string and remove any loose characters after links
         answer_with_links = str(soup).strip().rstrip('/')
-
+        
         # Add line breaks
         answer_with_line_breaks = answer_with_links.replace('\n', '<br>')
-
+        
         # Check if bullet points are needed
         if '•' in answer_with_line_breaks:
             # Split the answer into lines and wrap each line with <li> tags
