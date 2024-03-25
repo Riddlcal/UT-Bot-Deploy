@@ -32,7 +32,7 @@ for doc in documents:
 
 # Initialize OpenAI Embeddings
 openai_api_key = os.getenv('OPENAI_API_KEY')
-model_name = 'text-embedding-3-large'
+model_name = 'text-embedding-3-small'
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, model_name=model_name)
 
 # Initialize Pinecone
