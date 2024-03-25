@@ -12,6 +12,11 @@ Answer: UT Tyler is located at 3900 University Blvd, Tyler, TX 75799. Here's the
 
 --------------------------------------------------------------
 
+Question: What courses do you offer?
+Answer: Can you be more specific on what degree you are pursuing?
+
+--------------------------------------------------------------
+
 Question: Can you show me the Campus Map?
 Answer: Here's the Campus Map:
 
@@ -3255,6 +3260,342 @@ Graduate Programs Advising
 903.565.5836
 Soulesgradadvising@uttyler.edu
 
+
+------------------------------------------------------------------
+
+List of courses by Degree for UT Tyler:
+
+Anthropology
+ANTH 2346.001 - Introduction to Anthropology - Hanratty
+ANTH 3380.001 - Physical Anthropology - Hanratty
+ANTH 4310.001 - North American Indians - Guderjan
+ANTH 4360.001 - Topics in Anthropology - Advanced Maya Archaeology - Guderjan
+
+Criminal Justice
+CRIJ 1301.001 - Intro to Criminal Justice - K. Stadelmann                                                                     
+CRIJ 1301.060 - Intro to Criminal Justice - Wooldridge
+CRIJ 1310.060 - Fundamentals of Criminal Law - Miller
+CRIJ 2328.001 - Police Systems and Practices - Ferguson
+CRIJ 3301.060 - Survey of Forensic Science - Kotulla
+CRIJ 3311.060 - Admin of Criminal Justice Agencies - Charlson
+CRIJ 3320.061 - Criminology - Scott
+CRIJ 3344.060 - Drugs, Behavior, and Criminal Justice - Wooldridge
+CRIJ 4307.060 - Juvenile Justice System - Thompson
+CRIJ 4309.001 - Family Violence - Scott
+CRIJ 4322.001 - Criminal Justice Research Methods - Bailey
+CRIJ 4333.001 - Contemporary Policing - Castillo
+CRIJ 4355.001 - Senior Seminar in Criminal Justice - Helfers
+CRIJ 5303.060 - Contemporary Crime Theory - Wooldridge
+CRIJ 5310.060 - Topics in Criminal Justice - Homeland Security - Kotulla
+CRIJ 5332.060 - Law Enforcement: Environment and Practice - Helfers
+CRIJ 5355.060 - Criminal Justice Capstone - Helfers
+CRIJ 5396.060 - Research Methods - Royal
+
+Economics
+ECON 2301.001 - Principles of Macroeconomics - Doty
+ECON 2301.060 - Principles of Macroeconomics - Lozier
+ECON 2301.061 - Principles of Macroeconomics - Bergan
+ECON 2301.D002 - Principles of Macroeconomics - Saygili
+ECON 2302.001 - Principles of Microeconomics - Doty
+ECON 2302.029 - Principles of Microeconomics - HONORS - Doty
+ECON 2302.060 - Principles of Microeconomics - Castaneda
+ECON 2302.061 - Principles of Microeconomics - Cuellar Tapia
+ECON 3302.060 - Economic & Financial Literacy - Doty
+ECON 3314.001 - Intermediate Microeconomic Analysis - Castaneda
+ECON 4345.001 - Health Economics - Castaneda
+ECON 4350.001 - Topics in Economics - International Macroeconomics and Finance - Saygili
+ECON 4355.001 - Econometrics - Saygili
+
+Geography
+GEOG 1301.001 - Physical Geography - Isom
+GEOG 1313.001 - World Regional Geography - Sills
+GEOG 1313.060 - World Regional Geography - Isom
+GEOG 4330.001 - Geographic Information Systems - Sills
+GEOG 4360.001 - Cartography and Remote Sensing - Sills
+
+Public Administration
+PADM 5312.060 - Non-Profit Management - Franks
+PADM 5331.060 - Info Systems in Public Admin - Scott
+PADM 5339.060 - Urban and Regional Planning - Franklin
+PADM 5350.060 - Human Resources Management - Cooper
+PADM 5353.060 - Public Administration Capstone - Wink
+PADM 5396.060 - Research Methods - Royal
+
+Sociology
+SOCI 1301.001 - Introduction to Sociology - Cregler
+SOCI 1306.060 - Contemporary Social Problems - Cregler
+SOCI 3321.001 - Multi-Cultural Studies - Cregler
+
+Social Work
+SOCW 2361.001 - Introduction to Social Work - Mycke
+SOCW 3303.001 - Human Behavior in the Social Environment - Mycke
+SOCW 4140.001 - Pre-Field Orientation - Freeman
+SOCW 4310.001 - Child and Family Social Work - Freeman
+SOCW 4333.001 - Social Work Group Practice - Freeman
+SOCW 4334.001 - Social Work Community Practice - Kenney
+SOCW 4335.001 - Communities and Organizations - Mycke
+SOCW 4601.030 - Practicum I - Freeman
+
+Art
+ART 1301 Introduction to Art (section 001)
+ART 1301 Introduction to Art (section 060 - Online/Distance)
+ART 1301 Introduction to Art (section 061 - Online/Distance)
+ART 1311 Two-Dimensional Design
+ART 1312 Three-Dimensional Design
+ART 2304 Art History Survey II
+ART 2326 Beginning Sculpture
+ART 2333 Beginning Printmaking
+ART 2379 Beginning Ceramics
+ART 3320 Intermediate Life Drawing I
+ART 3343 Jewelry & Metalsmithing
+ART 3340/5336 Aesthetics in Visual Learning
+ART 3366 Intermediate Painting
+ART 3369 Collage
+ART 3379 Ceramics
+ART 4192 Senior Exhibition (Studio Art)
+ART 4337 Advanced Painting Techniques
+ART 4341 Advanced Jewelry & Metalsmithing
+ART 4376 Advanced Intaglio/Relief
+ART 4379 Advanced Sculpture
+ART 4380 Advanced Ceramics
+ART 4391/5391 Topics in Art History: Visual Culture of the Cold War (section 001)
+ART 4391/5391 Topics in Art History: Murals, Martyrs, and the Macabre: Mexican Revolutionary Art (section 002)
+ART 5370 Graduate Studio Practice
+ART 5371 Graduate Internship Practicum
+ART 5395/5397 Thesis and Thesis Exhibition (Studio Art)
+
+Biology:
+BIOL 1302 - Introduction to LIfe Sciences II
+BIOL 1306 - General Biology I
+BIOL 1306.06 - General Biology I Online
+BIOL 1307 - General Biology II
+BIOL 1307.06 - General Biology II Online
+BIOL 1330 - Biology in Popular Culture
+BIOL 2301 - Anatomy & Physiology I
+BIOL 2302 - Anatomy & Physiology II
+BIOL 2302.060 - Anatomy & Physiology II (online course)
+BIOL 2320 - Introduction to Microbiology
+BIOL 3332 - Genetics 
+BIOL 3334 - Cell Biology
+BIOL 3336 - Ecology
+BIOL 3338 - Biological Evolution
+BIOL 3339 - Plant Biology
+BIOL 3343 - Physiology 
+BIOL 3350 - Conservation Biology 
+BIOL 4115 - Scientific Communication II
+BIOL 4300 - Microbiology  
+BIOL 4304 - Biogeography
+BIOL 4330 - Herpetology 
+BIOL 4340 - Ornithology 
+BIOL 5193 - Biostatistics
+BIOL 5303 - Advanced Cellular Physiology
+BIOL 5342 - Bioinformatics
+BIOL 5380 - Molecular Ecology
+BIOL 1106 - General Biology I Laboratory
+BIOL 1107 - General Biology II Laboratory
+BIOL 2101 - Anatomy & Physiology I Laboratory
+BIOL 2102 - Anatomy & Physiology II Laboratory
+BIOL 2120 - Introduction to Microbiology Laboratory
+BIOL 3133 - Genetics Laboratory
+BIOL 3134 - Cell Biology Laboratory
+BIOL 3144 - Human Physiology Laboratory
+BIOL 3137 - Ecology Laboratory 
+BIOL 3139 - Plant Biology Laboratory
+BIOL 4101 - Microbiology Laboratory  
+BIOL 4131 - Herpetology Laboratory
+BIOL 5133 - Landscape Ecology Laboratory
+
+Chemistry
+CHEM1305.001 - Introductory Chemistry I
+CHEM1105.ALL - Introductory Chemistry I Lab
+CHEM1311.001 - General Chemistry I
+CHEM1111.ALL - General Chemistry I Lab
+CHEM1312.001 - General Chemistry II
+CHEM1112.ALL - General Chemistry II Lab
+CHEM1320.001 - Forensic Chemistry I
+CHEM1321.001 - Forensic Chemistry II
+CHEM1330.060 - Culinary Chemistry
+CHEM1350.001 - Chemistry in Action
+CHEM3310.001 - Analytical Chemistry
+CHEM3111.ALL - Analytical Chemistry Lab
+CHEM3320.001 - Inorganic Chemistry
+CHEM3121.ALL - Inorganic Chemistry Lab
+CHEM3342.001 - Organic Chemistry I
+CHEM3143.ALL - Organic Chemistry I Lab
+CHEM3344.001 - Organic Chemistry II
+CHEM3145.ALL - Organic Chemistry II Lab
+CHEM3346.001 - Macromolecular, Supramolecular, and Nanoscale Chemistry
+CHEM3352.001 - Physical Chemistry I
+CHEM3153.ALL - Physical Chemistry I Lab
+CHEM3354.001 - Physical Chemistry II
+CHEM3155.001 - Physical Chemistry II Lab
+CHEM3360.001 - Research Methods
+CHEM3370.001 - Perspectives on Science & Math
+CHEM4332.001 - Spectroscopy
+CHEM4312.001 - Instrumental Analysis
+CHEM4113.001 - Instrumental Analysis Lab
+CHEM4330.001 - Advanced Inorganic Chemistry
+CHEM4334.001
+
+Biochemistry I
+
+Fall, Spring
+
+CHEM4135.ALL
+
+Biochemistry Lab
+
+Fall, Spring
+
+CHEM4336.001
+
+Biochemistry II
+
+Spring
+
+CHEM4340.001
+
+Proteomics
+
+Fall
+
+CHEM4344.001
+
+Molecular Basis of Disease
+
+Spring
+
+CHEM4383.001
+
+Chemical Principles of Fermentation
+
+Spring
+
+CHEM4190.001
+
+Chemical Literature
+
+Fall, Spring, Summer
+
+CHEM4191.001
+
+Seminar
+
+Fall. Spring, Summer
+
+CHEM4195
+
+CHEM4295
+
+CHEM4395 (no syllabus for these courses)
+
+Undergraduate Research
+
+Fall, Spring
+
+*Achieve online homework is NOT used during Summer I or II for General Chemistry I and II, respectively.
+
+ 
+
+Geology
+
+Course/Section
+
+Course Title
+
+Semester(s) Offered
+
+GEOL3310.001
+
+Physical Geology and Astronomy
+
+Fall, Spring
+
+GEOL3314.001
+
+Oceanography and Meteorology
+
+Fall, Spring
+
+ 
+
+ 
+
+Physics
+
+Course/Section
+
+Course Title
+
+Semester(s) Offered
+
+PHYS1301.001
+
+College Physics I
+
+Fall, Spring
+
+PHYS1101.ALL
+
+College Physics I Lab
+
+Fall, Spring
+
+PHYS1302.001
+
+College Physics II
+
+Spring
+
+PHYS1102.ALL
+
+College Physics II Lab
+
+Spring
+
+PHYS1303.060
+
+Intro to Astronomy
+
+Fall, Spring
+
+PHYS2325.001
+
+University Physics I
+
+Fall, Spring
+
+PHYS2125.ALL
+
+University Physics I Lab
+
+Fall, Spring
+
+PHYS2326.001
+
+University Physics II
+
+Fall, Spring
+
+PHYS2126.ALL
+
+University Physics II Lab
+
+Fall, Spring
+
+PHYS4326.001
+
+Intro to Quantum Mechanics
+
+Fall
+
+PHYS4340.001
+
+Modern Physics
+
+Variable
+
+PHYS4399.001
 
 ------------------------------------------------------------------
 
