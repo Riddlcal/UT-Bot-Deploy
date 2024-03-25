@@ -48,7 +48,7 @@ pc = Pinecone(api_key=pinecone_api_key, cloud="GCP", environment="gcp-starter", 
 if index_name not in pc.list_indexes().names():
     pc.create_index(
         name=index_name,
-        dimension=3072,  # Length of OpenAI embeddings
+        dimension=1536,  # Length of OpenAI embeddings
         metric='cosine',  # or any other metric you prefer
         spec={"pod": "starter"}  # specify the correct variant and environment
     )
