@@ -56,22 +56,21 @@ if index_name not in pc.list_indexes().names():
 # Create a BM25Retriever instance with documents
 retriever = BM25Retriever.from_documents(chunked_documents, k=2)
 
-# Initialize Chat models
-llm_name = 'gpt-3.5-turbo'
+# Define the prompt template
+prompt_template = """
+You are a chatbot that answers questions about the University of Texas at Tyler.
+You will answer questions from students, teachers, and staff. Also give helpful hyperlinks to the relevant information.
+If you don't know the answer, say simply that you cannot help with the question and advise to contact the host directly and/or give them a helpful link associated with their question.
+Also if their question is too broad please ask them to be more specific.
+{question}
+"""
+
+# Initialize Chat models with PromptTemplate
 qa = ConversationalRetrievalChain.from_llm(
-    ChatOpenAI(openai_api_key=openai_api_key, model=llm_name),
+    ChatOpenAI(openai_api_key=openai_api_key, model=llm_name, prompt_template=PromptTemplate(prompt_template)),
     retriever,
     return_source_documents=True
 )
-
-# Define the prompt template
-prompt_template = """
-You are a chatbot that answers questions about University of Texas at Tyler.
-You will answer questions from students, teachers, and staff. Also give helpful hyperlinks to the relevant information.
-If you don't know the answer, say simply that you cannot help with the question and advise to contact the host directly.
-
-{question}
-"""
 
 # Define route for home page
 @app.route('/')
