@@ -12,6 +12,11 @@ Answer: UT Tyler is located at 3900 University Blvd, Tyler, TX 75799. Here's the
 
 --------------------------------------------------------------
 
+Question: What courses do you offer?
+Answer: Can you be more specific on what degree you are pursuing?
+
+--------------------------------------------------------------
+
 Question: Can you show me the Campus Map?
 Answer: Here's the Campus Map:
 
@@ -3254,6 +3259,609 @@ Department of Human Resource Development
 Graduate Programs Advising
 903.565.5836
 Soulesgradadvising@uttyler.edu
+
+------------------------------------------------------------------
+
+List of courses by Degree for UT Tyler:
+
+Anthropology
+ANTH 2346.001 - Introduction to Anthropology - Hanratty
+ANTH 3380.001 - Physical Anthropology - Hanratty
+ANTH 4310.001 - North American Indians - Guderjan
+ANTH 4360.001 - Topics in Anthropology - Advanced Maya Archaeology - Guderjan
+
+Criminal Justice
+CRIJ 1301.001 - Intro to Criminal Justice - K. Stadelmann                                                                     
+CRIJ 1301.060 - Intro to Criminal Justice - Wooldridge
+CRIJ 1310.060 - Fundamentals of Criminal Law - Miller
+CRIJ 2328.001 - Police Systems and Practices - Ferguson
+CRIJ 3301.060 - Survey of Forensic Science - Kotulla
+CRIJ 3311.060 - Admin of Criminal Justice Agencies - Charlson
+CRIJ 3320.061 - Criminology - Scott
+CRIJ 3344.060 - Drugs, Behavior, and Criminal Justice - Wooldridge
+CRIJ 4307.060 - Juvenile Justice System - Thompson
+CRIJ 4309.001 - Family Violence - Scott
+CRIJ 4322.001 - Criminal Justice Research Methods - Bailey
+CRIJ 4333.001 - Contemporary Policing - Castillo
+CRIJ 4355.001 - Senior Seminar in Criminal Justice - Helfers
+CRIJ 5303.060 - Contemporary Crime Theory - Wooldridge
+CRIJ 5310.060 - Topics in Criminal Justice - Homeland Security - Kotulla
+CRIJ 5332.060 - Law Enforcement: Environment and Practice - Helfers
+CRIJ 5355.060 - Criminal Justice Capstone - Helfers
+CRIJ 5396.060 - Research Methods - Royal
+
+Economics
+ECON 2301.001 - Principles of Macroeconomics - Doty
+ECON 2301.060 - Principles of Macroeconomics - Lozier
+ECON 2301.061 - Principles of Macroeconomics - Bergan
+ECON 2301.D002 - Principles of Macroeconomics - Saygili
+ECON 2302.001 - Principles of Microeconomics - Doty
+ECON 2302.029 - Principles of Microeconomics - HONORS - Doty
+ECON 2302.060 - Principles of Microeconomics - Castaneda
+ECON 2302.061 - Principles of Microeconomics - Cuellar Tapia
+ECON 3302.060 - Economic & Financial Literacy - Doty
+ECON 3314.001 - Intermediate Microeconomic Analysis - Castaneda
+ECON 4345.001 - Health Economics - Castaneda
+ECON 4350.001 - Topics in Economics - International Macroeconomics and Finance - Saygili
+ECON 4355.001 - Econometrics - Saygili
+
+Geography
+GEOG 1301.001 - Physical Geography - Isom
+GEOG 1313.001 - World Regional Geography - Sills
+GEOG 1313.060 - World Regional Geography - Isom
+GEOG 4330.001 - Geographic Information Systems - Sills
+GEOG 4360.001 - Cartography and Remote Sensing - Sills
+
+Public Administration
+PADM 5312.060 - Non-Profit Management - Franks
+PADM 5331.060 - Info Systems in Public Admin - Scott
+PADM 5339.060 - Urban and Regional Planning - Franklin
+PADM 5350.060 - Human Resources Management - Cooper
+PADM 5353.060 - Public Administration Capstone - Wink
+PADM 5396.060 - Research Methods - Royal
+
+Sociology
+SOCI 1301.001 - Introduction to Sociology - Cregler
+SOCI 1306.060 - Contemporary Social Problems - Cregler
+SOCI 3321.001 - Multi-Cultural Studies - Cregler
+
+Social Work
+SOCW 2361.001 - Introduction to Social Work - Mycke
+SOCW 3303.001 - Human Behavior in the Social Environment - Mycke
+SOCW 4140.001 - Pre-Field Orientation - Freeman
+SOCW 4310.001 - Child and Family Social Work - Freeman
+SOCW 4333.001 - Social Work Group Practice - Freeman
+SOCW 4334.001 - Social Work Community Practice - Kenney
+SOCW 4335.001 - Communities and Organizations - Mycke
+SOCW 4601.030 - Practicum I - Freeman
+
+Art
+ART 1301 Introduction to Art (section 001)
+ART 1301 Introduction to Art (section 060 - Online/Distance)
+ART 1301 Introduction to Art (section 061 - Online/Distance)
+ART 1311 Two-Dimensional Design
+ART 1312 Three-Dimensional Design
+ART 2304 Art History Survey II
+ART 2326 Beginning Sculpture
+ART 2333 Beginning Printmaking
+ART 2379 Beginning Ceramics
+ART 3320 Intermediate Life Drawing I
+ART 3343 Jewelry & Metalsmithing
+ART 3340/5336 Aesthetics in Visual Learning
+ART 3366 Intermediate Painting
+ART 3369 Collage
+ART 3379 Ceramics
+ART 4192 Senior Exhibition (Studio Art)
+ART 4337 Advanced Painting Techniques
+ART 4341 Advanced Jewelry & Metalsmithing
+ART 4376 Advanced Intaglio/Relief
+ART 4379 Advanced Sculpture
+ART 4380 Advanced Ceramics
+ART 4391/5391 Topics in Art History: Visual Culture of the Cold War (section 001)
+ART 4391/5391 Topics in Art History: Murals, Martyrs, and the Macabre: Mexican Revolutionary Art (section 002)
+ART 5370 Graduate Studio Practice
+ART 5371 Graduate Internship Practicum
+ART 5395/5397 Thesis and Thesis Exhibition (Studio Art)
+
+Biology:
+BIOL 1302 - Introduction to LIfe Sciences II
+BIOL 1306 - General Biology I
+BIOL 1306.06 - General Biology I Online
+BIOL 1307 - General Biology II
+BIOL 1307.06 - General Biology II Online
+BIOL 1330 - Biology in Popular Culture
+BIOL 2301 - Anatomy & Physiology I
+BIOL 2302 - Anatomy & Physiology II
+BIOL 2302.060 - Anatomy & Physiology II (online course)
+BIOL 2320 - Introduction to Microbiology
+BIOL 3332 - Genetics 
+BIOL 3334 - Cell Biology
+BIOL 3336 - Ecology
+BIOL 3338 - Biological Evolution
+BIOL 3339 - Plant Biology
+BIOL 3343 - Physiology 
+BIOL 3350 - Conservation Biology 
+BIOL 4115 - Scientific Communication II
+BIOL 4300 - Microbiology  
+BIOL 4304 - Biogeography
+BIOL 4330 - Herpetology 
+BIOL 4340 - Ornithology 
+BIOL 5193 - Biostatistics
+BIOL 5303 - Advanced Cellular Physiology
+BIOL 5342 - Bioinformatics
+BIOL 5380 - Molecular Ecology
+BIOL 1106 - General Biology I Laboratory
+BIOL 1107 - General Biology II Laboratory
+BIOL 2101 - Anatomy & Physiology I Laboratory
+BIOL 2102 - Anatomy & Physiology II Laboratory
+BIOL 2120 - Introduction to Microbiology Laboratory
+BIOL 3133 - Genetics Laboratory
+BIOL 3134 - Cell Biology Laboratory
+BIOL 3144 - Human Physiology Laboratory
+BIOL 3137 - Ecology Laboratory 
+BIOL 3139 - Plant Biology Laboratory
+BIOL 4101 - Microbiology Laboratory  
+BIOL 4131 - Herpetology Laboratory
+BIOL 5133 - Landscape Ecology Laboratory
+
+Chemistry
+CHEM1305.001 - Introductory Chemistry I
+CHEM1105.ALL - Introductory Chemistry I Lab
+CHEM1311.001 - General Chemistry I
+CHEM1111.ALL - General Chemistry I Lab
+CHEM1312.001 - General Chemistry II
+CHEM1112.ALL - General Chemistry II Lab
+CHEM1320.001 - Forensic Chemistry I
+CHEM1321.001 - Forensic Chemistry II
+CHEM1330.060 - Culinary Chemistry
+CHEM1350.001 - Chemistry in Action
+CHEM3310.001 - Analytical Chemistry
+CHEM3111.ALL - Analytical Chemistry Lab
+CHEM3320.001 - Inorganic Chemistry
+CHEM3121.ALL - Inorganic Chemistry Lab
+CHEM3342.001 - Organic Chemistry I
+CHEM3143.ALL - Organic Chemistry I Lab
+CHEM3344.001 - Organic Chemistry II
+CHEM3145.ALL - Organic Chemistry II Lab
+CHEM3346.001 - Macromolecular, Supramolecular, and Nanoscale Chemistry
+CHEM3352.001 - Physical Chemistry I
+CHEM3153.ALL - Physical Chemistry I Lab
+CHEM3354.001 - Physical Chemistry II
+CHEM3155.001 - Physical Chemistry II Lab
+CHEM3360.001 - Research Methods
+CHEM3370.001 - Perspectives on Science & Math
+CHEM4332.001 - Spectroscopy
+CHEM4312.001 - Instrumental Analysis
+CHEM4113.001 - Instrumental Analysis Lab
+CHEM4330.001 - Advanced Inorganic Chemistry
+CHEM4334.001 - Biochemistry I
+CHEM4135.ALL - Biochemistry Lab
+CHEM4336.001 - Biochemistry II
+CHEM4340.001 - Proteomics
+CHEM4344.001 - Molecular Basis of Disease
+CHEM4383.001 - Chemical Principles of Fermentation
+CHEM4190.001 - Chemical Literature
+CHEM4191.001 - Seminar
+CHEM4195 - Undergraduate Research
+
+Geology
+GEOL3310.001 - Physical Geology and Astronomy
+GEOL3314.001 - Oceanography and Meteorology
+
+Physics
+PHYS1301.001 - College Physics I
+PHYS1101.ALL - College Physics I Lab
+PHYS1302.001 - College Physics II
+PHYS1102.ALL - College Physics II Lab
+PHYS1303.060 - Intro to Astronomy
+PHYS2325.001 - University Physics I
+PHYS2125.ALL - University Physics I Lab
+PHYS2326.001 - University Physics II
+PHYS2126.ALL - University Physics II Lab
+PHYS4326.001 - Intro to Quantum Mechanics
+PHYS4340.001 - Modern Physics
+PHYS4399.001 - Independent Study
+
+MASS COMMUNICATION
+MCOM 2306.060 Media Design and Production
+MCOM 2307 Mass Media and Society
+MCOM 2311.001 Writing for Mass Media
+MCOM 2311.002 Writing for Mass Media
+MCOM 2313 Introduction to Multimedia Production
+MCOM 2315 Sports Communication
+MCOM 3303 News Writing
+MCOM 3312 Publication Design
+MCOM 3318.001 Media Law and Ethics
+MCOM 3350.001 Video Production
+MCOM 3360 Photojournalism
+MCOM 3370 Web Design
+MCOM 3380 Brand Identity Design
+MCOM 3395 Writing for PR and Advertising
+MCOM 4332 Advanced Media News
+MCOM 4365.001 Public Relations Campaigns
+
+COMMUNICATION STUDIES
+CMST 1311 Introduction to Communication Studies
+CMST 1315 Fundamentals of Public Speaking
+CMST 1315.005 Fundamentals of Public Speaking
+CMST 1315.006 Fundamentals of Public Speaking
+CMST 4320 Communication Theory/COMM 5308 Seminar Comm Theory
+CMST 4360 Popular Culture and Mass Media
+
+MASTER OF ARTS IN COMMUNICATION
+COMM 4315/5335 Organizational Communication
+COMM 5308 Seminar Comm Theory/CMST 4320 Communication Theory
+
+English
+ENGL 1200- College Composition I Lab- Natalia Menkina Snider
+ENGL 1200- College Composition I Lab- June Oh
+ENGL 1200- College Composition I Lab- Maximillion Patton
+ENGL 1200- College Composition I Lab- Miriam Rowntree
+ENGL 1200- College Composition I Lab- Mark Sidey
+ENGL 1301- College Composition I- Karen Buckland
+ENGL 1301- College Composition I- Nicole Hicks
+ENGL 1301- College Composition I- Kristen Jackson
+ENGL 1301- College Composition I- Natalia Menkina Snider
+ENGL 1301- College Composition I- June Oh
+ENGL 1301- College Composition I- Maximillion Patton
+ENGL 1302- College Composition II- Miriam Rowntree
+ENGL 1302- College Composition II- Mark Sidey
+ENGL 2311- Technical and Business Writing- Mark Sidey
+ENGL 2322- English Literature to the 1780's- David Strong
+ENGL 2323- British Literature from 1770 to the Present- Catherine Ross
+ENGL 2363- World Literature Since the Renaissance: American Immigrant Literature- Natalia Menkina Snider
+ENGL 2370- Reading American Leadership- Ann Beebe
+ENGL 3308- Writing Textual Analysis- Matthew Kelly
+ENGL 3312- Creative Writing I- Anett Jessop
+ENGL 3314- Creative Writing II- Glenn Blake
+ENGL 3362- Reading and Writing about Data- Matthew Kelly
+ENGL 3375- Modern Grammar and Professional Editing- Tara Propper
+ENGL 4355- American Literary Realism- Anett Jessop
+ENGL 4365- Victorian Women Writers and Their World- Catherine Ross
+ENGL 4371- Special Topics in Rhetoric and Writing (Grant Writing)- Kay Jenkins
+ENGL 4374- Texts, Tech, & Humanities- June Oh
+ENGL 4393- Writing Center Theory and Practice- Miriam Rowntree
+ENGL 4397- Senior Seminar/Topics in English- Ann Beebe
+ENGL 5300- Bibliography and Research Methods- Tara Propper
+ENGL 5325- Victorian Women Writers and Their World- Catherine Ross
+ENGL 5369- Senior Seminar/Topics in English- Ann Beebe
+ENGL 5370- World Literature (Comparative Women's Literature)- Hui Wu
+ENGL 5388- History and Practice Rhetoric- Mark Sidey
+ENGL 5392- Writing Center Theory and Practice- Miriam Rowntree
+
+French
+FREN 1611- Accelerated French I- Kayla Hartman
+
+Spanish
+SPAN 1611- Accelerated Spanish I- Ramiro Ardon
+SPAN 1611- Accelerated Spanish I- Myrna Vale
+SPAN 4301- Medical Spanish I- Gregory Utley
+SPAN 4360- Hispanic Cinema- Gregory Utley
+SPAN 4385- Spanish for Oral Proficiency/Advanced Spanish Grammar- Gregory Utley
+SPAN 5301- Medical Spanish I- Gregory Utley
+
+Philosophy
+PHIL 1301- Introduction to Philosophy- Gregory Bock
+PHIL 1304- Introduction to World Religions- Wes Crawford
+PHIL 2306- Introductions to Ethics- Matt Deaton
+PHIL 2306- Introductions to Ethics- Christopher King
+PHIL 2306- Introductions to Ethics- Griffin Nelson
+PHIL 2331- Foundations of Leadership- Gregory Bock
+PHIL 3304- Existentialism- Gregory Bock 
+PHIL 4301- Bioethics- Gregory Bock
+
+History
+HIST 1301.001 US History I - Dr. M Rhys Dotson
+HIST 1301.060 US History I - Dr. Matthew Stith
+HIST 1301.061 US History I - Ms. Meri Souliman
+HIST 1301.062 US History I - Ms. Meri Souliman
+HIST 1302.001 US History II - Dr. M Rhys Dotson
+HIST 1302.002 US History II - Ms. Hollie Attebury
+HIST 1302.060 US History II - Dr. M Rhys Dotson
+HIST 1302.061 US History II - Dr. Mary Linehan
+HIST 1302 Dual Credit US History II - Mrs. Nikki Carter
+HIST 1303.001 A History of Technology and Innovation in US Society Since 1865 - Dr. Jeffrey Owens
+HIST 2321.060 World Civilizations I - Mrs. Nikki Carter
+HIST 2322.060 World History 1500 - Present - Dr. Mandy Link
+HIST 3300.001 Historical Methods and Research - Dr. Matthew Stith
+HIST 3353.001 Reformation Europe - Dr. Edward Tabri
+HIST 4328.001 Modern American Diplomatic History - Dr. Jeffrey Crean
+HIST 4334.060 Women in US History - Dr. Mary Linehan
+HIST 4364.060 World War II: A Global History - Dr. Mandy Link
+HIST 4365.001 The Cold War - Dr. Colin Snider
+HIST 4371.001 The History of Mexican Americans - Dr. M Rhys Dotson
+HIST 4386.001 Civil War and Reconstruction - Dr. Matthew Stith
+HIST 5353.001 Reformation Europe - Dr. Edward Tabri
+HIST 5357.040 Eighteenth Century Europe - Dr. Mandy Link
+HIST 5394.001 Historiography - Dr. Colin Snider
+HIST 5397.001 The American Presidents - Dr. Justin Liles
+
+Mathematics
+HNRS 2414.001 - Honors Calculus II - D. Milan
+MATH 0303.001 - Intermediate Algebra - F. Meza
+MATH 0303.002 - Intermediate Algebra - G. Kambhampati
+MATH 0303.003 - Intermediate Algebra - N. Bailey
+MATH 0303.004 - Intermediate Algebra - G. Kambhampati
+MATH 0303.005 - Intermediate Algebra - F. Meza
+MATH 1324.001 - Mathematics for Business and Economics I - D. Armstrong
+MATH 1324.002 - Mathematics for Business and Economics I - J. Zeng
+MATH 1324.003 - Mathematics for Business and Economics I - A. Berry
+MATH 1325.001 - Mathematics for Business and Economics II - D. Armstrong
+MATH 1332.001 - Mathematics for Liberal Arts Majors I - F. Meza
+MATH 1332.002 - Mathematics for Liberal Arts Majors I - F. Meza
+MATH 1342.001 - Statistics I - S. Graves
+MATH 1342.002 - Statistics I - N. Bailey
+MATH 1342.003 - Statistics I - C. Chappa
+MATH 1342.004 - Statistics I - N. Bailey
+MATH 1342.005 - Statistics I - H. Singh
+MATH 1342.006 - Statistics I - G. Kambhampati
+MATH 1342.007 - Statistics I - T. Lynn
+MATH 1342.008 - Statistics I - F. Meza
+MATH 1342.009 - Statistics I - N. Bailey
+MATH 1342.011 - Statistics I - K. Anders
+MATH 1342.012 - Statistics I - N. Bailey
+MATH 1342.013 - Statistics I - A. Davis
+MATH 1342.029 - Honors Statistics I - K. Anders
+MATH 1343.001 - Statistics II - C. Chappa
+MATH 1350.001 - Concepts of Modern Mathematics I - D. Koslover
+MATH 1351.001 - Concepts of Modern Mathematics II - N. Smith
+MATH 1351.002 - Concepts of Modern Mathematics II - N. Smith
+MATH 2312.001 - Precalculus - K. Anders
+MATH 2312.002 - Precalculus - T. Mayo
+MATH 2312.003 - Precalculus - N. Lebowitz-Lockard
+MATH 2312.004 - Precalculus - R. Gupta
+MATH 2330.001 - Discrete Structures - S. Graves
+MATH 2413.001 - Calculus I - G. Kambhampati
+MATH 2413.002 - Calculus I - H. Singh
+MATH 2413.003 - Calculus I - N. Lebowitz-Lockard
+MATH 2413.004 - Calculus I - H. Singh
+MATH 2414.001 - Calculus II - J. Zeng
+MATH 2414.002 - Calculus II - J. Zeng
+MATH 2414.003 - Calculus II - D. Milan
+MATH 2415.001 - Multivariate Calculus - J. Vandehey
+MATH 3203.001 - Matrix Methods in Science and Engineering - M. Dawsey
+MATH 3305.001 - Ordinary Differential Equations - C. Graves
+MATH 3305.002 - Ordinary Differential Equations - C. Graves
+MATH 3336.001 - Abstract Algebra I - M. Dawsey
+MATH 3351.001 - Probability and Statistics for Engineers and Scientists - D. Koslover
+MATH 3365.001 - Geometric Systems - D. Koslover
+MATH 3373.001 - Advanced Ordinary Differential Equations - J. Vandehey
+MATH 3380.001 - Algorithms in Applied Mathematics - S. Graves
+MATH 3425.001 - Foundations of Mathematics - D. Koslover
+MATH 3452.001 - Advanced Concepts of Mathematics - N. Smith
+MATH 4160.001 - Senior Seminar I - R. Beckham
+MATH 4161.001 - Senior Seminar II - R. Beckham
+MATH 4306.001 - Topology - S. Davis
+MATH 4351.001 - Applied Statistics - N. Smith
+MATH 5306.001 - Graduate Topology - S. Davis
+MATH 5311.001 - Graduate Advanced Engineering Mathematics - R. Beckham
+MATH 5332.001 - Graduate Algebra II - R. Gupta
+MATH 5382.001 - Graduate Applied Mathematics II - R. Beckham
+
+Music
+MUAP xx01 - Violin
+MUAP xx20 - Flute
+MUAP xx29 - Clarinet
+MUAP xx41 - Horn
+MUAP xx46 - Trombone
+MUAP xx50 - Euphonium
+MUAP xx81 - Voice
+MUAP x121 - Oboe
+MUAP x125 - Jazz Improvisation
+MUAP x137 - Trumpet
+MUAP x138 - Natural Trumpet
+MUAP x166 - Organ
+MUAP x169 - Piano
+MUAP x171 - Accompanying
+MUAP x187 - Composition
+MUAP x233 - Saxophone
+MUAP x237 - Trumpet
+MUAP x241 - Horn
+MUAP x246 - Trombone
+MUAP x253 - Tuba
+MUAP x257 - Percussion
+MUAP x269 - Piano
+MUAP x287 - Composition
+MUAP 1111 - Harmony & Keyboard I
+MUAP 1112 - Harmony & Keyboard II
+MUAP 1261 - Guitar
+MUAP 2001 - Piano Proficiency
+MUAP 2111 - Harmony & Keyboard III
+MUAP 2112 - Harmony & Keyboard IV
+MUAP 2161 - Guitar
+MUAP 2221 - Oboe
+MUAP 2261 - Guitar
+MUAP 3000 - Junior Recital (Trumpet)
+MUAP 3138 - Applied Natural Trumpet
+MUAP 3221 - Oboe
+MUAP 3261 - Guitar
+MUAP 4101 - Analytical Research Project
+MUAP 4201 - Internship in Piano Pedagogy
+MUAP 4221 - Oboe
+MUAP 4261 - Guitar
+
+Ensembles
+MUEN x131 - Brass Ensemble
+MUEN x131 - Patriot Drumline
+MUEN x131 - Percussion Ensemble
+MUEN x131 - String Ensemble
+MUEN x131 - Swoop Jazz Collective
+MUEN x135 - Jazz Ensemble
+MUEN x140 - Wind Ensemble
+MUEN x145 - Concert Chorale
+MUEN x151 - Opera/Musical Theatre
+MUEN x155 - Patriot Singers
+MUEN 1131 - Guitar Ensemble
+MUEN 3131 - Guitar Ensemble
+
+Lecture
+MUSI 1000 - Recitals, Concerts and Productions
+MUSI 1116 - Aural Skills I
+MUSI 1117 - Aural Skills II
+MUSI 1211 - Music Theory I
+MUSI 1306 - Music Appreciation (Allen)
+MUSI 1306 - Music Appreciation (Heiden)
+MUSI 1306 - Music Appreciation (Ogburn)
+MUSI 1312 - Music Theory II
+MUSI 1313 - History of Rock
+MUSI 2116 - Aural Skills III
+MUSI 2117 - Aural Skills IV
+MUSI 2211 - Music Theory III
+MUSI 2308 - Music Literature
+MUSI 2312 - Music Theory IV
+MUSI 3214 - Advanced Conducting & Score Reading
+MUSI 3220 - Woodwind Methods
+MUSI 3221 - Brass Methods
+MUSI 3222 - Percussion Methods
+MUSI 3223 - String Methods
+MUSI 3224 - Diction 1
+MUSI 3226 - Choral Conducting & Score Reading
+MUSI 3228 - Instrumental Seminar for Vocal Majors
+MUSI 3229 - Vocal Seminar for Instrumental Majors
+MUSI 3230 - Song Literature
+MUSI 3231 - Vocal Pedagogy
+MUSI 3240 - Marching Band Techniques
+MUSI 3242 - Electronic Music
+MUSI 3311 - Conducting
+MUSI 3313 - Survey of American Musical Theatre
+MUSI 3318 - Musics of the World
+MUSI 3319 - Music History I
+MUSI 3320 - Music History II
+MUSI 3325 - Teaching Music in the Elementary School
+MUSI 3327 - Teaching Music in the Secondary Schools
+MUSI 3330 - Topics in Pedagogy & Literature: Brass
+MUSI 3330 - Topics in Pedagogy & Literature: Piano
+MUSI 3330 - Topics in Pedagogy & Literature: Vocal
+MUSI 3335 - Piano Pedagogy
+MUSI 3348 - Composers Seminar
+MUSI 4199 - Wind Literature
+MUSI 4201 - Internship in Piano Pedagogy
+MUSI 4212 - Band Administration
+MUSI 4225 - Choral Literature I
+MUSI 4226 - Choral Literature II
+MUSI 4320 - Piano Literature
+MUSI 4340 - Counterpoint
+MUSI 4342 - Form and Analysis
+MUSI 4343 - Topics in Music Theory
+MUSI 4345 - Arranging for Ensembles
+THTR 1356 - Cinema: Films & Performers
+THTR 3329 - Theatre History
+THTR 3330 - Theatre History
+
+Political Science
+POLS 2305.001 Introduction to American Government - Mr. Eric Lopez
+POLS 2305.002 Introduction to American Government - Dr. Kenneth Bryant Jr.
+POLS 2305.060 Introduction to American Government - Ms. Melissa Salgado
+POLS 2305.061 Introduction to American Government - Dr. Amentahru Wahlrab
+POLS 2305.062 Introduction to American Government - Dr. Amentahru Wahlrab
+POLS 2306.001 Introduction to Texas Politics - Mr. Nickolas Rios
+POLS 2306.002 Introduction to Texas Politics - Dr. Robert Sterken
+POLS 2306.003 Introduction to Texas Politics - Mr. Eric Lopez
+POLS 2306.301 Introduction to Texas Politics - Mr. Eric Lopez
+POLS 2306.302 Introduction to Texas Politics - Mrs. Nikki Carter
+POLS 2306.303 Introduction to Texas Politics - Ms. Katarina Stadelmann 
+POLS 2306 Dual Credit Introduction to Texas Politics - Mrs. Nikki Carter
+POLS 2320.001 The Study of Law - Mr. Trey Yarbrough
+POLS 3300.001 Development of the First Amendment - Mr. Eric Lopez
+POLS 3375.060 European Political Systems - Dr. Marcus Stadelmann
+POLS 4316.001 Model United Nations II - Ms. Melissa Salgado
+POLS 4345.060 Public Policy Analysis - Dr. Geoffrey Willbanks 
+POLS 4353.001 Contemporary Political Theory - Dr. Randy LeBlanc
+POLS 4355.001 American Politics in Mass Media - Dr. Kenneth Bryant Jr.
+POLS 5321.001 Seminar in Political Theory - Dr. Randy LeBlanc
+POLS 5341.060 International Relations - Dr. Robet Sterken
+
+Accounting
+ACCT 2301.001 Principles of Financial Accounting
+ACCT 2301.002 Principles of Financial Accounting
+ACCT 2301.003 Principles of Financial Accounting
+ACCT 2301.004 Principles of Financial Accounting
+ACCT 2302.001/.002/.003 Principles of Managerial Accounting
+ACCT 2302.060 Principles of Managerial Accounting
+ACCT 3170.001 Build An Accounting Career
+ACCT 3300.060 ACCT/FINA Small Business & Entrepreneurs
+ACCT 3311.001 Intermediate Accounting I
+ACCT 3312.002 Intermediate Accounting II
+ACCT 3315.001 Cost Accounting
+ACCT 3325.001 Federal Income Taxation
+ACCT 4313.001 Intermediate Accounting III
+ACCT 4380.001 Auditing
+ACCT 4391.001 Accounting Information Systems
+BLAW 3301.001 Business Law & Social Responsibility
+BLAW 3301.002 Business Law & Social Responsibility
+BLAW 3301.003 Business Law & Social Responsibility
+BLAW 3301.060 Business Law & Social Responsibility
+BLAW 4320.001 Employment Law
+FINA 3311.001 Principles of Finance
+FINA 3311.002 Principles of Finance
+FINA 3311.061 Principles of Finance
+FINA 3311.062 Principles of Finance
+FINA 3315.060/061 Personal Finance
+FINA 3330.001 Investments
+FINA 4310.001 Managements of Financial Institutions
+FINA 4330.001 Security Analysis
+FINA 4340.001 Managerial Finance
+FINA 4356.001  Energy Risk Management
+FINA 4357.001 Business Forecasting
+GENB 4350.060 Diversity in Organizations
+
+Computer Science
+
+COSC 1307.060 - Introduction to Information Systems Software - Delk                             
+COSC	3333.060/.061	- Computer Information Systems -	Shaw
+COSC	5362.062 -	Ethical Hacking -	Nix
+COSC	5350 -	Data Communication and Networks -	Subramanian
+COSC	1336.001 -	Programming Fundamentals -	Alger
+COSC	1337.001 - Object Oriented Paradigm -	Alger
+COSC	4390.001 -	Game Development II -	Alger
+COSC	1315	- Programming Fundamentals for non-CS Majors - Morris
+COSC	2336	- Data Structures and Algorithms - Morris
+COSC	4385	- Database Management Concepts -	Li
+COSC	5360	- Database Design	- Li
+COSC	4361-5342 -	Cyber Securtiy Management -	Memarian
+COSC	4364-5364	- Cyber Risk Analysis	- Memarian
+COSC	5356	- Computer Vision	- Kulkarni
+COSC	4356	- Computer Vision -	Kulkarni
+COSC	2315.001 -	Computer Organization -	Kulkarni
+COSC	1337	- Object Oriented Paradigm	- Kulkarni
+COSC	5347 - 	Business Intelligence -	Chung
+COSC	5342.060 -	Cyber Security Management -	Roberts
+COSC	5342.701	- Cyber Security Management -	Roberts
+COSC	3385	- Database Design -	Dakshit
+COSC	4375-4395 -	Capstone	- Dakshit
+COSC	1307.062/.063	- Introduction to Information Systems Software -	Rainwater
+COSC	3355.001	- Operating Systems -	Rainwater
+COSC	4315	- Information and Knowledge Management -	Brown
+CSCI	4332.001 -	Game Developement I -	Alger
+CSCI	5346	- Database Analytics -	Chung
+CSCI	5374.060	- Quantitative Analytics	- Roberts
+CSCI	5374.061 -	Quantitative Analytics -	Roberts
+CSCI	5334	- Data Analytics with Python	- Li
+CSCI	5350	- Machine Learning -	Subramanian
+CSCI	4385 -	Capstone -	Dakshit
+
+Human Resource Development
+GENB 2300.001 - Business Statistics - Yoo
+GENB 2300 .060 - Business Statistics - S. Taylor
+HRD 3306.001 - Team Building - McWhorter
+HRD 3306.068 - Team Building - M. Taylor
+HRD 3312.060 - Training and Development - McWhorter
+HRD 3333.001 - Human Relations - Yoo
+HRD 4301.060 - Supervision - McWhorter
+HRD 4320.060 - Job Analysis and Design - Roberts 
+HRD 4370.060 - Undergraduate Internship in HRD - McWhorter
+HRD 5307.060 - Measurement & Evaluation in HRD/Technology Education - Yoo
+HRD 5308.060 - Needs Assesment in HRD - Cho
+HRD 5343.060 - Foundations of Human Resource Development - Roberts
+HRD 5347.060 - Performance Consulting - Sun
+HRD 5347.701 - Performance Consulting - Sun
+HRD 5352.060 - Organization Development - Silberman
+HRD 6310.001 - Adv Theoretical Found of Human Resource Development - Allen
+HRD 6312.001 - Contemporary Issues in Human Resource Development - Cho
+HRD 6355.001 - Multivariate Statistics - Nimon
+HRD 6359.001 - Advanced Research Seminar Human Resource Development - Nimon
+HRD 6366.001 - Seminar On Org Change and Development - Carpenter
+HRD 6377.001 - Leadership Thoery and Practice - Turner
 
 ------------------------------------------------------------------
 
