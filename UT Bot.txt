@@ -3863,6 +3863,531 @@ HRD 6359.001 - Advanced Research Seminar Human Resource Development - Nimon
 HRD 6366.001 - Seminar On Org Change and Development - Carpenter
 HRD 6377.001 - Leadership Thoery and Practice - Turner
 
+Marketing
+EMBA 5345.060 - Strategic Healthcare Leadership - McCann
+EMBA 5345.061 - Strategic Healthcare Leadership - J. McCann
+EMBA 5350.001 - Strategic Human Resource Mgmt - J. McCann
+EMBA 5361.001 - Issues in Amer Healthcare System - P. McMann
+EMBA 5362.001 - Healthcare IT & Informatics - Padden/McBride
+MANA 1300.001 - Intro to Business - Clem
+MANA 1300.002 - Intro to Business - Meadows
+MANA 1300.060 - Intro to Business - Clem
+MANA 3170.001 - Build and Manage a Career - Johnson
+MANA 3170.002 - Build and Manage a Career - Johnson
+MANA 3170.003 - Build and Manage a Career - Beck
+MANA 3300.001 - Critical Thinking - Meadows
+MANA 3300.060 - Critical Thinking - Meadows
+MANA 3300.061 - Critical Thinking - Fagan
+MANA 3305.001 - Operations Management - Hua
+MANA 3305.060 - Operations Management - Hua
+MANA 3305.061 - Operations Management - Hua
+MANA 3311.001 - Fundamentals of Management - Young
+MANA 3311.002 - Fundamentals of Management - Morgan
+MANA 3311.060 - Fundamentals of Management - Young
+MANA 3311.061 - Fundamentals of Management - Young
+MANA 3311.062 - Fundamentals of Management - Fagan
+MANA 3312.060 - International Business - Behnke
+MANA 3315.001 - Organizational Behavior - Morgan
+MANA 3315.060 - Organizational Behavior - Morgan
+MANA 3320.060 - Human Resource Management - Clem
+MANA 3320.061 - Human Resource Management - Clem
+
+MANA
+
+3320.062
+
+Human Resource Management
+
+Clem
+
+MANA
+
+3325.060
+
+Entrepreneurship
+
+Cater
+
+MANA
+
+3370.001
+
+Bus Writing and Oral Presentation
+
+Hicks
+
+MANA
+
+3370.002
+
+Bus Writing and Oral Presentation
+
+Hicks
+
+MANA
+
+3370.003
+
+Bus Writing and Oral Presentation
+
+Tidwell
+
+MANA
+
+3370.060
+
+Bus Writing and Oral Presentation
+
+Hicks
+
+MANA
+
+3370.061
+
+Bus Writing and Oral Presentation
+
+Hicks
+
+MANA
+
+3370.062
+
+Bus Writing and Oral Presentation
+
+Tidwell
+
+MANA
+
+3370.063
+
+Bus Writing and Oral Presentation
+
+Tidwell
+
+MANA
+
+4199.060
+
+Independent Study
+
+Meadows
+
+MANA
+
+4320.060
+
+New Venture Planning
+
+Cater
+
+MANA
+
+4335.060
+
+Labor Relations
+
+Meadows
+
+MANA
+
+4385.060
+
+Stategic Leadership
+
+Kumar
+
+MANA
+
+4395.001
+
+Strategic Management
+
+Al-Shammari
+
+MANA
+
+4395.060
+
+Strategic Management
+
+Al-Shammari
+
+MANA
+
+4395.061
+
+Strategic Management
+
+Al-Shammari
+
+MANA
+
+5305.001
+
+Dec Making in Oper Mgmt
+
+Bari
+
+MANA
+
+5305.060
+
+Dec Making in Oper Mgmt
+
+Bari
+
+MANA
+
+5307.060
+
+Service Operations Management
+
+Bari
+
+MANA
+
+5320.001
+
+Organizational Behavior-hybrid
+
+Kincaid
+
+MANA
+
+5320.060
+
+Organizational Behavior
+
+Kincaid
+
+MANA
+
+5320.061
+
+Organizational Behavior
+
+Kincaid
+
+MANA
+
+5345.060
+
+Strategic Leadership Processes
+
+Doty
+
+MANA
+
+5345.061
+
+Strategic Leadership Processes
+
+Doty
+
+MANA
+
+5350.060
+
+Strategic Human Resource Mgmt
+
+Cater
+
+MANA
+
+5360.060
+
+Global Business Perspectives
+
+Behnke
+
+MANA
+
+5395.060
+
+Formulate & Implement Strat.
+
+Beal
+
+MARK
+
+3311.001
+
+Principles of Marketing
+
+Pei
+
+MARK
+
+3311.002
+
+Principles of Marketing
+
+Hong
+
+MARK
+
+3311.060
+
+Principles of Marketing
+
+James
+
+MARK
+
+3325.060
+
+Retailing in the 21st Century
+
+Pei
+
+MARK
+
+3350.060
+
+Consumer Behavior
+
+Hong
+
+MARK
+
+4340.001
+
+Consumer Insights
+
+Byun
+
+MARK
+
+4340.060
+
+Consumer Insights
+
+Byun
+
+MARK
+
+4350.001
+
+Personal Selling 
+
+Swimberghe
+
+MARK
+
+4355.060
+
+Digital Marketing
+
+Pei
+
+MARK
+
+4360.060
+
+International Marketing
+
+C. Bushardt
+
+MARK
+
+4380.060
+
+Marketing Research
+
+Byun
+
+MARK
+
+5320.001.060
+
+Advanced Marketing Fund
+
+Hong
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+BAAS - 1st Session
+
+ 
+
+MANA
+
+3315.068
+
+Organizational Behavior
+
+Cater
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+BAAS - 2nd Session
+
+ 
+
+MANA
+
+4385.068
+
+Strategic Leadership
+
+Cater
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+A/P - 1st 7-week session
+
+ 
+
+MANA
+
+5350.701
+
+Strategic Human Resource Mgmt
+
+Risher
+
+MANA
+
+5350.703
+
+Strategic Human Resource Mgmt
+
+Risher
+
+MANA
+
+5360.701
+
+Global Business Perspectives
+
+Caldas
+
+MANA
+
+5360.703
+
+Global Business Perspectives
+
+Caldas
+
+MANA
+
+5360.705
+
+Global Business Perspectives
+
+Caldas
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+A/P - 2nd 7-week session
+
+ 
+
+MANA
+
+5375.702
+
+Sp Topics in Health Mgmt
+
+Remani
+
+MANA
+
+5375.704
+
+Sp Topics in Health Mgmt
+
+Remani
+
+MANA
+
+5375.706
+
+Sp Topics in Health Mgmt
+
+Remani
+
+MANA
+
+5395.702
+
+Formulate & Implement Strat
+
+Beal
+
+MANA
+
+5395.704
+
+Formulate & Implement Strat
+
+Beal
+
+MARK
+
+5320.702
+
+Advanced Marketing Fund
+
+Camp
+
+MARK
+
+5320.704
+
+Advanced Marketing Fund
+
+Camp
+
+MARK
+
+5360.702
+
+Advanced Service Marketing
+
+Camp
+
 ------------------------------------------------------------------
 
 Helpful Links:
