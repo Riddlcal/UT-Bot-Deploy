@@ -67,11 +67,12 @@ Also if their question is too broad please ask them to be more specific.
 
 # Initialize Chat models with PromptTemplate
 llm_name = 'gpt-3.5-turbo'
+# Initialize Chat models with PromptTemplate
 qa = ConversationalRetrievalChain.from_llm(
     ChatOpenAI(openai_api_key=openai_api_key, model=llm_name),
     retriever,
     return_source_documents=True,
-    prompt_template=PromptTemplate(prompt_template)
+    prompt_template=prompt_template
 )
 
 # Define route for home page
