@@ -53,6 +53,15 @@ if index_name not in pc.list_indexes().names():
         spec={"pod": "starter"}  # specify the correct variant and environment
     )
 
+# Retrieve embeddings for documents
+document_embeddings = []
+for chunked_doc in chunked_documents:
+    embeddings_result = embeddings.embed_documents(chunked_doc)
+    document_embeddings.extend(embeddings_result['embeddings'])
+
+# Upsert embeddings to Pinecone
+upsert_result = pc.upsert_items(index_name, embeddings=document_embeddings, ids=[str(i) for i in range(len(document_embeddings))])
+
 # Create a BM25Retriever instance with documents
 retriever = BM25Retriever.from_documents(chunked_documents, k=2)
 
