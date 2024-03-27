@@ -82,7 +82,7 @@ def chunks(iterable, batch_size=100):
 # Upsert data with 100 vectors per upsert request
 for ids_vectors_chunk in chunks(example_data_generator, batch_size=100):
     # Set the timeout value (in seconds)
-    timeout = 10  # Example timeout value
+    timeout = 60  # Example timeout value
 
     # Make a request with timeout
     pc.Index(index_name).upsert(vectors=ids_vectors_chunk, timeout=timeout)
