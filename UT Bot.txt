@@ -3264,12 +3264,15 @@ Soulesgradadvising@uttyler.edu
 
 List of courses by Degree for UT Tyler:
 
+
+Classes/Courses for Anthropology:
 Anthropology
 ANTH 2346.001 - Introduction to Anthropology - Hanratty
 ANTH 3380.001 - Physical Anthropology - Hanratty
 ANTH 4310.001 - North American Indians - Guderjan
 ANTH 4360.001 - Topics in Anthropology - Advanced Maya Archaeology - Guderjan
 
+Classes/Courses for Criminal Justice:
 Criminal Justice
 CRIJ 1301.001 - Intro to Criminal Justice - K. Stadelmann                                                                     
 CRIJ 1301.060 - Intro to Criminal Justice - Wooldridge
@@ -3290,6 +3293,7 @@ CRIJ 5332.060 - Law Enforcement: Environment and Practice - Helfers
 CRIJ 5355.060 - Criminal Justice Capstone - Helfers
 CRIJ 5396.060 - Research Methods - Royal
 
+Classes/Courses for Economics:
 Economics
 ECON 2301.001 - Principles of Macroeconomics - Doty
 ECON 2301.060 - Principles of Macroeconomics - Lozier
@@ -3305,6 +3309,7 @@ ECON 4345.001 - Health Economics - Castaneda
 ECON 4350.001 - Topics in Economics - International Macroeconomics and Finance - Saygili
 ECON 4355.001 - Econometrics - Saygili
 
+Classes/Courses for Geography:
 Geography
 GEOG 1301.001 - Physical Geography - Isom
 GEOG 1313.001 - World Regional Geography - Sills
@@ -3312,6 +3317,7 @@ GEOG 1313.060 - World Regional Geography - Isom
 GEOG 4330.001 - Geographic Information Systems - Sills
 GEOG 4360.001 - Cartography and Remote Sensing - Sills
 
+Classes/Courses for Public Administration:
 Public Administration
 PADM 5312.060 - Non-Profit Management - Franks
 PADM 5331.060 - Info Systems in Public Admin - Scott
@@ -3320,11 +3326,13 @@ PADM 5350.060 - Human Resources Management - Cooper
 PADM 5353.060 - Public Administration Capstone - Wink
 PADM 5396.060 - Research Methods - Royal
 
+Classes/Courses for Sociology:
 Sociology
 SOCI 1301.001 - Introduction to Sociology - Cregler
 SOCI 1306.060 - Contemporary Social Problems - Cregler
 SOCI 3321.001 - Multi-Cultural Studies - Cregler
 
+Classes/Courses for Social Work:
 Social Work
 SOCW 2361.001 - Introduction to Social Work - Mycke
 SOCW 3303.001 - Human Behavior in the Social Environment - Mycke
@@ -3335,6 +3343,7 @@ SOCW 4334.001 - Social Work Community Practice - Kenney
 SOCW 4335.001 - Communities and Organizations - Mycke
 SOCW 4601.030 - Practicum I - Freeman
 
+Classes/Courses for Art:
 Art
 ART 1301 Introduction to Art (section 001)
 ART 1301 Introduction to Art (section 060 - Online/Distance)
@@ -3363,6 +3372,7 @@ ART 5370 Graduate Studio Practice
 ART 5371 Graduate Internship Practicum
 ART 5395/5397 Thesis and Thesis Exhibition (Studio Art)
 
+Classes/Courses for Biology:
 Biology:
 BIOL 1302 - Introduction to LIfe Sciences II
 BIOL 1306 - General Biology I
@@ -3404,6 +3414,7 @@ BIOL 4101 - Microbiology Laboratory
 BIOL 4131 - Herpetology Laboratory
 BIOL 5133 - Landscape Ecology Laboratory
 
+Classes/Courses for Chemistry:
 Chemistry
 CHEM1305.001 - Introductory Chemistry I
 CHEM1105.ALL - Introductory Chemistry I Lab
@@ -3444,10 +3455,12 @@ CHEM4190.001 - Chemical Literature
 CHEM4191.001 - Seminar
 CHEM4195 - Undergraduate Research
 
+Classes/Courses for Geology:
 Geology
 GEOL3310.001 - Physical Geology and Astronomy
 GEOL3314.001 - Oceanography and Meteorology
 
+Classes/Courses for Physics:
 Physics
 PHYS1301.001 - College Physics I
 PHYS1101.ALL - College Physics I Lab
@@ -3462,6 +3475,7 @@ PHYS4326.001 - Intro to Quantum Mechanics
 PHYS4340.001 - Modern Physics
 PHYS4399.001 - Independent Study
 
+Classes/Courses for Mass Communication:
 MASS COMMUNICATION
 MCOM 2306.060 Media Design and Production
 MCOM 2307 Mass Media and Society
@@ -3480,6 +3494,7 @@ MCOM 3395 Writing for PR and Advertising
 MCOM 4332 Advanced Media News
 MCOM 4365.001 Public Relations Campaigns
 
+Classes/Courses for Communication Studies:
 COMMUNICATION STUDIES
 CMST 1311 Introduction to Communication Studies
 CMST 1315 Fundamentals of Public Speaking
@@ -3488,10 +3503,12 @@ CMST 1315.006 Fundamentals of Public Speaking
 CMST 4320 Communication Theory/COMM 5308 Seminar Comm Theory
 CMST 4360 Popular Culture and Mass Media
 
+Classes/Courses for Master of Arts in Communication:
 MASTER OF ARTS IN COMMUNICATION
 COMM 4315/5335 Organizational Communication
 COMM 5308 Seminar Comm Theory/CMST 4320 Communication Theory
 
+Classes/Courses for English:
 English
 ENGL 1200- College Composition I Lab- Natalia Menkina Snider
 ENGL 1200- College Composition I Lab- June Oh
@@ -3529,9 +3546,11 @@ ENGL 5370- World Literature (Comparative Women's Literature)- Hui Wu
 ENGL 5388- History and Practice Rhetoric- Mark Sidey
 ENGL 5392- Writing Center Theory and Practice- Miriam Rowntree
 
+Classes/Courses for French:
 French
 FREN 1611- Accelerated French I- Kayla Hartman
 
+Classes/Courses for Spanish:
 Spanish
 SPAN 1611- Accelerated Spanish I- Ramiro Ardon
 SPAN 1611- Accelerated Spanish I- Myrna Vale
@@ -3540,6 +3559,7 @@ SPAN 4360- Hispanic Cinema- Gregory Utley
 SPAN 4385- Spanish for Oral Proficiency/Advanced Spanish Grammar- Gregory Utley
 SPAN 5301- Medical Spanish I- Gregory Utley
 
+Classes/Courses for Philosophy:
 Philosophy
 PHIL 1301- Introduction to Philosophy- Gregory Bock
 PHIL 1304- Introduction to World Religions- Wes Crawford
@@ -3550,6 +3570,7 @@ PHIL 2331- Foundations of Leadership- Gregory Bock
 PHIL 3304- Existentialism- Gregory Bock 
 PHIL 4301- Bioethics- Gregory Bock
 
+Classes/Courses for History:
 History
 HIST 1301.001 US History I - Dr. M Rhys Dotson
 HIST 1301.060 US History I - Dr. Matthew Stith
@@ -3576,6 +3597,7 @@ HIST 5357.040 Eighteenth Century Europe - Dr. Mandy Link
 HIST 5394.001 Historiography - Dr. Colin Snider
 HIST 5397.001 The American Presidents - Dr. Justin Liles
 
+Classes/Courses for Mathematics:
 Mathematics
 HNRS 2414.001 - Honors Calculus II - D. Milan
 MATH 0303.001 - Intermediate Algebra - F. Meza
@@ -3638,6 +3660,7 @@ MATH 5311.001 - Graduate Advanced Engineering Mathematics - R. Beckham
 MATH 5332.001 - Graduate Algebra II - R. Gupta
 MATH 5382.001 - Graduate Applied Mathematics II - R. Beckham
 
+Classes/Courses for Music:
 Music
 MUAP xx01 - Violin
 MUAP xx20 - Flute
@@ -3680,6 +3703,7 @@ MUAP 4201 - Internship in Piano Pedagogy
 MUAP 4221 - Oboe
 MUAP 4261 - Guitar
 
+Classes/Courses for Ensembles:
 Ensembles
 MUEN x131 - Brass Ensemble
 MUEN x131 - Patriot Drumline
@@ -3694,6 +3718,7 @@ MUEN x155 - Patriot Singers
 MUEN 1131 - Guitar Ensemble
 MUEN 3131 - Guitar Ensemble
 
+Classes/Courses for Lecture:
 Lecture
 MUSI 1000 - Recitals, Concerts and Productions
 MUSI 1116 - Aural Skills I
@@ -3748,6 +3773,7 @@ THTR 1356 - Cinema: Films & Performers
 THTR 3329 - Theatre History
 THTR 3330 - Theatre History
 
+Classes/Courses for Political Science:
 Political Science
 POLS 2305.001 Introduction to American Government - Mr. Eric Lopez
 POLS 2305.002 Introduction to American Government - Dr. Kenneth Bryant Jr.
@@ -3771,6 +3797,7 @@ POLS 4355.001 American Politics in Mass Media - Dr. Kenneth Bryant Jr.
 POLS 5321.001 Seminar in Political Theory - Dr. Randy LeBlanc
 POLS 5341.060 International Relations - Dr. Robet Sterken
 
+Classes/Courses for Accounting:
 Accounting
 ACCT 2301.001 Principles of Financial Accounting
 ACCT 2301.002 Principles of Financial Accounting
@@ -3805,8 +3832,8 @@ FINA 4356.001  Energy Risk Management
 FINA 4357.001 Business Forecasting
 GENB 4350.060 Diversity in Organizations
 
+Classes/Courses for Computer Science:
 Computer Science
-
 COSC 1307.060 - Introduction to Information Systems Software - Delk                             
 COSC	3333.060/.061	- Computer Information Systems -	Shaw
 COSC	5362.062 -	Ethical Hacking -	Nix
@@ -3840,6 +3867,7 @@ CSCI	5334	- Data Analytics with Python	- Li
 CSCI	5350	- Machine Learning -	Subramanian
 CSCI	4385 -	Capstone -	Dakshit
 
+Classes/Courses for Human Resource Development:
 Human Resource Development
 GENB 2300.001 - Business Statistics - Yoo
 GENB 2300 .060 - Business Statistics - S. Taylor
@@ -3863,6 +3891,7 @@ HRD 6359.001 - Advanced Research Seminar Human Resource Development - Nimon
 HRD 6366.001 - Seminar On Org Change and Development - Carpenter
 HRD 6377.001 - Leadership Thoery and Practice - Turner
 
+Classes/Courses for Marketing:
 Marketing
 EMBA 5345.060 - Strategic Healthcare Leadership - McCann
 EMBA 5345.061 - Strategic Healthcare Leadership - J. McCann
@@ -3891,502 +3920,60 @@ MANA 3315.001 - Organizational Behavior - Morgan
 MANA 3315.060 - Organizational Behavior - Morgan
 MANA 3320.060 - Human Resource Management - Clem
 MANA 3320.061 - Human Resource Management - Clem
-
-MANA
-
-3320.062
-
-Human Resource Management
-
-Clem
-
-MANA
-
-3325.060
-
-Entrepreneurship
-
-Cater
-
-MANA
-
-3370.001
-
-Bus Writing and Oral Presentation
-
-Hicks
-
-MANA
-
-3370.002
-
-Bus Writing and Oral Presentation
-
-Hicks
-
-MANA
-
-3370.003
-
-Bus Writing and Oral Presentation
-
-Tidwell
-
-MANA
-
-3370.060
-
-Bus Writing and Oral Presentation
-
-Hicks
-
-MANA
-
-3370.061
-
-Bus Writing and Oral Presentation
-
-Hicks
-
-MANA
-
-3370.062
-
-Bus Writing and Oral Presentation
-
-Tidwell
-
-MANA
-
-3370.063
-
-Bus Writing and Oral Presentation
-
-Tidwell
-
-MANA
-
-4199.060
-
-Independent Study
-
-Meadows
-
-MANA
-
-4320.060
-
-New Venture Planning
-
-Cater
-
-MANA
-
-4335.060
-
-Labor Relations
-
-Meadows
-
-MANA
-
-4385.060
-
-Stategic Leadership
-
-Kumar
-
-MANA
-
-4395.001
-
-Strategic Management
-
-Al-Shammari
-
-MANA
-
-4395.060
-
-Strategic Management
-
-Al-Shammari
-
-MANA
-
-4395.061
-
-Strategic Management
-
-Al-Shammari
-
-MANA
-
-5305.001
-
-Dec Making in Oper Mgmt
-
-Bari
-
-MANA
-
-5305.060
-
-Dec Making in Oper Mgmt
-
-Bari
-
-MANA
-
-5307.060
-
-Service Operations Management
-
-Bari
-
-MANA
-
-5320.001
-
-Organizational Behavior-hybrid
-
-Kincaid
-
-MANA
-
-5320.060
-
-Organizational Behavior
-
-Kincaid
-
-MANA
-
-5320.061
-
-Organizational Behavior
-
-Kincaid
-
-MANA
-
-5345.060
-
-Strategic Leadership Processes
-
-Doty
-
-MANA
-
-5345.061
-
-Strategic Leadership Processes
-
-Doty
-
-MANA
-
-5350.060
-
-Strategic Human Resource Mgmt
-
-Cater
-
-MANA
-
-5360.060
-
-Global Business Perspectives
-
-Behnke
-
-MANA
-
-5395.060
-
-Formulate & Implement Strat.
-
-Beal
-
-MARK
-
-3311.001
-
-Principles of Marketing
-
-Pei
-
-MARK
-
-3311.002
-
-Principles of Marketing
-
-Hong
-
-MARK
-
-3311.060
-
-Principles of Marketing
-
-James
-
-MARK
-
-3325.060
-
-Retailing in the 21st Century
-
-Pei
-
-MARK
-
-3350.060
-
-Consumer Behavior
-
-Hong
-
-MARK
-
-4340.001
-
-Consumer Insights
-
-Byun
-
-MARK
-
-4340.060
-
-Consumer Insights
-
-Byun
-
-MARK
-
-4350.001
-
-Personal Selling 
-
-Swimberghe
-
-MARK
-
-4355.060
-
-Digital Marketing
-
-Pei
-
-MARK
-
-4360.060
-
-International Marketing
-
-C. Bushardt
-
-MARK
-
-4380.060
-
-Marketing Research
-
-Byun
-
-MARK
-
-5320.001.060
-
-Advanced Marketing Fund
-
-Hong
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-BAAS - 1st Session
-
- 
-
-MANA
-
-3315.068
-
-Organizational Behavior
-
-Cater
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-BAAS - 2nd Session
-
- 
-
-MANA
-
-4385.068
-
-Strategic Leadership
-
-Cater
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-A/P - 1st 7-week session
-
- 
-
-MANA
-
-5350.701
-
-Strategic Human Resource Mgmt
-
-Risher
-
-MANA
-
-5350.703
-
-Strategic Human Resource Mgmt
-
-Risher
-
-MANA
-
-5360.701
-
-Global Business Perspectives
-
-Caldas
-
-MANA
-
-5360.703
-
-Global Business Perspectives
-
-Caldas
-
-MANA
-
-5360.705
-
-Global Business Perspectives
-
-Caldas
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-A/P - 2nd 7-week session
-
- 
-
-MANA
-
-5375.702
-
-Sp Topics in Health Mgmt
-
-Remani
-
-MANA
-
-5375.704
-
-Sp Topics in Health Mgmt
-
-Remani
-
-MANA
-
-5375.706
-
-Sp Topics in Health Mgmt
-
-Remani
-
-MANA
-
-5395.702
-
-Formulate & Implement Strat
-
-Beal
-
-MANA
-
-5395.704
-
-Formulate & Implement Strat
-
-Beal
-
-MARK
-
-5320.702
-
-Advanced Marketing Fund
-
-Camp
-
-MARK
-
-5320.704
-
-Advanced Marketing Fund
-
-Camp
-
-MARK
-
-5360.702
-
-Advanced Service Marketing
-
-Camp
+MANA 3320.062 - Human Resource Management - Clem
+MANA 3325.060 - Entrepreneurship - Cater
+MANA 3370.001 - Bus Writing and Oral Presentation - Hicks
+MANA 3370.002 - Bus Writing and Oral Presentation - Hicks
+MANA 3370.003 - Bus Writing and Oral Presentation - Tidwell
+MANA 3370.060 - Bus Writing and Oral Presentation - Hicks
+MANA 3370.061 - Bus Writing and Oral Presentation - Hicks
+MANA 3370.062 - Bus Writing and Oral Presentation - Tidwell
+MANA 3370.063 - Bus Writing and Oral Presentation - Tidwell
+MANA 4199.060 - Independent Study - Meadows
+MANA 4320.060 - New Venture Planning - Cater
+MANA 4335.060 - Labor Relations - Meadows
+MANA 4385.060 - Strategic Leadership - Kumar
+MANA 4395.001 - Strategic Management - Al-Shammari
+MANA 4395.060 - Strategic Management - Al-Shammari
+MANA 4395.061 - Strategic Management - Al-Shammari
+MANA 5305.001 - Decision Making in Operations Management - Bari
+MANA 5305.060 - Decision Making in Operations Management - Bari
+MANA 5307.060 - Service Operations Management - Bari
+MANA 5320.001 - Organizational Behavior - Kincaid (Hybrid)
+MANA 5320.060 - Organizational Behavior - Kincaid
+MANA 5320.061 - Organizational Behavior - Kincaid
+MANA 5345.060 - Strategic Leadership Processes - Doty
+MANA 5345.061 - Strategic Leadership Processes - Doty
+MANA 5350.060 - Strategic Human Resource Management - Cater
+MANA 5360.060 - Global Business Perspectives - Behnke
+MANA 5395.060 - Formulate & Implement Strategic Plans - Beal
+MARK 3311.001 - Principles of Marketing - Pei
+MARK 3311.002 - Principles of Marketing - Hong
+MARK 3311.060 - Principles of Marketing - James
+MARK 3325.060 - Retailing in the 21st Century - Pei
+MARK 3350.060 - Consumer Behavior - Hong
+MARK 4340.001 - Consumer Insights - Byun
+MARK 4340.060 - Consumer Insights - Byun
+MARK 4350.001 - Personal Selling - Swimberghe
+MARK 4355.060 - Digital Marketing - Pei
+MARK 4360.060 - International Marketing - C. Bushardt
+MARK 4380.060 - Marketing Research - Byun
+MARK 5320.001.060 - Advanced Marketing Fund - Hong
+MANA 3315.068 - Organizational Behavior - Cater
+MANA 4385.068 - Strategic Leadership - Cater
+MANA 5350.701 - Strategic Human Resource Management - Risher
+MANA 5350.703 - Strategic Human Resource Management - Risher
+MANA 5360.701 - Global Business Perspectives - Caldas
+MANA 5360.703 - Global Business Perspectives - Caldas
+MANA 5360.705 - Global Business Perspectives - Caldas
+MANA 5375.702 - Special Topics in Health Management - Remani
+MANA 5375.704 - Special Topics in Health Management - Remani
+MANA 5375.706 - Special Topics in Health Management - Remani
+MANA 5395.702 - Formulate & Implement Strategic Plans - Beal
+MANA 5395.704 - Formulate & Implement Strategic Plans - Beal
+MARK 5320.702 - Advanced Marketing Fund - Camp
+MARK 5320.704 - Advanced Marketing Fund - Camp
+MARK 5360.702 - Advanced Service Marketing - Camp
 
 ------------------------------------------------------------------
 
