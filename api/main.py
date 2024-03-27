@@ -71,6 +71,14 @@ vector_count = 10000
 # Example generator that generates many (id, vector) pairs
 example_data_generator = generate_example_data(vector_dim, vector_count)
 
+# Upsert data with 100 vectors per upsert request
+for ids_vectors_chunk in chunks(example_data_generator, batch_size=100):
+    # Set the timeout value (in seconds)
+    timeout = 10  # Example timeout value
+
+    # Make a request with timeout
+    pc.Index(index_name).upsert(vectors=ids_vectors_chunk, timeout=timeout)
+
 # Define the chunks function to break an iterable into chunks
 def chunks(iterable, batch_size=100):
     it = iter(iterable)
