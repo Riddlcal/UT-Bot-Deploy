@@ -79,13 +79,16 @@ def chunks(iterable, batch_size=100):
         yield chunk
         chunk = tuple(itertools.islice(it, batch_size))
 
-# Upsert data with 100 vectors per upsert request
-for ids_vectors_chunk in chunks(example_data_generator, batch_size=100):
-    # Set the timeout value (in seconds)
-    timeout = 60  # Example timeout value
-
-    # Make a request with timeout
-    pc.Index(index_name).upsert(vectors=ids_vectors_chunk, timeout=timeout)
+# Upsert data with 100 vectors per upsert request asynchronously
+# - Pass async_req=True to index.upsert()
+with pc.Index(index_name) as index:
+    # Send requests in parallel
+    async_results = [
+        index.upsert(vectors=ids_vectors_chunk, async_req=True)
+        for ids_vectors_chunk in chunks(example_data_generator, batch_size=100)
+    ]
+    # Wait for and retrieve responses (this raises in case of error)
+    [async_result.get() for async_result in async_results]
 
 # Initialize Chat models
 llm_name = 'gpt-3.5-turbo'
@@ -106,7 +109,7 @@ If you don't know the answer, say simply that you cannot help with the question 
 
 # Initialize the LangChain vector store
 text_field = "text"
-vectorstore = PineconeVectorStore(index, embeddings, text_field)
+vectorstore = PineconeVectorStore(index_name, embeddings, text_field)
 
 # Initialize RetrievalQA object
 llm = ChatOpenAI(openai_api_key=openai_api_key, model_name=llm_name, temperature=0.0)
