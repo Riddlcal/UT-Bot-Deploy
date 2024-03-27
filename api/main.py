@@ -60,20 +60,16 @@ while not pc.describe_index(index_name).status['ready']:
 model_name = 'text-embedding-3-small'
 embeddings = OpenAIEmbeddings(model=model_name, openai_api_key=openai_api_key)
 
-# Define the function to break an iterable into chunks
-def chunks(iterable, batch_size=100):
-    it = iter(iterable)
-    chunk = tuple(itertools.islice(it, batch_size))
-    while chunk:
-        yield chunk
-        chunk = tuple(itertools.islice(it, batch_size))
+def generate_example_data(vector_dim, vector_count):
+    for i in range(vector_count):
+        yield f'id-{i}', [random.random() for _ in range(vector_dim)]
 
 # Define the vector dimension and count
 vector_dim = 1536
 vector_count = 10000
 
 # Example generator that generates many (id, vector) pairs
-example_data_generator = map(lambda i: (f'id-{i}', [random.random() for _ in range(vector_dim)]), range(vector_count))
+example_data_generator = generate_example_data(vector_dim, vector_count)
 
 # Upsert data with 100 vectors per upsert request
 for ids_vectors_chunk in chunks(example_data_generator, batch_size=100):
@@ -98,7 +94,7 @@ If you don't know the answer, say simply that you cannot help with the question 
 
 # Initialize the LangChain vector store
 text_field = "text"
-vectorstore = PineconeVectorStore(index_name, embeddings, text_field)
+vectorstore = PineconeVectorStore(index, embeddings, text_field)
 
 # Initialize RetrievalQA object
 llm = ChatOpenAI(openai_api_key=openai_api_key, model_name=llm_name, temperature=0.0)
