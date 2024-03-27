@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, render_template, request
 from openai import OpenAI
 import shelve
 import time
@@ -34,19 +34,12 @@ assistant = get_or_create_assistant(file)
 
 # Thread management
 def check_if_thread_exists():
-    try:
-        with shelve.open("threads_db") as threads_shelf:
-            return threads_shelf.get("current_thread", None)
-    except Exception as e:
-        print("Error accessing threads_db:", e)
-        return None
+    with shelve.open("threads_db") as threads_shelf:
+        return threads_shelf.get("current_thread", None)
 
 def store_thread(thread_id):
-    try:
-        with shelve.open("threads_db", writeback=True) as threads_shelf:
-            threads_shelf["current_thread"] = thread_id
-    except Exception as e:
-        print("Error accessing threads_db:", e)
+    with shelve.open("threads_db", writeback=True) as threads_shelf:
+        threads_shelf["current_thread"] = thread_id
 
 # Generate response
 def generate_response(message_body):
@@ -77,28 +70,28 @@ def generate_response(message_body):
 
 # Run assistant
 def run_assistant(thread, assistant_id):
-    try:
-        # Run the assistant
-        run = client.beta.threads.runs.create(
-            thread_id=thread.id,
-            assistant_id=assistant_id,
-        )
+    # Run the assistant
+    run = client.beta.threads.runs.create(
+        thread_id=thread.id,
+        assistant_id=assistant_id,
+    )
 
-        # Wait for completion
-        while run.status != "completed":
-            # Be nice to the API
-            time.sleep(0.5)
-            run = client.beta.threads.runs.retrieve(thread_id=thread.id, run_id=run.id)
+    # Wait for completion
+    while run.status != "completed":
+        # Be nice to the API
+        time.sleep(0.5)
+        run = client.beta.threads.runs.retrieve(thread_id=thread.id, run_id=run.id)
 
-        # Retrieve the Messages
-        messages = client.beta.threads.messages.list(thread_id=thread.id)
-        new_message = messages.data[0].content[0].text.value
-        return new_message
-    except Exception as e:
-        print("Error running assistant:", e)
-        return None
+    # Retrieve the Messages
+    messages = client.beta.threads.messages.list(thread_id=thread.id)
+    new_message = messages.data[0].content[0].text.value
+    return new_message
 
 # Routes
+@app.route('/')
+def home():
+    return render_template('index.html')
+
 @app.route('/ask', methods=['POST'])
 def ask():
     question = request.form['question']
