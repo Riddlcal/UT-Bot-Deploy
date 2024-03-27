@@ -1,4 +1,5 @@
 import itertools
+import asyncio
 import random
 from flask import Flask, render_template, request
 from langchain_community.document_loaders import TextLoader
@@ -79,16 +80,10 @@ def chunks(iterable, batch_size=100):
         yield chunk
         chunk = tuple(itertools.islice(it, batch_size))
 
-# Upsert data with 100 vectors per upsert request asynchronously
-# - Pass async_req=True to index.upsert()
-with pc.Index(index_name) as index:
-    # Send requests in parallel
-    async_results = [
-        index.upsert(vectors=ids_vectors_chunk, async_req=True)
-        for ids_vectors_chunk in chunks(example_data_generator, batch_size=100)
-    ]
-    # Wait for and retrieve responses (this raises in case of error)
-    [async_result.get() for async_result in async_results]
+async def upsert_data_async(pc, index_name, example_data_generator, batch_size):
+    index = pc.Index(index_name)
+    for ids_vectors_chunk in chunks(example_data_generator, batch_size):
+        await index.upsert(vectors=ids_vectors_chunk, async_req=True)
 
 # Initialize Chat models
 llm_name = 'gpt-3.5-turbo'
@@ -184,6 +179,16 @@ def ask():
             return bulleted_lines
         else:
             return answer_with_line_breaks
+
+async def main():
+    # Initialize Pinecone client
+    pc = Pinecone(api_key=pinecone_api_key)
+
+    # Upsert data asynchronously
+    await upsert_data_async(pc, index_name, example_data_generator, batch_size=100)
+
+# Run the main function asynchronously
+asyncio.run(main())
 
 # Run the Flask app
 if __name__ == '__main__':
