@@ -1,3 +1,4 @@
+import itertools
 from flask import Flask, render_template, request
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -58,13 +59,20 @@ while not pc.describe_index(index_name).status['ready']:
 model_name = 'text-embedding-3-small'
 embeddings = OpenAIEmbeddings(model=model_name, openai_api_key=openai_api_key)
 
+# Define the function to break an iterable into chunks
+def chunks(iterable, batch_size=100):
+    it = iter(iterable)
+    chunk = tuple(itertools.islice(it, batch_size))
+    while chunk:
+        yield chunk
+        chunk = tuple(itertools.islice(it, batch_size))
+
 # Upsert the data to Pinecone with batch size of 100
 index = pc.Index(index_name)
 batch_size = 100
-for i in range(0, len(chunked_documents), batch_size):
-    batch = chunked_documents[i:i+batch_size]
-    embeddings_batch = [embeddings.embed_text(doc.text) for doc in batch]  # Convert documents to embeddings
-    index.upsert(embeddings_batch)
+for batch in chunks(chunked_documents, batch_size):
+    embeddings_batch = [(f'doc-{i}', embeddings.embed_text(doc.text)) for i, doc in enumerate(batch)]  # Convert documents to embeddings
+    index.upsert(vectors=embeddings_batch)
 
 # Initialize Chat models
 llm_name = 'gpt-3.5-turbo'
