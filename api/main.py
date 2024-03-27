@@ -61,6 +61,10 @@ for i in range(0, len(chunked_documents), batch_size):
     batch = chunked_documents[i:i+batch_size]
     index.upsert(batch)
 
+# Initialize LangChain embeddings object
+model_name = 'text-embedding-3-small'
+embeddings = OpenAIEmbeddings(model=model_name, openai_api_key=openai_api_key)
+
 # Initialize Chat models
 llm_name = 'gpt-3.5-turbo'
 qa = ConversationalRetrievalChain.from_llm(
@@ -77,10 +81,6 @@ If you don't know the answer, say simply that you cannot help with the question 
 
 {question}
 """
-
-# Initialize LangChain embeddings object
-model_name = 'text-embedding-3-small'
-embeddings = OpenAIEmbeddings(model=model_name, openai_api_key=openai_api_key)
 
 # Initialize the LangChain vector store
 text_field = "text"
