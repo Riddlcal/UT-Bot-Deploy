@@ -25,7 +25,7 @@ loader = TextLoader(file_path)
 documents = loader.load()
 
 # Split documents into chunks
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=150)
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 chunked_documents = []
 for doc in documents:
     chunked_documents.extend(text_splitter.split_documents([doc]))
