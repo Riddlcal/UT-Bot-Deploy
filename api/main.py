@@ -54,6 +54,10 @@ if index_name not in pc.list_indexes().names():
 while not pc.describe_index(index_name).status['ready']:
     time.sleep(1)
 
+# Initialize LangChain embeddings object
+model_name = 'text-embedding-3-small'
+embeddings = OpenAIEmbeddings(model=model_name, openai_api_key=openai_api_key)
+
 # Upsert the data to Pinecone with batch size of 100
 index = pc.Index(index_name)
 batch_size = 100
@@ -61,10 +65,6 @@ for i in range(0, len(chunked_documents), batch_size):
     batch = chunked_documents[i:i+batch_size]
     embeddings_batch = [embeddings.embed(doc.text) for doc in batch]  # Convert documents to embeddings
     index.upsert(embeddings_batch)
-
-# Initialize LangChain embeddings object
-model_name = 'text-embedding-3-small'
-embeddings = OpenAIEmbeddings(model=model_name, openai_api_key=openai_api_key)
 
 # Initialize Chat models
 llm_name = 'gpt-3.5-turbo'
