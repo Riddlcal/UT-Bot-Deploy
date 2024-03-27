@@ -1,4 +1,5 @@
 import itertools
+import random
 from flask import Flask, render_template, request
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -67,12 +68,16 @@ def chunks(iterable, batch_size=100):
         yield chunk
         chunk = tuple(itertools.islice(it, batch_size))
 
-# Upsert the data to Pinecone with batch size of 100
-index = pc.Index(index_name)
-batch_size = 100
-for batch in chunks(chunked_documents, batch_size):
-    embeddings_batch = [(f'doc-{i}', embeddings.embed_text(doc.text)) for i, doc in enumerate(batch)]  # Convert documents to embeddings
-    index.upsert(vectors=embeddings_batch)
+# Define the vector dimension and count
+vector_dim = 128
+vector_count = 10000
+
+# Example generator that generates many (id, vector) pairs
+example_data_generator = map(lambda i: (f'id-{i}', [random.random() for _ in range(vector_dim)]), range(vector_count))
+
+# Upsert data with 100 vectors per upsert request
+for ids_vectors_chunk in chunks(example_data_generator, batch_size=100):
+    pc.Index(index_name).upsert(vectors=ids_vectors_chunk)
 
 # Initialize Chat models
 llm_name = 'gpt-3.5-turbo'
@@ -93,7 +98,7 @@ If you don't know the answer, say simply that you cannot help with the question 
 
 # Initialize the LangChain vector store
 text_field = "text"
-vectorstore = PineconeVectorStore(index, embeddings, text_field)
+vectorstore = PineconeVectorStore(index_name, embeddings, text_field)
 
 # Initialize RetrievalQA object
 llm = ChatOpenAI(openai_api_key=openai_api_key, model_name=llm_name, temperature=0.0)
