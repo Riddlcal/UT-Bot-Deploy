@@ -59,7 +59,8 @@ index = pc.Index(index_name)
 batch_size = 100
 for i in range(0, len(chunked_documents), batch_size):
     batch = chunked_documents[i:i+batch_size]
-    index.upsert(batch)
+    embeddings_batch = [embeddings.embed(doc.text) for doc in batch]  # Convert documents to embeddings
+    index.upsert(embeddings_batch)
 
 # Initialize LangChain embeddings object
 model_name = 'text-embedding-3-small'
