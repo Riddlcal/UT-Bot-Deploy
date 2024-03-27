@@ -6,3 +6,4 @@ langchain-openai==0.0.8
 rank-bm25==0.2.2
 bs4==0.0.2
 langchain-pinecone==0.0.3
+more-intertools==10.2.0
