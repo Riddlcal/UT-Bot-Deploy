@@ -69,7 +69,7 @@ def chunks(iterable, batch_size=100):
         chunk = tuple(itertools.islice(it, batch_size))
 
 # Define the vector dimension and count
-vector_dim = 128
+vector_dim = 1536
 vector_count = 10000
 
 # Example generator that generates many (id, vector) pairs
