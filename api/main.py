@@ -33,7 +33,7 @@ pinecone_api_key = os.getenv('PINECONE_API_KEY')
 openai_api_key = os.getenv('OPENAI_API_KEY')
 
 # Use pod-based architecture
-spec = PodSpec()
+spec = PodSpec(environment='GCP')
 
 # Initialize Pinecone with the provided information
 pc = Pinecone(api_key=pinecone_api_key)
