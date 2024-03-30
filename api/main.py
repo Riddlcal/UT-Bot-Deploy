@@ -1,17 +1,17 @@
 from flask import Flask, render_template, request
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_openai import OpenAIEmbeddings
-from pinecone import Pinecone
 from langchain_openai import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
 from langchain_community.retrievers import BM25Retriever
+from langchain_community.vectorstores import Chroma
 from langchain.prompts.prompt import PromptTemplate
 from bs4 import BeautifulSoup
 import time
 import os
 import warnings
 import re
+import chromadb.utils.embedding_functions as embedding_functions
 
 # Suppress UserWarnings
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -30,38 +30,30 @@ chunked_documents = []
 for doc in documents:
     chunked_documents.extend(text_splitter.split_documents([doc]))
 
-# Initialize OpenAI Embeddings
+# Get the OpenAI API key from environment variables
 openai_api_key = os.getenv('OPENAI_API_KEY')
-model_name = 'text-embedding-3-small'
-embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, model_name=model_name)
 
-# Initialize Pinecone
-pinecone_api_key = os.getenv('PINECONE_API_KEY')
+# Initialize the Chroma embedding function
+openai_ef = embedding_functions.OpenAIEmbeddingFunction(
+    api_key=openai_api_key,
+    model_name="text-embedding-3-small"
+)
 
-# Now do stuff with Pinecone
-index_name = "chatdata"
+# Embed all documents using Chroma embeddings
+document_embeddings = [openai_ef.embed(doc) for doc in chunked_documents]
 
-# Initialize Pinecone with the provided information
-pc = Pinecone(api_key=pinecone_api_key, cloud="GCP", environment="gcp-starter", region="us-central1")
+# Initialize Chroma for vector storage
+chroma = Chroma()
 
-# Check if the index already exists; if not, create it
-if index_name not in pc.list_indexes().names():
-    pc.create_index(
-        name=index_name,
-        dimension=1536,  # Length of OpenAI embeddings
-        metric='cosine',  # or any other metric you prefer
-        spec={"pod": "starter"}  # specify the correct variant and environment
-    )
+# Store the embeddings in Chroma
+for idx, embedding in enumerate(document_embeddings):
+    chroma.set_vector(str(idx), embedding)
 
-# Create a BM25Retriever instance with documents
-retriever = BM25Retriever.from_documents(chunked_documents, k=2)
-
-# Initialize Chat models
+# Initialize Chat models using only Chroma for similarity search
 llm_name = 'gpt-3.5-turbo'
 qa = ConversationalRetrievalChain.from_llm(
     ChatOpenAI(openai_api_key=openai_api_key, model=llm_name),
-    retriever,
-    return_source_documents=True
+    storage=chroma
 )
 
 # Define the prompt template
