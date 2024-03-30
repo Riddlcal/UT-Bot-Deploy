@@ -3,7 +3,6 @@ from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
-from langchain_community.retrievers import BM25Retriever
 from langchain_community.vectorstores import Chroma
 from langchain.prompts.prompt import PromptTemplate
 from bs4 import BeautifulSoup
@@ -12,6 +11,7 @@ import os
 import warnings
 import re
 import chromadb.utils.embedding_functions as embedding_functions
+import threading  # Import threading module for asynchronous embedding
 
 # Suppress UserWarnings
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -19,51 +19,53 @@ warnings.filterwarnings("ignore", category=UserWarning)
 # Initialize Flask app
 app = Flask(__name__)
 
-# Specify the file path to UT Bot.txt
-file_path = "UT Bot.txt"
-loader = TextLoader(file_path)
-documents = loader.load()
+def embed_files():
+    # Specify the file path to UT Bot.txt
+    file_path = "UT Bot.txt"
+    loader = TextLoader(file_path)
+    documents = loader.load()
 
-# Split documents into chunks
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-chunked_documents = []
-for doc in documents:
-    chunked_documents.extend(text_splitter.split_documents([doc]))
+    # Split documents into chunks
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+    chunked_documents = []
+    for doc in documents:
+        chunked_documents.extend(text_splitter.split_documents([doc]))
 
-# Get the OpenAI API key from environment variables
-openai_api_key = os.getenv('OPENAI_API_KEY')
+    # Get the OpenAI API key from environment variables
+    openai_api_key = os.getenv('OPENAI_API_KEY')
 
-# Initialize the Chroma embedding function
-openai_ef = embedding_functions.OpenAIEmbeddingFunction(
-    api_key=openai_api_key,
-    model_name="text-embedding-3-small"
-)
+    # Initialize the Chroma embedding function
+    openai_ef = embedding_functions.OpenAIEmbeddingFunction(
+        api_key=openai_api_key,
+        model_name="text-embedding-3-small"
+    )
 
-# Embed all documents using Chroma embeddings
-document_embeddings = [openai_ef.embed(doc) for doc in chunked_documents]
+    # Embed all documents using Chroma embeddings
+    document_embeddings = [openai_ef.embed(doc) for doc in chunked_documents]
 
-# Initialize Chroma for vector storage
-chroma = Chroma()
+    # Initialize Chroma for vector storage
+    chroma = Chroma()
 
-# Store the embeddings in Chroma
-for idx, embedding in enumerate(document_embeddings):
-    chroma.set_vector(str(idx), embedding)
+    # Store the embeddings in Chroma
+    for idx, embedding in enumerate(document_embeddings):
+        chroma.set_vector(str(idx), embedding)
 
-# Initialize Chat models using only Chroma for similarity search
-llm_name = 'gpt-3.5-turbo'
-qa = ConversationalRetrievalChain.from_llm(
-    ChatOpenAI(openai_api_key=openai_api_key, model=llm_name),
-    storage=chroma
-)
+    # Initialize Chat models using only Chroma for similarity search
+    llm_name = 'gpt-3.5-turbo'
+    qa = ConversationalRetrievalChain.from_llm(
+        ChatOpenAI(openai_api_key=openai_api_key, model=llm_name),
+        storage=chroma
+    )
 
-# Define the prompt template
-prompt_template = """
-You are a chatbot that answers questions about University of Texas at Tyler.
-You will answer questions from students, teachers, and staff. Also give helpful hyperlinks to the relevant information.
-If you don't know the answer, say simply that you cannot help with the question and advise to contact the host directly.
+    # Define the prompt template
+    global prompt_template
+    prompt_template = """
+    You are a chatbot that answers questions about University of Texas at Tyler.
+    You will answer questions from students, teachers, and staff. Also give helpful hyperlinks to the relevant information.
+    If you don't know the answer, say simply that you cannot help with the question and advise to contact the host directly.
 
-{question}
-"""
+    {question}
+    """
 
 # Define route for home page
 @app.route('/')
@@ -137,4 +139,6 @@ def ask():
 
 # Run the Flask app
 if __name__ == '__main__':
+    # Start a separate thread to embed files into Chroma
+    threading.Thread(target=embed_files).start()
     app.run(debug=True)
