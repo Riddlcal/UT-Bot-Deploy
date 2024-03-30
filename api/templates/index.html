@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT Bot</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='UT-Bot-favicon.ico') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            height: 100vh;
+        }
+
+        .chat-bubble {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #002f6c;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all ease-in-out 0.3s;
+        }
+
+        .chat-bubble:hover {
+            transform: translate(0px, -5px);
+            transition: all ease-in-out 0.3s;
+        }
+
+        .chat-bubble i {
+            font-size: 24px;
+        }
+
+        .chat-box a {
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 5px;
+            width: 95%;
+            display: block;
+            text-align: center;
+            margin: 10px 0px;
+        }
+
+        .chat-box a:hover {
+            color: #ea7c30;
+            background: #fff;
+        }
+
+        .chat-container {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            max-width: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .chat-banner {
+            background: linear-gradient(90deg, #002f6c, #0052bc);
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: auto;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #fff;
+            color: #ea7c30;
+            border-radius: 50px;
+        }
+
+        .dropbtn {
+            background-color: transparent;
+            color: white;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .chat-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .chat-text {
+            color: #fff;
+            font-size: 16px;
+            line-height: 1.2;
+        }
+
+        .chat-avatar-name {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .chat-box {
+            background-color: #fff;
+            padding: 20px;
+            height: 300px;
+            overflow-y: scroll;
+            position: relative;
+        }
+
+        .chat-bot {
+            display: block;
+            background: linear-gradient(90deg, #002f6c, #0052bc);
+            color: #fff;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 15px;
+            clear: both;
+            float: left;
+            max-width: 50%;
+            word-wrap: break-word;
+            position: relative;
+        }
+
+        .chat-bot::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 10px 0 10px;
+            border-color: #002f6c transparent transparent transparent;
+            bottom: -8px;
+            left: 25px;
+        }
+
+        .user {
+            display: block;
+            background: linear-gradient(90deg, #cb6015, #ea7c30);
+            color: white;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 15px;
+            clear: both;
+            float: right;
+            max-width: 50%;
+            word-wrap: break-word;
+            position: relative;
+        }
+
+        .user::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 10px 0 10px;
+            border-color: #ea7c30 transparent transparent transparent;
+            bottom: -8px;
+            right: 25px;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        #chat-form {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 25px;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        #send-btn {
+            background: linear-gradient(90deg, #cb6015, #ea7c30);
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 100px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all ease-in-out 0.3s;
+        }
+
+        #send-btn:hover {
+            background: linear-gradient(90deg, #9e4c11, #9e4c11);
+            transform: translate(0px, -3px);
+            transition: all ease-in-out 0.3s;
+        }
+
+        .chat-message {
+            font-size: 13px;
+        }
+
+        .chat-box::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .chat-box::-webkit-scrollbar-track {
+            background: #fff;
+        }
+
+        .chat-box::-webkit-scrollbar-thumb {
+            background: #0052bc;
+            border-radius: 10px;
+        }
+
+        .chat-box::-webkit-scrollbar-thumb:hover {
+            background: #002f6c;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-bubble" id="chat-bubble">
+        <i class="fas fa-comments"></i>
+    </div>
+    <div class="chat-container" id="chat-container">
+        <div class="chat-banner">
+            <img src="https://github.com/Riddlcal/UT-Bot/blob/main/UT-Bot-Avatar-white-bg.jpg?raw=true" alt="Chatbot Avatar" class="chat-avatar">
+            <div class="chat-text">
+                <div>Chat with</div>
+                <div class="chat-avatar-name">UT Bot</div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown()"><i class="fas fa-ellipsis-v"></i></button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="#" onclick="downloadTranscript()" style="font-size: 12px; text-align: center;"><i class="fa-solid fa-file-arrow-down" style = "margin-right: 5px;"></i>Transcript</a>
+                </div>
+            </div>
+        </div>
+        <div class="chat-box clearfix" id="chat-box">
+            <div class="chat-bot">
+                <p class="chat-message">Welcome to the UT Tyler Chatbot! How can I assist you today?</p>
+            </div>
+        </div>
+        <form id="chat-form">
+            <input type="text" id="user-input" name="user_input" placeholder="Type your message...">
+            <button type="submit" id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+    </div>
+    <script>
+        function sendMessage() {
+
+            var userInput = document.getElementById("user-input");
+            var userMessage = userInput.value.trim();
+
+            if (userMessage !== "") {
+                addUserMessage(userMessage);
+                userInput.disabled = true; // Disable input field
+                userInput.value = ""; // Clear input field
+                scrollToBottom();
+
+                fetch('/ask', {
+                    method: 'POST',
+                    body: new URLSearchParams({
+                        'question': userMessage
+                    })
+                })
+                .then(response => response.text())
+                .then(data => {
+                    setTimeout(function() {
+                        addChatBotMessage(data); // Display bot response in chat window
+                        userInput.disabled = false; // Re-enable input field
+                        scrollToBottom(); // Scroll to the bottom after adding the bot's message
+                    }, 1000); // Delay added to give time for the loader to display
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    userInput.disabled = false; // Re-enable input field
+                });
+            }
+        }
+
+        // Function to add user message to chat window
+        function addUserMessage(message) {
+            var chatBox = document.getElementById("chat-box");
+            var userDiv = document.createElement("div");
+            userDiv.className = "user";
+            userDiv.innerHTML = "<p class='chat-message'>" + message + "</p>";
+            chatBox.appendChild(userDiv);
+        }
+
+        // Function to add bot message to chat window
+        function addChatBotMessage(message) {
+            var chatBox = document.getElementById("chat-box");
+            var botDiv = document.createElement("div");
+            botDiv.className = "chat-bot";
+
+            if (message.includes("<iframe")) {
+                botDiv.innerHTML = message;
+            } else {
+                botDiv.innerHTML = "<p class='chat-message'>" + message + "</p>";
+            }
+
+            chatBox.appendChild(botDiv);
+
+            // Play ping sound
+            var pingSound = new Audio('https://github.com/Riddlcal/UT-Bot/raw/main/Chatbot-ping-sfx.mp3');
+            pingSound.play();
+        }
+
+        function scrollToBottom() {
+            var chatBox = document.getElementById("chat-box");
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // Event listener for form submission
+        document.getElementById("chat-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            sendMessage();
+        });
+
+        var chatBubble = document.getElementById("chat-bubble");
+        var chatContainer = document.getElementById("chat-container");
+        var chatIcon = document.querySelector("#chat-bubble i");
+
+        chatBubble.addEventListener("click", function() {
+            chatContainer.style.display = chatContainer.style.display === "block" ? "none" : "block";
+            if (chatContainer.style.display === "block") {
+                chatIcon.className = "fa-solid fa-xmark"; // Change icon to close when chatbot is open
+            } else {
+                chatIcon.className = "fas fa-comments"; // Change icon to open when chatbot is closed
+            }
+        });
+
+        function toggleDropdown(event) {
+            var dropdownContent = document.getElementById("dropdownContent");
+            dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+            event.stopPropagation(); // Prevent the click event from propagating to the document body
+        }
+
+        // Function to close dropdown when clicking outside
+        document.body.addEventListener("click", function(event) {
+            var dropdownContent = document.getElementById("dropdownContent");
+            if (dropdownContent.style.display === "block" && !event.target.closest(".dropdown")) {
+                dropdownContent.style.display = "none";
+            }
+        });
+
+        function downloadTranscript() {
+            var chatMessages = document.querySelectorAll(".chat-message");
+            var transcript = "";
+
+            // Loop through each chat message and extract the text content
+            chatMessages.forEach(function(chatMessage) {
+                var sender;
+                if (chatMessage.closest('.chat-bot')) {
+                    sender = 'UT Bot';  // Message sent by the bot
+                } else {
+                    sender = 'User';  // Message sent by the user
+                }
+                transcript += '[' + sender + ']: ' + chatMessage.textContent.trim() + "\n"; // Add sender and message to the transcript
+            });
+
+            var blob = new Blob([transcript], { type: "text/plain;charset=utf-8" });
+            saveAs(blob, "chat_transcript.txt");
+        }
+    </script>
+</body>
+</html>
