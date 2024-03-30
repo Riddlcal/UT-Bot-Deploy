@@ -1,8 +1,5 @@
 {
   "rewrites": [
     { "source": "/(.*)", "destination": "/api/main.py" }
-  ],
-  "builds": [
-    { "src": "*", "use": "@vercel/python", "config": { "postDeploy": "pip install chromadb==$CHROMADB_VERSION" } }
   ]
 }
