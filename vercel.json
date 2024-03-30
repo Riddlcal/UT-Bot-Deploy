@@ -3,9 +3,6 @@
     { "source": "/(.*)", "destination": "/api/main.py" }
   ],
   "functions": {
-    "afterDeployment": {
-      "source": "api/serverless_functions.py",
-      "memory": 128
-    }
+    "afterDeployment": "api/serverless_functions.py"
   }
 }
