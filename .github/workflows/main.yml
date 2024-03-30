@@ -18,17 +18,25 @@ jobs:
       - name: Find latest deployment
         id: latest_deployment
         run: |
-          latest_deployment_url=$(curl -sSf -X GET "https://api.vercel.com/v6/now/deployments?projectId=ut-bot-deploy&limit=1" \
+          latest_deployment_id=$(curl -sSf -X GET "https://api.vercel.com/v6/deployments?projectId=ut-bot-deploy&limit=1" \
               -H "Authorization: Bearer 4EMYs0YWWJQrhQYIVDGzIFkR" \
               -H "Content-Type: application/json" \
-              | jq -r '.deployments[0].url')
+              | jq -r '.deployments[0].uid')
+          echo "::set-output name=deployment_id::$latest_deployment_id"
+          latest_deployment_url=$(curl -sSf -X GET "https://api.vercel.com/v6/deployments/${latest_deployment_id}" \
+              -H "Authorization: Bearer 4EMYs0YWWJQrhQYIVDGzIFkR" \
+              -H "Content-Type: application/json" \
+              | jq -r '.url')
           echo "::set-output name=deployment_url::$latest_deployment_url"
           
       - name: Wait for Deployment
         run: |
-          deployment_url="${{ steps.latest_deployment.outputs.deployment_url }}"
+          deployment_id="${{ steps.latest_deployment.outputs.deployment_id }}"
           # Command to wait for the deployment to be ready
-          while ! curl -sSLf "${deployment_url}" >/dev/null; do
+          while [[ "$(curl -sSf -X GET "https://api.vercel.com/v6/deployments/${deployment_id}" \
+              -H "Authorization: Bearer 4EMYs0YWWJQrhQYIVDGzIFkR" \
+              -H "Content-Type: application/json" \
+              | jq -r '.ready')" != "true" ]]; do
               sleep 30
           done
           
