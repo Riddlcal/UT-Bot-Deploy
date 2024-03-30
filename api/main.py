@@ -3,6 +3,7 @@ from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
+from langchain_community.retrievers import BM25Retriever
 from langchain_community.vectorstores import Chroma
 from langchain.prompts.prompt import PromptTemplate
 from bs4 import BeautifulSoup
@@ -12,26 +13,9 @@ import warnings
 import re
 import chromadb.utils.embedding_functions as embedding_functions
 import requests
-import subprocess
 
 # Suppress UserWarnings
 warnings.filterwarnings("ignore", category=UserWarning)
-
-# Function to install ChromaDB
-def install_chromadb(version):
-    subprocess.run(["pip", "install", f"chromadb=={version}"])
-
-# Function to handle the Lambda event
-def handler(event, context):
-    # Check if the CHROMADB_VERSION environment variable is set
-    chromadb_version = os.getenv('CHROMADB_VERSION')
-    if chromadb_version:
-        # Install ChromaDB
-        install_chromadb(chromadb_version)
-        # Continue with your code here...
-        return {"message": f"Chromadb {chromadb_version} installed successfully"}
-    else:
-        return {"message": "CHROMADB_VERSION environment variable not set, ChromaDB not installed"}
 
 # Initialize Flask app
 app = Flask(__name__)
