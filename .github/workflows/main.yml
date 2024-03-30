@@ -15,19 +15,10 @@ jobs:
         
       # Your build and deployment steps go here
       
-      - name: Find project ID
-        id: project_id
-        run: |
-          project_id=$(curl -sSf -X GET "https://api.vercel.com/v8/projects" \
-              -H "Authorization: Bearer 4EMYs0YWWJQrhQYIVDGzIFkR" \
-              -H "Content-Type: application/json" \
-              | jq -r '.[] | select(.name == "ut-bot-deploy") | .id')
-          echo "::set-output name=project_id::$project_id"
-
       - name: Find latest deployment
         id: latest_deployment
         run: |
-          latest_deployment=$(curl -sSf -X GET "https://api.vercel.com/v12/now/deployments?projectId=${{ steps.project_id.outputs.project_id }}&limit=1" \
+          latest_deployment=$(curl -sSf -X GET "https://api.vercel.com/v12/now/deployments?projectId=ut-bot-deploy&limit=1" \
               -H "Authorization: Bearer 4EMYs0YWWJQrhQYIVDGzIFkR" \
               -H "Content-Type: application/json" \
               | jq -r '.deployments[0].uid')
