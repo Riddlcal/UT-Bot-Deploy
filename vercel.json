@@ -2,7 +2,12 @@
   "rewrites": [
     { "source": "/(.*)", "destination": "/api/main.py" }
   ],
-  "functions": {
-    "postDeploy": "pip install chromadb==$CHROMADB_VERSION"
-  }
+  "functions": [
+    {
+      "postDeploy": {
+        "pip": "install",
+        "command": "chromadb==$CHROMADB_VERSION"
+      }
+    }
+  ]
 }
