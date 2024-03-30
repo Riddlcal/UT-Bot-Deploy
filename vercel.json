@@ -4,7 +4,7 @@
   ],
   "functions": {
     "afterDeployment": {
-      "path": "api/serverless_functions.py"
+      "source": "api/serverless_functions.py"
     }
   }
 }
