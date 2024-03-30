@@ -3,7 +3,7 @@ import subprocess
 
 def install_chroma():
     # Install Chroma using pip
-    subprocess.run(["pip", "install", "chroma"])
+    subprocess.run(["pip", "install", "chromadb"])
 
 def handler(event, context):
     # Check if the function should install Chroma
