@@ -4,4 +4,4 @@ langchain==0.1.9
 langchain-openai==0.0.8
 bs4==0.0.2
 rank-bm25==0.2.2
-pinecone-cilent==3.1.0
+pinecone-client==3.1.0
