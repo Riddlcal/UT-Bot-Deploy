@@ -12,6 +12,7 @@ import os
 import warnings
 import re
 import chromadb.utils.embedding_functions as embedding_functions
+import requests
 
 # Suppress UserWarnings
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -56,14 +57,16 @@ qa = ConversationalRetrievalChain.from_llm(
     storage=chroma
 )
 
-# Define the prompt template
-prompt_template = """
-You are a chatbot that answers questions about University of Texas at Tyler.
-You will answer questions from students, teachers, and staff. Also give helpful hyperlinks to the relevant information.
-If you don't know the answer, say simply that you cannot help with the question and advise to contact the host directly.
+# Define the Vercel Deployment Hook URL
+vercel_deployment_hook_url = 'https://api.vercel.com/v1/integrations/deploy/prj_OdwL3MBQEsxULxJIhzSIybRxgm2F/JfVf82b2gW'
 
-{question}
-"""
+# Function to send a POST request to the Vercel Deployment Hook
+def trigger_deployment_hook():
+    response = requests.post(vercel_deployment_hook_url)
+    if response.status_code == 200:
+        print("Deployment hook triggered successfully!")
+    else:
+        print(f"Failed to trigger deployment hook. Status code: {response.status_code}")
 
 # Define route for home page
 @app.route('/')
@@ -137,4 +140,6 @@ def ask():
 
 # Run the Flask app
 if __name__ == '__main__':
+    # Trigger the deployment hook after starting the app
+    trigger_deployment_hook()
     app.run(debug=True)
