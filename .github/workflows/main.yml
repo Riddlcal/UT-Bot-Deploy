@@ -1,0 +1,39 @@
+name: Trigger Deployment Hook
+
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      # Your build and deployment steps go here
+      
+      - name: Find latest deployment
+        id: latest_deployment
+        run: |
+          latest_deployment=$(curl -sSf -X GET "https://api.vercel.com/v12/now/deployments?projectId=ut-bot-deploy&limit=1" \
+              -H "Authorization: Bearer 4EMYs0YWWJQrhQYIVDGzIFkR" \
+              -H "Content-Type: application/json" \
+              | jq -r '.deployments[0].uid')
+          echo "::set-output name=deployment_id::$latest_deployment"
+          
+      - name: Wait for Deployment
+        run: |
+          # Command to check the deployment status
+          while [[ "$(curl -sSf -X GET "https://api.vercel.com/v3/deployments/${{ steps.latest_deployment.outputs.deployment_id }}/events" \
+              -H "Authorization: Bearer 4EMYs0YWWJQrhQYIVDGzIFkR" \
+              -H "Content-Type: application/json" \
+              | grep -c 'READY')" -eq 0 ]]; do
+              sleep 30
+          done
+          
+      - name: Install ChromaDB
+        run: |
+          pip install chromadb
