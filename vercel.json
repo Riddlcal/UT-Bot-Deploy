@@ -1,5 +1,11 @@
 {
   "rewrites": [
     { "source": "/(.*)", "destination": "/api/main.py" }
-  ]
+  ],
+  "functions": {
+    "afterDeployment": {
+      "path": "api/serverless_functions.py",
+      "memory": 128
+    }
+  }
 }
