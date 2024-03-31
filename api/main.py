@@ -25,21 +25,13 @@ file_path = "UT Bot.txt"
 loader = TextLoader(file_path)
 documents = loader.load()
 
-# Split documents into chunks
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-chunked_documents = []
-for doc in documents:
-    chunked_documents.extend(text_splitter.split_documents([doc]))
-
 # Initialize OpenAI Embeddings
 openai_api_key = os.getenv('OPENAI_API_KEY')
 model_name = 'text-embedding-3-small'
-embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, model_name=model_name)
+embed_model = OpenAIEmbeddings(openai_api_key=openai_api_key, model_name=model_name)
 
-# Generate embeddings for each document and store in a list
-document_embeddings = []
-for document in chunked_documents:
-    document_embeddings.append(embeddings.embed(document))
+# Generate embeddings for the documents
+document_embeddings = embed_model.embed_documents(documents)
 
 # Initialize Pinecone
 pinecone_api_key = os.getenv('PINECONE_API_KEY')
