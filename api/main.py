@@ -22,14 +22,14 @@ app = Flask(__name__)
 
 # Specify the file path to UT Bot.txt
 file_path = "UT Bot.txt"
-with open(file_path, 'r', encoding='utf-8') as file:
-    documents = file.readlines()
+loader = TextLoader(file_path)
+documents = loader.load()
+
+# Initialize text splitter
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 
 # Split documents into chunks
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-chunked_documents = []
-for doc in documents:
-    chunked_documents.extend(text_splitter.split_documents([doc]))
+chunked_documents = text_splitter.split_documents(documents)
 
 # Initialize OpenAI Embeddings
 openai_api_key = os.getenv('OPENAI_API_KEY')
