@@ -53,14 +53,15 @@ if index_name not in pc.list_indexes().names():
         spec={"pod": "starter"}  # specify the correct variant and environment
     )
 
-# Create a BM25Retriever instance with documents
-retriever = BM25Retriever.from_documents(chunked_documents, k=2)
+# Store embeddings in Pinecone
+for idx, doc_embedding in enumerate(embeddings):
+    pc.insert(index_name=index_name, data=doc_embedding, ids=str(idx))
 
 # Initialize Chat models
 llm_name = 'gpt-3.5-turbo'
 qa = ConversationalRetrievalChain.from_llm(
     ChatOpenAI(openai_api_key=openai_api_key, model=llm_name),
-    retriever,
+    BM25Retriever.from_pinecone(pc, index_name),
     return_source_documents=True
 )
 
