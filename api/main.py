@@ -22,8 +22,8 @@ app = Flask(__name__)
 
 # Specify the file path to UT Bot.txt
 file_path = "UT Bot.txt"
-loader = TextLoader(file_path)
-documents = loader.load()
+with open(file_path, 'r', encoding='utf-8') as file:
+    documents = file.readlines()
 
 # Split documents into chunks
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
