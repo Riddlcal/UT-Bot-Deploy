@@ -1,3 +1,5 @@
+import os
+import json
 from flask import Flask, render_template, request
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -9,7 +11,6 @@ from langchain_community.retrievers import BM25Retriever
 from langchain.prompts.prompt import PromptTemplate
 from bs4 import BeautifulSoup
 import time
-import os
 import warnings
 import re
 
@@ -35,13 +36,14 @@ openai_api_key = os.getenv('OPENAI_API_KEY')
 model_name = 'text-embedding-3-small'
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, model_name=model_name)
 
+# Generate embeddings for each document and store in a list
+document_embeddings = []
+for document in chunked_documents:
+    document_embeddings.append(embeddings.embed(document))
+
 # Initialize Pinecone
 pinecone_api_key = os.getenv('PINECONE_API_KEY')
-
-# Now do stuff with Pinecone
 index_name = "chatdata"
-
-# Initialize Pinecone with the provided information
 pc = Pinecone(api_key=pinecone_api_key, cloud="GCP", environment="gcp-starter", region="us-central1")
 
 # Check if the index already exists; if not, create it
@@ -54,8 +56,8 @@ if index_name not in pc.list_indexes().names():
     )
 
 # Store embeddings in Pinecone
-for idx, doc_embedding in enumerate(embeddings):
-    pc.insert(index_name=index_name, data=doc_embedding, ids=str(idx))
+for idx, doc_embedding in enumerate(document_embeddings):
+    pc.upsert(index_name=index_name, vectors=[doc_embedding], ids=[str(idx)])
 
 # Initialize Chat models
 llm_name = 'gpt-3.5-turbo'
