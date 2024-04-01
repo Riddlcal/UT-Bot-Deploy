@@ -61,7 +61,11 @@ def generate_response(message_body):
 
     # Run the assistant and get the new message
     new_message = run_assistant(thread_id, assistant.id)
-    return new_message
+    
+    # Remove source annotations like  
+    cleaned_message = re.sub(r'\[\d+†source\]', '', new_message)
+    
+    return cleaned_message
 
 # Run assistant
 def run_assistant(thread_id, assistant_id):
