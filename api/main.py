@@ -7,7 +7,6 @@ from langchain_community.vectorstores import Chroma
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_openai import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
-from langchain_community.retrievers import BM25Retriever
 from bs4 import BeautifulSoup
 import time
 import os
