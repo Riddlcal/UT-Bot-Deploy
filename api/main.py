@@ -10,7 +10,7 @@ app = Flask(__name__)
 client = OpenAI()
 
 # File path for storing thread IDs
-THREADS_DB_FILE = "pickle/threads_db.pkl"
+THREADS_DB_FILE = "tmp/threads_db.pkl"
 
 # Load threads_db from file if it exists
 if os.path.exists(THREADS_DB_FILE):
