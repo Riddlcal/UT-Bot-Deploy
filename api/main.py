@@ -1,12 +1,21 @@
 from flask import Flask, render_template, request
 from openai import OpenAI
-import shelve
+import sqlite3
 import time
 import re
 from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 client = OpenAI()
+
+# Initialize SQLite database
+conn = sqlite3.connect('threads.db')
+c = conn.cursor()
+
+# Create table if it doesn't exist
+c.execute('''CREATE TABLE IF NOT EXISTS threads
+             (id TEXT)''')
+conn.commit()
 
 # Retrieve file
 def retrieve_file(file_id):
@@ -36,12 +45,13 @@ assistant = get_or_create_assistant(file)
 
 # Thread management
 def check_if_thread_exists():
-    with shelve.open("threads_db") as threads_shelf:
-        return threads_shelf.get("current_thread", None)
+    c.execute('SELECT id FROM threads')
+    thread_id = c.fetchone()
+    return thread_id[0] if thread_id else None
 
 def store_thread(thread_id):
-    with shelve.open("threads_db", writeback=True) as threads_shelf:
-        threads_shelf["current_thread"] = thread_id
+    c.execute("INSERT INTO threads (id) VALUES (?)", (thread_id,))
+    conn.commit()
 
 # Generate response
 def generate_response(message_body):
