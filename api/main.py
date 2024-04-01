@@ -84,8 +84,12 @@ def run_assistant(thread_id, assistant_id):
     # Retrieve the Messages
     messages = client.beta.threads.messages.list(thread_id=thread_id)
     new_message = messages.data[0].content[0].text.value
-    return new_message
-
+    
+    # Remove source annotations like  from the message
+    cleaned_message = re.sub(r'\【\d+†source\】', '', new_message)
+    
+    return cleaned_message
+    
 # Routes
 @app.route('/')
 def home():
