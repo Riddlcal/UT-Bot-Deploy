@@ -1,110 +1,121 @@
 from flask import Flask, render_template, request
-from langchain_community.document_loaders import TextLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_openai import OpenAIEmbeddings
-from pinecone import Pinecone
-from langchain_openai import ChatOpenAI
-from langchain.chains import ConversationalRetrievalChain
-from langchain_community.retrievers import BM25Retriever
-from langchain.prompts.prompt import PromptTemplate
-from bs4 import BeautifulSoup
+from openai import OpenAI
+import shelve
 import time
-import os
-import warnings
 import re
+from bs4 import BeautifulSoup
 
-# Suppress UserWarnings
-warnings.filterwarnings("ignore", category=UserWarning)
-
-# Initialize Flask app
 app = Flask(__name__)
+client = OpenAI()
 
-# Specify the file path to UT Bot.txt
-file_path = "UT Bot.txt"
-loader = TextLoader(file_path)
-documents = loader.load()
+# Retrieve file
+def retrieve_file(file_id):
+    file = client.files.retrieve(file_id)
+    return file
 
-# Split documents into chunks
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-chunked_documents = []
-for doc in documents:
-    chunked_documents.extend(text_splitter.split_documents([doc]))
+file_id = "file-aEk13iLb3GpYB7ugAddJ7v34"
+file = retrieve_file(file_id)
 
-# Initialize OpenAI Embeddings
-openai_api_key = os.getenv('OPENAI_API_KEY')
-model_name = 'text-embedding-3-small'
-embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, model_name=model_name)
+# Get or create assistant
+def get_or_create_assistant(file):
+    assistant_id = "asst_hZZ6WJuvudWehHO3Bmdsn2Ro"
+    try:
+        assistant = client.beta.assistants.retrieve(assistant_id)
+    except Exception as e:
+        # Assistant doesn't exist, create a new one
+        assistant = client.beta.assistants.create(
+            name="UTY",
+            instructions="You are a chatbot that answers questions about University of Texas at Tyler. You will answer questions from students, teachers, and staff. Also give helpful hyperlinks to the relevant information. If you don't know the answer, and advise to contact the host directly. Keep answers short.",
+            tools=[{"type": "retrieval"}],
+            model="gpt-3.5-turbo-0125",
+            file_ids=[file.id],
+        )
+    return assistant
 
-# Initialize Pinecone
-pinecone_api_key = os.getenv('PINECONE_API_KEY')
+assistant = get_or_create_assistant(file)
 
-# Now do stuff with Pinecone
-index_name = "chatdata"
+# Thread management
+def check_if_thread_exists():
+    with shelve.open("threads_db") as threads_shelf:
+        return threads_shelf.get("current_thread", None)
 
-# Initialize Pinecone with the provided information
-pc = Pinecone(api_key=pinecone_api_key, cloud="GCP", environment="gcp-starter", region="us-central1")
+def store_thread(thread_id):
+    with shelve.open("threads_db", writeback=True) as threads_shelf:
+        threads_shelf["current_thread"] = thread_id
 
-# Check if the index already exists; if not, create it
-if index_name not in pc.list_indexes().names():
-    pc.create_index(
-        name=index_name,
-        dimension=1536,  # Length of OpenAI embeddings
-        metric='cosine',  # or any other metric you prefer
-        spec={"pod": "starter"}  # specify the correct variant and environment
+# Generate response
+def generate_response(message_body):
+    # Check if there is already a thread_id for the current thread
+    thread_id = check_if_thread_exists()
+
+    # If a thread doesn't exist, create one and store it
+    if thread_id is None:
+        print("Creating new thread.")
+        thread = client.beta.threads.create()
+        store_thread(thread.id)
+        thread_id = thread.id
+
+    # Otherwise, retrieve the existing thread
+    else:
+        thread = client.beta.threads.retrieve(thread_id)
+
+    # Add message to thread
+    message = client.beta.threads.messages.create(
+        thread_id=thread_id,
+        role="user",
+        content=message_body,
     )
 
-# Create a BM25Retriever instance with documents
-retriever = BM25Retriever.from_documents(chunked_documents, k=2)
+    # Run the assistant and get the new message
+    new_message = run_assistant(thread, assistant.id)
+    return new_message
 
-# Initialize Chat models
-llm_name = 'gpt-3.5-turbo'
-qa = ConversationalRetrievalChain.from_llm(
-    ChatOpenAI(openai_api_key=openai_api_key, model=llm_name),
-    retriever,
-    return_source_documents=True
-)
+# Run assistant
+def run_assistant(thread, assistant_id):
+    # Run the assistant
+    run = client.beta.threads.runs.create(
+        thread_id=thread.id,
+        assistant_id=assistant_id,
+    )
 
-# Define the prompt template
-prompt_template = """
-You are a chatbot that answers questions about University of Texas at Tyler.
-You will answer questions from students, teachers, and staff. Also give helpful hyperlinks to the relevant information.
-If you don't know the answer, say simply that you cannot help with the question and advise to contact the host directly.
+    # Wait for completion
+    while run.status != "completed":
+        # Be nice to the API
+        time.sleep(0.5)
+        run = client.beta.threads.runs.retrieve(thread_id=thread.id, run_id=run.id)
 
-{question}
-"""
+    # Retrieve the Messages
+    messages = client.beta.threads.messages.list(thread_id=thread.id)
+    new_message = messages.data[0].content[0].text.value
+    return new_message
 
-# Define route for home page
+# Routes
 @app.route('/')
 def home():
     return render_template('index.html')
 
-# Sample route for handling POST requests
 @app.route('/ask', methods=['POST'])
 def ask():
-    user_input = request.form['question']
-    result = qa.invoke({"question": user_input, "chat_history": {}})
-    answer = result['answer']
-
-    # Sleepy time
-    time.sleep(0.5)
+    question = request.form['question']
+    response = generate_response(question)
 
     # Remove labels like '[Label]' from the answer
-    answer = re.sub(r'\[[^\[\]]+\]', '', answer)
-    
+    answer = re.sub(r'\[[^\[\]]+\]', '', response)
+
     # Check if the answer contains iframe HTML
     if 'iframe' in answer:
         return render_template('iframe.html', iframe_html=answer)
     else:
         # Remove unnecessary characters such as parentheses
         cleaned_answer = re.sub(r'[()\[\]]', '', answer)
-    
+
         # Initialize Beautiful Soup
         soup = BeautifulSoup(cleaned_answer, 'html.parser')
-    
+
         # Find all URLs and email addresses in the text
         urls = re.findall(r'\bhttps?://\S+\b', str(soup))
         emails = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', str(soup))
-        
+
         # Replace each URL with an anchor tag
         for url in urls:
             # Create a new anchor tag
@@ -115,7 +126,7 @@ def ask():
             new_tag.append(icon_tag)
             # Replace the URL with the anchor tag
             soup = BeautifulSoup(str(soup).replace(url, str(new_tag)), 'html.parser')
-        
+
         # Replace each email address with a mailto link
         for email in emails:
             # Create a new anchor tag
@@ -127,13 +138,13 @@ def ask():
             # Replace the email with the anchor tag
             email_tag_str = str(new_tag)
             soup = BeautifulSoup(str(soup).replace(email, email_tag_str), 'html.parser')
-        
+
         # Convert back to string and remove any loose characters after links
         answer_with_links = str(soup).strip().rstrip('/. ')
-        
+
         # Add line breaks
         answer_with_line_breaks = answer_with_links.replace('\n', '<br>')
-        
+
         # Check if bullet points are needed
         if '•' in answer_with_line_breaks:
             # Split the answer into lines and wrap each line with <li> tags
@@ -143,6 +154,5 @@ def ask():
         else:
             return answer_with_line_breaks
 
-# Run the Flask app
 if __name__ == '__main__':
     app.run(debug=True)
