@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from langchain_community.document_loaders import TextLoader
 from langchain_community.embeddings.openai import OpenAIEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import FAISS
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_openai import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
@@ -31,11 +31,8 @@ openai_api_key = os.getenv('OPENAI_API_KEY')
 openai_model_name = 'text-embedding-3-small'
 embedding_function = OpenAIEmbeddings(openai_api_key=openai_api_key, model_name=openai_model_name)
 
-# Initialize Chroma
-chroma = Chroma()
-
 # Load documents into Chroma
-db = chroma.from_documents(docs, embedding_function)
+db = FAISS.from_documents(docs, embedding_function)
 
 # Initialize Chat models
 llm_name = 'gpt-3.5-turbo'
