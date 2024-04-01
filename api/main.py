@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from openai import OpenAI
-import sqlite3
 import time
 import re
 from bs4 import BeautifulSoup
@@ -8,14 +7,8 @@ from bs4 import BeautifulSoup
 app = Flask(__name__)
 client = OpenAI()
 
-# Initialize SQLite database
-conn = sqlite3.connect('threads.db')
-c = conn.cursor()
-
-# Create table if it doesn't exist
-c.execute('''CREATE TABLE IF NOT EXISTS threads
-             (id TEXT)''')
-conn.commit()
+# In-memory storage for threads
+threads_db = {}
 
 # Retrieve file
 def retrieve_file(file_id):
@@ -43,31 +36,21 @@ def get_or_create_assistant(file):
 
 assistant = get_or_create_assistant(file)
 
-# Thread management
-def check_if_thread_exists():
-    c.execute('SELECT id FROM threads')
-    thread_id = c.fetchone()
-    return thread_id[0] if thread_id else None
-
-def store_thread(thread_id):
-    c.execute("INSERT INTO threads (id) VALUES (?)", (thread_id,))
-    conn.commit()
-
 # Generate response
 def generate_response(message_body):
     # Check if there is already a thread_id for the current thread
-    thread_id = check_if_thread_exists()
+    thread_id = threads_db.get("current_thread")
 
     # If a thread doesn't exist, create one and store it
     if thread_id is None:
         print("Creating new thread.")
         thread = client.beta.threads.create()
-        store_thread(thread.id)
+        threads_db["current_thread"] = thread.id
         thread_id = thread.id
 
     # Otherwise, retrieve the existing thread
     else:
-        thread = client.beta.threads.retrieve(thread_id)
+        thread_id = threads_db["current_thread"]
 
     # Add message to thread
     message = client.beta.threads.messages.create(
@@ -77,14 +60,14 @@ def generate_response(message_body):
     )
 
     # Run the assistant and get the new message
-    new_message = run_assistant(thread, assistant.id)
+    new_message = run_assistant(thread_id, assistant.id)
     return new_message
 
 # Run assistant
-def run_assistant(thread, assistant_id):
+def run_assistant(thread_id, assistant_id):
     # Run the assistant
     run = client.beta.threads.runs.create(
-        thread_id=thread.id,
+        thread_id=thread_id,
         assistant_id=assistant_id,
     )
 
@@ -92,10 +75,10 @@ def run_assistant(thread, assistant_id):
     while run.status != "completed":
         # Be nice to the API
         time.sleep(0.5)
-        run = client.beta.threads.runs.retrieve(thread_id=thread.id, run_id=run.id)
+        run = client.beta.threads.runs.retrieve(thread_id=thread_id, run_id=run.id)
 
     # Retrieve the Messages
-    messages = client.beta.threads.messages.list(thread_id=thread.id)
+    messages = client.beta.threads.messages.list(thread_id=thread_id)
     new_message = messages.data[0].content[0].text.value
     return new_message
 
