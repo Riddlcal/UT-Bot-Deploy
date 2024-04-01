@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from langchain_community.document_loaders import TextLoader
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings.openai import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_openai import ChatOpenAI
@@ -26,8 +26,10 @@ documents = loader.load()
 text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
 docs = text_splitter.split_documents(documents)
 
-# Initialize SentenceTransformerEmbeddings
-embedding_function = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+# Initialize OpenAI Embeddings
+openai_api_key = os.getenv('OPENAI_API_KEY')
+openai_model_name = 'text-embedding-3-small'
+embedding_function = OpenAIEmbeddings(openai_api_key=openai_api_key, model_name=openai_model_name)
 
 # Initialize Chroma
 chroma = Chroma()
