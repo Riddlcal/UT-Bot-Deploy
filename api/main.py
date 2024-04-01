@@ -4,18 +4,19 @@ import time
 import re
 from bs4 import BeautifulSoup
 import pickle
+import os
 
 app = Flask(__name__)
 client = OpenAI()
 
 # File path for storing thread IDs
-THREADS_DB_FILE = "threads_db.pkl"
+THREADS_DB_FILE = "pickle/threads_db.pkl"
 
 # Load threads_db from file if it exists
-try:
+if os.path.exists(THREADS_DB_FILE):
     with open(THREADS_DB_FILE, "rb") as f:
         threads_db = pickle.load(f)
-except FileNotFoundError:
+else:
     threads_db = {}
 
 # Function to save threads_db to file
@@ -59,8 +60,8 @@ def generate_response(message_body):
         print("Creating new thread.")
         thread = client.beta.threads.create()
         threads_db["current_thread"] = thread.id
-        thread_id = thread.id
         save_threads_db()  # Save threads_db to file
+        thread_id = thread.id
 
     # Otherwise, retrieve the existing thread
     else:
