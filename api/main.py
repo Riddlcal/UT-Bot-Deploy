@@ -122,8 +122,11 @@ def ask():
             new_tag.append('Click here ')
             new_tag.append(icon_tag)
             # Replace the URL with the anchor tag
-            soup = BeautifulSoup(str(soup).replace(url, str(new_tag)), 'html.parser')
-
+            new_tag_str = str(new_tag)
+            # Remove source annotations like [5†source] from the anchor tag
+            new_tag_str = re.sub(r'\[\d+†source\]', '', new_tag_str)
+            soup = BeautifulSoup(str(soup).replace(url, new_tag_str), 'html.parser')
+        
         # Replace each email address with a mailto link
         for email in emails:
             # Create a new anchor tag
@@ -134,8 +137,10 @@ def ask():
             new_tag.append(icon_tag)
             # Replace the email with the anchor tag
             email_tag_str = str(new_tag)
+            # Remove source annotations like [5†source] from the anchor tag
+            email_tag_str = re.sub(r'\[\d+†source\]', '', email_tag_str)
             soup = BeautifulSoup(str(soup).replace(email, email_tag_str), 'html.parser')
-
+            
         # Convert back to string and remove any loose characters after links
         answer_with_links = str(soup).strip().rstrip('/. ')
 
