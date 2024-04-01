@@ -10,7 +10,6 @@ import time
 import os
 import warnings
 import re
-import faiss-cpu
 
 # Suppress UserWarnings
 warnings.filterwarnings("ignore", category=UserWarning)
