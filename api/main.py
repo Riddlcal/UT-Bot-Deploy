@@ -55,7 +55,7 @@ if index_name not in pc.list_indexes().names():
 # Assuming each chunk of documents is a separate document
 for idx, chunk in enumerate(chunked_documents):
     # Encode text chunk
-    encoded_chunk = embeddings.encode_text(chunk)
+    encoded_chunk = embeddings.encode(chunk)
     # Index the document
     pc.index(items=[(f"doc_{idx}", encoded_chunk)], index_name=index_name)
 
@@ -87,7 +87,7 @@ def ask():
     user_input = request.form['question']
     
     # Query Pinecone for relevant documents
-    query_embedding = embeddings.encode_text(user_input)
+    query_embedding = embeddings.encode(user_input)
     results = pc.query(queries=[query_embedding], index_name=index_name, top_k=5)
     
     # Extract relevant document indices
