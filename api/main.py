@@ -55,7 +55,9 @@ if index_name not in pc.list_indexes().names():
 # Assuming each chunk of documents is a separate document
 for idx, chunk in enumerate(chunked_documents):
     # Encode text chunk
-    encoded_chunk = embeddings.encode(chunk)
+    embeddings_list = embeddings.create(input=[chunk])
+    # Extract embeddings
+    encoded_chunk = embeddings_list[0]['embedding']
     # Index the document
     pc.index(items=[(f"doc_{idx}", encoded_chunk)], index_name=index_name)
 
