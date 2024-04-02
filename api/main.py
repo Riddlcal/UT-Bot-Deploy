@@ -54,7 +54,10 @@ if index_name not in pc.list_indexes().names():
 # Index documents into Pinecone
 # Assuming each chunk of documents is a separate document
 for idx, chunk in enumerate(chunked_documents):
-    pc.upsert(items=[(f"doc_{idx}", embeddings.encode_text(chunk))], index_name=index_name)
+    # Encode text chunk
+    encoded_chunk = embeddings.encode_text(chunk)
+    # Index the document
+    pc.index(items=[(f"doc_{idx}", encoded_chunk)], index_name=index_name)
 
 # Initialize Chat models
 llm_name = 'gpt-3.5-turbo'
