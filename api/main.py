@@ -5,8 +5,6 @@ from langchain_openai import OpenAIEmbeddings
 from pinecone import Pinecone
 from langchain_openai import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
-from langchain_community.retrievers import BM25Retriever
-from langchain.prompts.prompt import PromptTemplate
 from bs4 import BeautifulSoup
 import time
 import os
@@ -53,14 +51,16 @@ if index_name not in pc.list_indexes().names():
         spec={"pod": "starter"}  # specify the correct variant and environment
     )
 
-# Create a BM25Retriever instance with documents
-retriever = BM25Retriever.from_documents(chunked_documents, k=2)
+# Index documents into Pinecone
+# Assuming each chunk of documents is a separate document
+for idx, chunk in enumerate(chunked_documents):
+    pc.upsert(items=[(f"doc_{idx}", embeddings.encode_text(chunk))], index_name=index_name)
 
 # Initialize Chat models
 llm_name = 'gpt-3.5-turbo'
 qa = ConversationalRetrievalChain.from_llm(
     ChatOpenAI(openai_api_key=openai_api_key, model=llm_name),
-    retriever,
+    retriever=None,  # No need for retriever
     return_source_documents=True
 )
 
@@ -82,7 +82,21 @@ def home():
 @app.route('/ask', methods=['POST'])
 def ask():
     user_input = request.form['question']
-    result = qa.invoke({"question": user_input, "chat_history": {}})
+    
+    # Query Pinecone for relevant documents
+    query_embedding = embeddings.encode_text(user_input)
+    results = pc.query(queries=[query_embedding], index_name=index_name, top_k=5)
+    
+    # Extract relevant document indices
+    relevant_docs = [result.id for result in results[0]]
+    
+    # Retrieve relevant documents from chunked_documents
+    relevant_documents = [chunked_documents[int(doc.split('_')[1])] for doc in relevant_docs]
+    
+    # Combine relevant documents into one string
+    relevant_text = '\n'.join(relevant_documents)
+    
+    result = qa.invoke({"question": user_input, "chat_history": relevant_text})
     answer = result['answer']
 
     # Sleepy time
