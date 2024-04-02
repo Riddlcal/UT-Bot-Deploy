@@ -29,6 +29,7 @@ for doc in documents:
     chunked_documents.extend(text_splitter.split_documents([doc]))
 
 # Initialize Pinecone
+openai_api_key = os.getenv('OPENAI_API_KEY')
 pinecone_api_key = os.getenv('PINECONE_API_KEY')
 
 # Now do stuff with Pinecone
