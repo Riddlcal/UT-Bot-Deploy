@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_openai import OpenAIEmbeddings
 from pinecone import Pinecone
 from langchain_openai import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
@@ -10,6 +9,7 @@ import time
 import os
 import warnings
 import re
+import openai
 
 # Suppress UserWarnings
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -28,11 +28,6 @@ chunked_documents = []
 for doc in documents:
     chunked_documents.extend(text_splitter.split_documents([doc]))
 
-# Initialize OpenAI Embeddings
-openai_api_key = os.getenv('OPENAI_API_KEY')
-model_name = 'text-embedding-3-small'
-embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, model_name=model_name)
-
 # Initialize Pinecone
 pinecone_api_key = os.getenv('PINECONE_API_KEY')
 
@@ -46,20 +41,10 @@ pc = Pinecone(api_key=pinecone_api_key, cloud="GCP", environment="gcp-starter", 
 if index_name not in pc.list_indexes().names():
     pc.create_index(
         name=index_name,
-        dimension=1536,  # Length of OpenAI embeddings
+        dimension=1024,  # Length of OpenAI embeddings
         metric='cosine',  # or any other metric you prefer
         spec={"pod": "starter"}  # specify the correct variant and environment
     )
-
-# Index documents into Pinecone
-# Assuming each chunk of documents is a separate document
-for idx, chunk in enumerate(chunked_documents):
-    # Encode text chunk
-    embeddings_list = embeddings.create(input=[chunk])
-    # Extract embeddings
-    encoded_chunk = embeddings_list[0]['embedding']
-    # Index the document
-    pc.index(items=[(f"doc_{idx}", encoded_chunk)], index_name=index_name)
 
 # Initialize Chat models
 llm_name = 'gpt-3.5-turbo'
@@ -88,20 +73,21 @@ def home():
 def ask():
     user_input = request.form['question']
     
-    # Query Pinecone for relevant documents
-    query_embedding = embeddings.encode(user_input)
-    results = pc.query(queries=[query_embedding], index_name=index_name, top_k=5)
+    # Create embeddings for user input using OpenAI
+    embedding = openai.Embedding.create(
+        input=user_input,
+        model="text-embedding-ada-002"
+    )["data"][0]["embedding"]
     
-    # Extract relevant document indices
-    relevant_docs = [result.id for result in results[0]]
+    # Query Pinecone for most similar document
+    results = pc.query(queries=[embedding], index_name=index_name, top_k=1)
     
-    # Retrieve relevant documents from chunked_documents
-    relevant_documents = [chunked_documents[int(doc.split('_')[1])] for doc in relevant_docs]
-    
-    # Combine relevant documents into one string
-    relevant_text = '\n'.join(relevant_documents)
-    
-    result = qa.invoke({"question": user_input, "chat_history": relevant_text})
+    # Retrieve the most similar document
+    most_similar_document_idx = results[0][0].id
+    most_similar_document = chunked_documents[int(most_similar_document_idx.split('_')[1])]
+
+    # Provide the most similar document to ChatGPT 3.5 Turbo
+    result = qa.invoke({"question": user_input, "chat_history": most_similar_document})
     answer = result['answer']
 
     # Sleepy time
