@@ -14,7 +14,7 @@ import os
 app = Flask(__name__)
 
 # Set PIP_CACHE_DIR environment variable
-os.environ['PIP_CACHE_DIR'] = '/tmp/pip-cache'
+os.environ['PIP_CACHE_DIR'] = '/tmp'
 
 # Install faiss-cpu
 def install_faiss():
