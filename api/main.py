@@ -1,68 +1,58 @@
 from flask import Flask, render_template, request
-from langchain_community.document_loaders import TextLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from pinecone import Pinecone
-from langchain_openai import ChatOpenAI
+from langchain.text_splitter import CharacterTextSplitter
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
+from langchain_openai import ChatOpenAI
 from bs4 import BeautifulSoup
-import time
-import os
-import warnings
 import re
-import openai
 
-# Suppress UserWarnings
-warnings.filterwarnings("ignore", category=UserWarning)
-
-# Initialize Flask app
 app = Flask(__name__)
 
-# Specify the file path to UT Bot.txt
-file_path = "UT Bot.txt"
-loader = TextLoader(file_path)
-documents = loader.load()
+def read_text_file(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        raw_text = file.read()
+    return raw_text
 
-# Split documents into chunks
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-chunked_documents = []
-for doc in documents:
-    chunked_documents.extend(text_splitter.split_documents([doc]))
+def get_chunks(text):
+    text_splitter = CharacterTextSplitter(
+        separator="\n",
+        chunk_size=1000,
+        chunk_overlap=200,
+        length_function=len
+    )
+    text_chunks = text_splitter.split_text(text)
+    return text_chunks
 
-# Initialize Pinecone
-openai_api_key = os.getenv('OPENAI_API_KEY')
-pinecone_api_key = os.getenv('PINECONE_API_KEY')
+def get_embeddings(chunks):
+    embeddings = OpenAIEmbeddings()
+    vector_storage = FAISS.from_texts(texts=chunks, embedding=embeddings)
 
-# Now do stuff with Pinecone
-index_name = "chatdata"
+    return vector_storage
 
-# Initialize Pinecone with the provided information
-pc = Pinecone(api_key=pinecone_api_key, cloud="GCP", environment="gcp-starter", region="us-central1")
-
-# Check if the index already exists; if not, create it
-if index_name not in pc.list_indexes().names():
-    pc.create_index(
-        name=index_name,
-        dimension=1024,  # Length of OpenAI embeddings
-        metric='cosine',  # or any other metric you prefer
-        spec={"pod": "starter"}  # specify the correct variant and environment
+def start_conversation(vector_embeddings):
+    llm = ChatOpenAI()
+    memory = ConversationBufferMemory(
+        memory_key='chat_history',
+        return_messages=True
+    )
+    conversation = ConversationalRetrievalChain.from_llm(
+        llm=llm,
+        retriever=vector_embeddings.as_retriever(),
+        memory=memory
     )
 
-# Initialize Chat models
-llm_name = 'gpt-3.5-turbo'
-qa = ConversationalRetrievalChain.from_llm(
-    ChatOpenAI(openai_api_key=openai_api_key, model=llm_name),
-    retriever=None,  # No need for retriever
-    return_source_documents=True
-)
+    return conversation
 
-# Define the prompt template
-prompt_template = """
-You are a chatbot that answers questions about University of Texas at Tyler.
-You will answer questions from students, teachers, and staff. Also give helpful hyperlinks to the relevant information.
-If you don't know the answer, say simply that you cannot help with the question and advise to contact the host directly.
+# Read content from UT Bot.txt
+file_path = r'C:\Users\riddl\OneDrive\Desktop\UT Bot.txt'
+text_content = read_text_file(file_path)
 
-{question}
-"""
+# Process text content
+chunks = get_chunks(text_content)
+vector_embeddings = get_embeddings(chunks)
+conversation = start_conversation(vector_embeddings)
 
 # Define route for home page
 @app.route('/')
@@ -73,44 +63,26 @@ def home():
 @app.route('/ask', methods=['POST'])
 def ask():
     user_input = request.form['question']
-    
-    # Create embeddings for user input using OpenAI
-    embedding = openai.Embedding.create(
-        input=user_input,
-        model="text-embedding-ada-002"
-    )["data"][0]["embedding"]
-    
-    # Query Pinecone for most similar document
-    results = pc.query(queries=[embedding], index_name=index_name, top_k=1)
-    
-    # Retrieve the most similar document
-    most_similar_document_idx = results[0][0].id
-    most_similar_document = chunked_documents[int(most_similar_document_idx.split('_')[1])]
-
-    # Provide the most similar document to ChatGPT 3.5 Turbo
-    result = qa.invoke({"question": user_input, "chat_history": most_similar_document})
-    answer = result['answer']
-
-    # Sleepy time
-    time.sleep(0.5)
+    response = conversation.invoke(user_input)
+    bot_response = response['answer']
 
     # Remove labels like '[Label]' from the answer
-    answer = re.sub(r'\[[^\[\]]+\]', '', answer)
-    
+    answer = re.sub(r'\[[^\[\]]+\]', '', bot_response)
+
     # Check if the answer contains iframe HTML
     if 'iframe' in answer:
         return render_template('iframe.html', iframe_html=answer)
     else:
         # Remove unnecessary characters such as parentheses
         cleaned_answer = re.sub(r'[()\[\]]', '', answer)
-    
+
         # Initialize Beautiful Soup
         soup = BeautifulSoup(cleaned_answer, 'html.parser')
-    
+
         # Find all URLs and email addresses in the text
         urls = re.findall(r'\bhttps?://\S+\b', str(soup))
         emails = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', str(soup))
-        
+
         # Replace each URL with an anchor tag
         for url in urls:
             # Create a new anchor tag
@@ -121,7 +93,7 @@ def ask():
             new_tag.append(icon_tag)
             # Replace the URL with the anchor tag
             soup = BeautifulSoup(str(soup).replace(url, str(new_tag)), 'html.parser')
-        
+
         # Replace each email address with a mailto link
         for email in emails:
             # Create a new anchor tag
@@ -133,13 +105,13 @@ def ask():
             # Replace the email with the anchor tag
             email_tag_str = str(new_tag)
             soup = BeautifulSoup(str(soup).replace(email, email_tag_str), 'html.parser')
-        
+
         # Convert back to string and remove any loose characters after links
         answer_with_links = str(soup).strip().rstrip('/. ')
-        
+
         # Add line breaks
         answer_with_line_breaks = answer_with_links.replace('\n', '<br>')
-        
+
         # Check if bullet points are needed
         if '•' in answer_with_line_breaks:
             # Split the answer into lines and wrap each line with <li> tags
