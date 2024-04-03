@@ -9,8 +9,12 @@ from bs4 import BeautifulSoup
 import re
 import subprocess
 import sys
+import os
 
 app = Flask(__name__)
+
+# Set PIP_CACHE_DIR environment variable
+os.environ['PIP_CACHE_DIR'] = '/tmp/pip-cache'
 
 # Install faiss-cpu
 def install_faiss():
