@@ -6,53 +6,22 @@ Our beautiful Tyler campus features more than 200 acres nestled along a lake and
 
 ------------------------------------------------------------
 
-Question: Where is UT Tyler located?
-Answer: UT Tyler is located at 3900 University Blvd, Tyler, TX 75799. Here's the location on Google Maps:
+UT Tyler is located at 3900 University Blvd, Tyler, TX 75799. Here's the location on Google Maps:
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2881.0561191117126!2d-95.25286244795798!3d32.31480757299257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8649cd17e83f9399%3A0xb0ab28a921956fd6!2sThe%20University%20of%20Texas%20at%20Tyler!5e1!3m2!1sen!2sus!4v1709406946624!5m2!1sen!2sus" width="175" height="175" style="border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 --------------------------------------------------------------
 
-Question: What courses do you offer?
-Answer: Can you be more specific on what degree you are pursuing?
-
---------------------------------------------------------------
-
-Question: Can you show me the Campus Map?
-Answer: Here's the Campus Map:
+Link to the Campus Map:
 
 https://www.uttyler.edu/maps/files/2022/uttyler-campus-map-letter-20221010.pdf
 
 ---------------------------------------------------------------
 
-Question: What are UT Tyler's Socials/Social Media/Social Links?
-Question: Social Media
-Answer: These are UT Tyler's Social Media Accounts:
+UT Tyler's Social Media Accounts:
 
 Facebook: https://www.facebook.com/uttyler
 Twitter: https://twitter.com/UTTyler
 YouTube: https://www.youtube.com/user/go2uttyler
-Instagram: https://www.instagram.com/uttyler/
-
-----------------------------------------------------------------
-
-Question: Does UT Tyler have a Facebook?
-
-Answer: Yes they do!
-Facebook: https://www.facebook.com/uttyler
-
-Question: Does UT Tyler have a Twitter/X?
-
-Answer: Yes they do!
-Twitter: https://twitter.com/UTTyler
-
-Question: Does UT Tyler have a Youtube?
-
-Answer: Yes they do!
-YouTube: https://www.youtube.com/user/go2uttyler
-
-Question: Does UT Tyler have an Instagram?
-
-Answer: Yes they do!
 Instagram: https://www.instagram.com/uttyler/
 
 ----------------------------------------------------------------
@@ -85,16 +54,14 @@ Ph: 903.566.7457
 
 ----------------------------------------------------------------
 
-How do I get to Canvas?
-
 Here is the link to the Canvas Login Page:
+
 http://uttyler.instructure.com/login/saml
 
 ------------------------------------------------------------------
 
-How do I get to myUTTyler?
-
 Here is the link to the myUTTyler page:
+
 https://my.uttyler.edu/
 
 ------------------------------------------------------------------
@@ -1532,8 +1499,6 @@ SPECIAL EDUCATION MEd
 CERTIFICATE AND CERTIFICATE-PREPARATION PROGRAMS
 
 -----------------------------------------------------------------
-Question: Tell me about Human Resource Development PhD Degree.
-Question: I have some questions about Human Resource Development PhD Degree
 
 Human Resource Development PhD Degree
 Graduate Admissions
@@ -1554,18 +1519,14 @@ Students can be admitted while they are finishing their master's degree. However
 
 Application Instructions: https://www.uttyler.edu/soules-college-of-business/graduate-advising/degree-plans/hrd-phd/
 
-Question: What is the total tuition cost of a Human Resource Development PhD Degree?
+Total Program Tuition Cost: $30,330 Estimated tuition for full-time, in-state on-campus enrollment. Tuition varies by delivery method and hours taken per semester. Calculate your estimated tuition with the tuition calculator.
 
-Answer: Total Program Tuition Cost: $30,330 Estimated tuition for full-time, in-state on-campus enrollment. Tuition varies by delivery method and hours taken per semester. Calculate your estimated tuition with the tuition calculator.
+Link to tuition calculator:
 
-Question: Where is the tuition calculator?
-
-Answer: here's the link to the tuition calculator:
 https://www.uttyler.edu/graduate/tuition-and-fees/
 
-Question: What are the requirements for Human Resource Development PhD Degree?
+Requirements for Human Resource Development PhD Degree:
 
-Answer:
 Scholarships/Financial Support:  Yes
 
 Student Research:  Yes
@@ -1578,9 +1539,7 @@ Test Score Required: Submission of GMAT or GRE scores. In lieu of GRE or GMAT sc
 
 Additional requirements for applicants with bachelor’s degrees from foreign institutions include Proof of English Proficiency and an International Transcript Evaluation as outlined here.
 
-Question: How many Letters of Recommendation are needed for Human Resource Development PhD Degree?
-
-Answer: Letters of Recommendation: 3
+Letters of Recommendation: 3
 
 Resume/Curriculum Vitae: Yes
 
@@ -1625,9 +1584,8 @@ Advanced Quantitative Research in HRD – Explore advanced conception and design
 
 Leadership Theory and Practice – Focus on the leadership phenomenon and the contemporary leadership practices to explore the leadership’s role in human resource development (HRD). Studies on leadership theories and research approaches to conceptualizing and practicing effective leadership.
 
-Question: How to contact to learn more on Human Resource Development PhD Degree?
 
-Answer: Find Out More on HRD Phd:
+Find Out More on HRD Phd:
 
 Soules College of Business
 3900 University Blvd.
@@ -1652,9 +1610,6 @@ Applicants who are offered acceptance into the HRD PhD program will pay a non-re
 
 This program takes new, qualifying applicants each fall. Doctoral applicants must complete this process before being considered for admittance into the Ph.D. program in human resource development with an emphasis in organizational development and change (HRD/ODC). For those applying for financial aid, please visit the Office of Financial Aid website and submit your Ph.D. application materials before the deadline designated by that office.
 
-Question: What are the Admission Requirments for Human Resource Development PhD Degree?
-
-Answer:
 Admission Requirements
 
 Master's degree in HRD, business administration, management or related field from an accredited college or university.
@@ -1906,9 +1861,7 @@ Participation in an interview with program faculty on the admissions committee.
 Degree Requirements
 The Ph.D. in HRD is a 60-hour program beyond the master's degree, culminating in a dissertation. For all University requirements for the Ph.D. degree, please refer to the Doctoral Policies section of the Graduate Policies and Programs chapter.
 
-Question: What core classes are required for a Human Resource Development PhD Degree?
-
-Answer:
+Core classes required for a Human Resource Development PhD Degree:
 
 Required HRD Core (12 hrs.)
 HRD 6310	Advanced Theoretical Foundations of Human Resource Development	
@@ -2028,9 +1981,8 @@ The submission of documents in support of applications for admission and fellows
 
 A graduate program is under no obligation to provide feedback to unsuccessful applicants.
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Question: The Faculty of the HRD Department? Can you show me the factuly of the Human Development Department?
-Answer:
+Factuly of the Human Development Department:
+
 Kim Nimon
 Interim Chair, PHD Coordinator, Professor
 Email: knimon@uttyler.edu
@@ -2125,13 +2077,11 @@ Adjunct Lecturer
 Cara Wreyford
 Adjunct Lecturer
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------
 
 Department of Human Resource Development
 Faculty
 
-Question: Who is the chair of the HRD Department?
-Answer:
 Kim Nimon
 Interim Chair, PHD Coordinator, Professor
 
