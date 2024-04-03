@@ -12,6 +12,17 @@ import sys
 
 app = Flask(__name__)
 
+# Install faiss-cpu
+def install_faiss():
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "faiss-cpu"])
+        print('faiss-cpu installed successfully')
+    except Exception as e:
+        print(f'Error installing faiss-cpu: {str(e)}')
+
+# Run the installation function
+install_faiss()
+
 def read_text_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         raw_text = file.read()
