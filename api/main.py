@@ -47,14 +47,6 @@ def start_conversation(vector_embeddings):
 
     return conversation
 
-# Install faiss-cpu
-def install_faiss():
-    try:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "faiss-cpu"])
-        print('faiss-cpu installed successfully')
-    except Exception as e:
-        print(f'Error installing faiss-cpu: {str(e)}')
-
 # Read content from UT Bot.txt
 file_path = "UT Bot.txt"
 text_content = read_text_file(file_path)
@@ -63,9 +55,6 @@ text_content = read_text_file(file_path)
 chunks = get_chunks(text_content)
 vector_embeddings = get_embeddings(chunks)
 conversation = start_conversation(vector_embeddings)
-
-# Install faiss-cpu
-install_faiss()
 
 # Define route for home page
 @app.route('/')
