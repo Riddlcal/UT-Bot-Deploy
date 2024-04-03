@@ -3,4 +3,3 @@ langchain-community==0.0.24
 langchain==0.1.9
 langchain-openai==0.0.8
 bs4==0.0.2
-pinecone-client==3.1.0
