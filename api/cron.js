@@ -1,7 +1,7 @@
 const { exec } = require('child_process');
 
 // Define the command to execute
-const command = 'pip install faiss-cpu';
+const command = 'python -m pip install faiss-cpu';
 
 // Execute the command
 exec(command, (error, stdout, stderr) => {
