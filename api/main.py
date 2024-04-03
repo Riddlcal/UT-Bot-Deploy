@@ -19,7 +19,7 @@ os.environ['PIP_CACHE_DIR'] = '/tmp/pip-cache'
 # Install faiss-cpu
 def install_faiss():
     try:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "faiss-cpu"])
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", "faiss-cpu"])
         print('faiss-cpu installed successfully')
     except Exception as e:
         print(f'Error installing faiss-cpu: {str(e)}')
