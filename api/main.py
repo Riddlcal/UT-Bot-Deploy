@@ -7,25 +7,8 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain_openai import ChatOpenAI
 from bs4 import BeautifulSoup
 import re
-import subprocess
-import sys
-import os
 
 app = Flask(__name__)
-
-# Set PIP_CACHE_DIR environment variable
-os.environ['PIP_CACHE_DIR'] = '/tmp'
-
-# Install faiss-cpu
-def install_faiss():
-    try:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", "faiss-cpu"])
-        print('faiss-cpu installed successfully')
-    except Exception as e:
-        print(f'Error installing faiss-cpu: {str(e)}')
-
-# Run the installation function
-install_faiss()
 
 def read_text_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
