@@ -12,6 +12,10 @@ from langchain.prompts.chat import (
     SystemMessagePromptTemplate,
 )
 import re
+import sys
+import faiss
+
+sys.path.append("faiss_cpu_packages")
 
 app = Flask(__name__)
 
