@@ -1,14 +1,5 @@
 {
   "rewrites": [
     { "source": "/(.*)", "destination": "/api/main.py" }
-  ],
-  "builds": [
-    {
-      "src": "api",
-      "use": "@vercel/python"
-    }
-  ],
-  "env": {
-    "FAISS_CPU_PACKAGE_PATH": "faiss_cpu_packages"
-  }
+  ]
 }
