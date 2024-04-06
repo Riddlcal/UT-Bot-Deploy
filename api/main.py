@@ -13,6 +13,7 @@ from langchain.prompts.chat import (
 )
 import re
 import sys
+import ctypes
 import os
 
 # Get the absolute path to the root directory
@@ -20,6 +21,10 @@ root_directory = os.path.abspath(os.path.dirname(__file__))
 
 # Construct the path to the directory containing faiss_cpu_packages
 faiss_path = os.path.join(root_directory, 'faiss_cpu_packages')
+
+# Load Faiss library manually
+faiss_lib_path = os.path.join(faiss_path, 'faiss', 'faiss.dll')  # Adjust file extension for your platform
+ctypes.CDLL(faiss_lib_path)
 
 # Add the directory containing Faiss to the PATH environment variable
 os.environ['PATH'] = faiss_path + os.pathsep + os.environ['PATH']
