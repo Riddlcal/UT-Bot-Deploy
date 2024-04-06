@@ -6,6 +6,11 @@ from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 from langchain_openai import ChatOpenAI
 from bs4 import BeautifulSoup
+from langchain.prompts.chat import (
+    ChatPromptTemplate,
+    HumanMessagePromptTemplate,
+    SystemMessagePromptTemplate,
+)
 import re
 
 app = Flask(__name__)
@@ -37,10 +42,23 @@ def start_conversation(vector_embeddings):
         memory_key='chat_history',
         return_messages=True
     )
+    system_template = """You are a chatbot that answers questions about University of Texas at Tyler.
+    You will answer questions from students, teachers, and staff. If you don't know the answer, say simply that you cannot help with the question and advise to contact the host directly.
+    ----------------
+    {context}"""
+
+    human_template = "{question}"
+
+    messages = [
+        SystemMessagePromptTemplate.from_template(system_template),
+        HumanMessagePromptTemplate.from_template(human_template),
+    ]
+    qa_prompt = ChatPromptTemplate.from_messages( messages )
     conversation = ConversationalRetrievalChain.from_llm(
         llm=llm,
         retriever=vector_embeddings.as_retriever(),
-        memory=memory
+        memory=memory,
+        combine_docs_chain_kwargs={'prompt': qa_prompt}
     )
 
     return conversation
