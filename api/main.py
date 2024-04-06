@@ -13,6 +13,16 @@ from langchain.prompts.chat import (
 )
 import re
 import sys
+import os
+
+# Get the absolute path to the root directory
+root_directory = os.path.abspath(os.path.dirname(__file__))
+
+# Construct the path to the directory containing faiss_cpu_packages
+faiss_path = os.path.join(root_directory, 'faiss_cpu_packages')
+
+# Add the directory containing Faiss to the PATH environment variable
+os.environ['PATH'] = faiss_path + os.pathsep + os.environ['PATH']
 
 sys.path.append("faiss_cpu_packages")
 
