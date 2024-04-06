@@ -13,19 +13,16 @@ from langchain.prompts.chat import (
 )
 import re
 import sys
-import ctypes
 import os
+import ctypes
 
 # Get the absolute path to the root directory
 root_directory = os.path.abspath(os.path.dirname(__file__))
 
-# Construct the path to the directory containing faiss_cpu_packages
-faiss_path = os.path.join(root_directory, 'faiss_cpu_packages')
+# Construct the path to the directory containing faiss_cpu.libs
+faiss_libs_path = os.path.join(root_directory, 'faiss_cpu_packages', 'faiss_cpu.libs')
 
-# Construct the path to the directory containing DLL files
-faiss_libs_path = os.path.join(faiss_path, 'faiss_cpu.libs')
-
-# Load all Faiss-related DLL files manually
+# List of DLL files
 dll_files = [
     'openblas-1ba25ee8d70fa3c45ede15bdc95fbee3.dll',
     'flang-d38962844214aa9b06fc3989f9adae5b.dll',
@@ -35,6 +32,7 @@ dll_files = [
     'msvcp140-75f0e17aa84445df8d9f6c5be7aa31ac.dll'
 ]
 
+# Load each DLL file
 for dll_file in dll_files:
     dll_path = os.path.join(faiss_libs_path, dll_file)
     ctypes.CDLL(dll_path)
