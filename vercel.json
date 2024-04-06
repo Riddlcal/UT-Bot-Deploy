@@ -8,9 +8,6 @@
       "use": "@vercel/python"
     }
   ],
-  "routes": [
-    { "src": "/.*", "dest": "api" }
-  ],
   "env": {
     "FAISS_CPU_PACKAGE_PATH": "faiss_cpu_packages"
   }
