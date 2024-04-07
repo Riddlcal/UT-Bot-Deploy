@@ -12,37 +12,6 @@ from langchain.prompts.chat import (
     SystemMessagePromptTemplate,
 )
 import re
-import sys
-import os
-import ctypes
-
-# Get the absolute path to the root directory
-root_directory = os.path.abspath(os.path.dirname(__file__))
-
-# Construct the path to the directory containing faiss_cpu.libs
-faiss_libs_path = os.path.join(root_directory, 'faiss_cpu_packages', 'faiss_cpu.libs')
-
-# List of DLL files
-dll_files = [
-    'openblas-1ba25ee8d70fa3c45ede15bdc95fbee3.dll',
-    'flang-d38962844214aa9b06fc3989f9adae5b.dll',
-    'flangrti-5bbaf6aff159e72f9b015d5bc31c7584.dll',
-    'libomp140.x86_64-21fc660a28479b04d9fec85174fc894e.dll',
-    'libomp-26259cba665d756e8627cb8a206937cd.dll',
-    'msvcp140-75f0e17aa84445df8d9f6c5be7aa31ac.dll'
-]
-
-# Load each DLL file
-for dll_file in dll_files:
-    dll_path = os.path.join(faiss_libs_path, dll_file)
-    ctypes.CDLL(dll_path)
-
-# Add the directory containing Faiss to the PATH environment variable
-os.environ['PATH'] = faiss_path + os.pathsep + os.environ['PATH']
-
-sys.path.append("faiss_cpu_packages")
-
-import faiss
 
 app = Flask(__name__)
 
@@ -95,7 +64,7 @@ def start_conversation(vector_embeddings):
     return conversation
 
 # Read content from UT Bot.txt
-file_path = "UT Bot.txt"
+file_path = r'C:\Users\riddl\OneDrive\Desktop\UT Bot.txt'
 text_content = read_text_file(file_path)
 
 # Process text content
