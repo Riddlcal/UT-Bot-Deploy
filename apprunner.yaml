@@ -3,11 +3,11 @@ runtime: python311
 build:
   commands:
     build:
-      - pip install Flask
-      - pip install bs4
-      - pip install faiss-cpu
-      - pip install langchain
-      - pip install langchain-openai
-      - pip install langchain-community
+      - pip3 install Flask
+      - pip3 install bs4
+      - pip3 install faiss-cpu
+      - pip3 install langchain
+      - pip3 install langchain-openai
+      - pip3 install langchain-community
 run: 
-  command: python main.py
+  command: python3 main.py
