@@ -64,7 +64,7 @@ def start_conversation(vector_embeddings):
     return conversation
 
 # Read content from UT Bot.txt
-file_path = r'C:\Users\riddl\OneDrive\Desktop\UT Bot.txt'
+file_path = "UT Bot.txt"
 text_content = read_text_file(file_path)
 
 # Process text content
