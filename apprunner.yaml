@@ -1,0 +1,13 @@
+version: 1.0
+runtime: python3.11 
+build:
+  commands:
+    build:
+      - pip install Flask
+      - pip install bs4
+      - pip install faiss-cpu
+      - pip install langchain
+      - pip install langchain-openai
+      - pip install langchain-community
+run: 
+  command: python main.py
