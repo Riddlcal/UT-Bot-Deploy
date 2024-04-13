@@ -25,8 +25,8 @@ def read_csv_file(file_path):
 def get_chunks(text):
     text_splitter = CharacterTextSplitter(
         separator="\n",
-        chunk_size=1000,
-        chunk_overlap=200,
+        chunk_size=8000,
+        chunk_overlap=0,
         length_function=len
     )
     text_chunks = text_splitter.split_text(text)
