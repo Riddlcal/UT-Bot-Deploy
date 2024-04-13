@@ -1,94 +1,94 @@
 from flask import Flask, render_template, request
-from langchain.docstore.document import Document
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
-from langchain_community.vectorstores import Chroma
-from langchain_openai import ChatOpenAI
-from langchain.chains import ConversationalRetrievalChain
+from langchain_community.vectorstores import FAISS
 from langchain.memory import ConversationBufferMemory
-from langchain.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
+from langchain.chains import ConversationalRetrievalChain
+from langchain_openai import ChatOpenAI
 from bs4 import BeautifulSoup
-import dotenv
+from langchain.prompts.chat import (
+    ChatPromptTemplate,
+    HumanMessagePromptTemplate,
+    SystemMessagePromptTemplate,
+)
 import csv
-import os
 import re
-import sys
-maxInt = sys.maxsize
 
 app = Flask(__name__)
 
-dotenv.load_dotenv()
+def read_csv_file(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        csv_reader = csv.reader(file)
+        rows = [row for row in csv_reader]
+    return rows
 
-# DATA PROCESSING
-columns_to_embed = ['url','text']
-columns_to_metadata = ["url","text","date"]
+def get_chunks(text, max_chunk_size=8000):
+    chunks = []
+    current_chunk = ""
+    for line in text.split("\n"):
+        if len(current_chunk) + len(line) <= max_chunk_size:
+            current_chunk += line + "\n"
+        else:
+            chunks.append(current_chunk.strip())
+            current_chunk = line + "\n"
+    if current_chunk:
+        chunks.append(current_chunk.strip())
+    return chunks
 
-docs = []
-with open('UT Bot.csv', newline='', encoding='utf-8-sig') as csvfile:
-    csv_reader = csv.DictReader(csvfile)
-    for i, row in enumerate(csv_reader):
-        to_metadata = {col: row[col] for col in columns_to_metadata if col in row}
-        values_to_embed = {k: row[k] for k in columns_to_embed if k in row}
-        to_embed = "\n".join(f"{k.strip()}: {v.strip()}" for k, v in values_to_embed.items())
-        newDoc = Document(page_content=to_embed, metadata =to_metadata)
-        docs.append(newDoc)
+def get_embeddings(chunks):
+    embeddings = OpenAIEmbeddings()
+    vector_storage = FAISS.from_texts(texts=chunks, embedding=embeddings)
 
-splitter = CharacterTextSplitter(separator="\n",
-                                 chunk_size = 8000,
-                                 chunk_overlap = 0,
-                                 length_function =len)
-documents = splitter.split_documents(docs)
+    return vector_storage
 
-#DATA EMBEDDING
+def start_conversation(vector_embeddings):
+    llm = ChatOpenAI()
+    memory = ConversationBufferMemory(
+        memory_key='chat_history',
+        return_messages=True
+    )
+    system_template = """You are a chatbot that answers questions about University of Texas at Tyler.
+    You will answer questions from students, teachers, and staff. If you don't know the answer, say simply that you cannot help with the question and advise to contact the host directly.
+    ----------------
+    {context}"""
 
-embeddings = OpenAIEmbeddings(model="text-embedding-3-large", show_progress_bar=True)
+    human_template = "{question}"
 
-db = Chroma.from_documents(documents, embeddings)
+    messages = [
+        SystemMessagePromptTemplate.from_template(system_template),
+        HumanMessagePromptTemplate.from_template(human_template),
+    ]
+    qa_prompt = ChatPromptTemplate.from_messages(messages)
+    conversation = ConversationalRetrievalChain.from_llm(
+        llm=llm,
+        retriever=vector_embeddings.as_retriever(),
+        memory=memory,
+        combine_docs_chain_kwargs={'prompt': qa_prompt}
+    )
 
-# CHATBOT SET UP
-retriever = db.as_retriever(search_type="similarity", search_kwargs={"k": 3})
-openai_api_key = os.getenv("OPENAI_API_KEY")
+    return conversation
 
-general_system_template = r"""
-You are a chatbot that answers questions about University of Texas at Tyler.
-You will answer questions from students, teachers, and staff. If you don't know the answer, say simply that you cannot help with the question and advise to contact the host directly.
----- {context} ----
+# Read content from UT Bot.csv
+file_path = "UT Bot.csv"
+csv_content = read_csv_file(file_path)
 
-"""
+# Process CSV content
+text_content = '\n'.join([','.join(row) for row in csv_content])
+chunks = get_chunks(text_content)
+vector_embeddings = get_embeddings(chunks)
+conversation = start_conversation(vector_embeddings)
 
-general_user_template = "Question:```{question}```"
-
-messages = [
-            SystemMessagePromptTemplate.from_template(general_system_template),
-            HumanMessagePromptTemplate.from_template(general_user_template)
-]
-
-prompt = ChatPromptTemplate.from_messages(messages=messages)
-
-memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True, output_key='answer')
-
-llm = ChatOpenAI(temperature=0,openai_api_key=openai_api_key,model_name="gpt-3.5-turbo-0125")
-
-
-qa = ConversationalRetrievalChain.from_llm(
-    llm = llm,
-    retriever = retriever,
-    memory = memory,
-    combine_docs_chain_kwargs={'prompt': prompt},
-    chain_type="stuff",
-    return_source_documents=True,
-)
-
-## RUN THE APPLICATION
+# Define route for home page
 @app.route('/')
 def home():
     return render_template('index.html')
 
+# Sample route for handling POST requests
 @app.route('/ask', methods=['POST'])
 def ask():
     user_input = request.form['question']
-    result = qa.invoke({"question": user_input, "chat_history": {}})
-    bot_response = result['answer']
+    response = conversation.invoke(user_input)
+    bot_response = response['answer']
 
     # Remove labels like '[Label]' from the answer
     answer = re.sub(r'\[[^\[\]]+\]', '', bot_response)
