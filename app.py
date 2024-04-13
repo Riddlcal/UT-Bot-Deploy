@@ -22,15 +22,18 @@ def read_csv_file(file_path):
         rows = [row for row in csv_reader]
     return rows
 
-def get_chunks(text):
-    text_splitter = CharacterTextSplitter(
-        separator="\n",
-        chunk_size=8000,
-        chunk_overlap=0,
-        length_function=len
-    )
-    text_chunks = text_splitter.split_text(text)
-    return text_chunks
+def get_chunks(text, max_chunk_size=8000):
+    chunks = []
+    current_chunk = ""
+    for line in text.split("\n"):
+        if len(current_chunk) + len(line) <= max_chunk_size:
+            current_chunk += line + "\n"
+        else:
+            chunks.append(current_chunk.strip())
+            current_chunk = line + "\n"
+    if current_chunk:
+        chunks.append(current_chunk.strip())
+    return chunks
 
 def get_embeddings(chunks):
     embeddings = OpenAIEmbeddings()
