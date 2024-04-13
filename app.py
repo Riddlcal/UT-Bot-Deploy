@@ -11,14 +11,16 @@ from langchain.prompts.chat import (
     HumanMessagePromptTemplate,
     SystemMessagePromptTemplate,
 )
+import csv
 import re
 
 app = Flask(__name__)
 
-def read_text_file(file_path):
+def read_csv_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
-        raw_text = file.read()
-    return raw_text
+        csv_reader = csv.reader(file)
+        rows = [row for row in csv_reader]
+    return rows
 
 def get_chunks(text):
     text_splitter = CharacterTextSplitter(
@@ -53,7 +55,7 @@ def start_conversation(vector_embeddings):
         SystemMessagePromptTemplate.from_template(system_template),
         HumanMessagePromptTemplate.from_template(human_template),
     ]
-    qa_prompt = ChatPromptTemplate.from_messages( messages )
+    qa_prompt = ChatPromptTemplate.from_messages(messages)
     conversation = ConversationalRetrievalChain.from_llm(
         llm=llm,
         retriever=vector_embeddings.as_retriever(),
@@ -63,11 +65,12 @@ def start_conversation(vector_embeddings):
 
     return conversation
 
-# Read content from UT Bot.txt
-file_path = "UT Bot.txt"
-text_content = read_text_file(file_path)
+# Read content from UT Bot.csv
+file_path = "UT Bot.csv"
+csv_content = read_csv_file(file_path)
 
-# Process text content
+# Process CSV content
+text_content = '\n'.join([','.join(row) for row in csv_content])
 chunks = get_chunks(text_content)
 vector_embeddings = get_embeddings(chunks)
 conversation = start_conversation(vector_embeddings)
