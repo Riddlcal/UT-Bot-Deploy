@@ -22,7 +22,7 @@ def read_csv_file(file_path):
         rows = [row for row in csv_reader]
     return rows
 
-def get_chunks(text, max_chunk_size=1000):
+def get_chunks(text, max_chunk_size=3000):
     chunks = []
     current_chunk = ""
     for line in text.split("\n"):
