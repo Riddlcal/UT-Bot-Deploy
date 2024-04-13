@@ -24,7 +24,7 @@ columns_to_embed = ['url','text']
 columns_to_metadata = ["url","text","date"]
 
 docs = []
-with open('final_data/hrd_content.csv', newline='', encoding='utf-8-sig') as csvfile:
+with open('UT Bot.csv', newline='', encoding='utf-8-sig') as csvfile:
     csv_reader = csv.DictReader(csvfile)
     for i, row in enumerate(csv_reader):
         to_metadata = {col: row[col] for col in columns_to_metadata if col in row}
