@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request
 from langchain.docstore.document import Document
-from langchain.text_splitter import CharacterTextSplitter
-from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_openai import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
@@ -9,77 +7,33 @@ from langchain.memory import ConversationBufferMemory
 from langchain.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
 from bs4 import BeautifulSoup
 import dotenv
-import csv
+import pickle
 import os
 import re
 import sys
+
 __import__('pysqlite3')
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-
-# Helper function for streaming CSV processing
-def stream_csv(filename):
-    with open(filename, newline='', encoding='utf-8-sig') as csvfile:
-        csv_reader = csv.DictReader(csvfile)
-        for row in csv_reader:
-            yield row
-
-# DATA PROCESSING - Streaming CSV processing
-def process_documents(filename):
-    for row in stream_csv(filename):
-        to_metadata = {col: row[col] for col in columns_to_metadata if col in row}
-        values_to_embed = {k: row[k] for k in columns_to_embed if k in row}
-        to_embed = "\n".join(f"{k.strip()}: {v.strip()}" for k, v in values_to_embed.items())
-        newDoc = Document(page_content=to_embed, metadata=to_metadata)
-        yield newDoc
 
 app = Flask(__name__)
 
 dotenv.load_dotenv()
 
-# Define the splitter object
-splitter = CharacterTextSplitter(separator="\n",
-                                 chunk_size=8000,
-                                 chunk_overlap=0,
-                                 length_function=len)
+# Load embeddings from split pickle files
+current_directory = os.path.dirname(__file__)
+embeddings_folder = os.path.join(current_directory, 'split_files')
 
-# Define a function to process and embed documents in batches
-def process_and_embed_in_batches(filename, batch_size):
-    with open(filename, newline='', encoding='utf-8-sig') as csvfile:
-        csv_reader = csv.DictReader(csvfile)
-        batch = []
-        for row in csv_reader:
-            to_metadata = {col: row[col] for col in columns_to_metadata if col in row}
-            values_to_embed = {k: row[k] for k in columns_to_embed if k in row}
-            to_embed = "\n".join(f"{k.strip()}: {v.strip()}" for k, v in values_to_embed.items())
-            newDoc = Document(page_content=to_embed, metadata=to_metadata)
-            batch.append(newDoc)
-            if len(batch) == batch_size:
-                yield batch
-                batch = []
-        if batch:
-            yield batch
+embeddings_files = sorted(os.listdir(embeddings_folder))
+embeddings = []
 
-# DATA PROCESSING
-columns_to_embed = ['url','text']
-columns_to_metadata = ["url","text","date"]
-
-# Define the file path of your CSV file
-csv_filename = 'UT Bot.csv'
-
-# Process and embed documents in batches
-batch_size = 100  # Adjust the batch size as needed
-documents = []
-for batch_docs in process_and_embed_in_batches(csv_filename, batch_size):
-    split_docs = splitter.split_documents(batch_docs)
-    documents.extend(split_docs)
-
-#DATA EMBEDDING
-embeddings = OpenAIEmbeddings(model="text-embedding-3-large", show_progress_bar=True)
-
-db = Chroma.from_documents(documents, embeddings)
+for file_name in embeddings_files:
+    file_path = os.path.join(embeddings_folder, file_name)
+    with open(file_path, 'rb') as f:
+        embeddings.extend(pickle.load(f))
 
 # CHATBOT SET UP
-retriever = db.as_retriever(search_type="similarity", search_kwargs={"k": 3})
+retriever = Chroma(embeddings)
+
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
 general_system_template = r"""
@@ -92,21 +46,20 @@ You will answer questions from students, teachers, and staff. If you don't know 
 general_user_template = "Question:```{question}```"
 
 messages = [
-            SystemMessagePromptTemplate.from_template(general_system_template),
-            HumanMessagePromptTemplate.from_template(general_user_template)
+    SystemMessagePromptTemplate.from_template(general_system_template),
+    HumanMessagePromptTemplate.from_template(general_user_template)
 ]
 
 prompt = ChatPromptTemplate.from_messages(messages=messages)
 
 memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True, output_key='answer')
 
-llm = ChatOpenAI(temperature=0,openai_api_key=openai_api_key,model_name="gpt-3.5-turbo-0125")
-
+llm = ChatOpenAI(temperature=0, openai_api_key=openai_api_key, model_name="gpt-3.5-turbo-0125")
 
 qa = ConversationalRetrievalChain.from_llm(
-    llm = llm,
-    retriever = retriever,
-    memory = memory,
+    llm=llm,
+    retriever=retriever,
+    memory=memory,
     combine_docs_chain_kwargs={'prompt': prompt},
     chain_type="stuff",
     return_source_documents=True,
