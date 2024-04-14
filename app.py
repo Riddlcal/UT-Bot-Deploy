@@ -14,6 +14,8 @@ import os
 import re
 import sys
 maxInt = sys.maxsize
+__import__('pysqlite3')
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 app = Flask(__name__)
 
