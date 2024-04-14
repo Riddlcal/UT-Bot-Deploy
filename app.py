@@ -13,6 +13,8 @@ import csv
 import os
 import re
 import sys
+__import__('pysqlite3')
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 # Helper function for streaming CSV processing
 def stream_csv(filename):
