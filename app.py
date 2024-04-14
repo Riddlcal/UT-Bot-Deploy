@@ -13,9 +13,22 @@ import csv
 import os
 import re
 import sys
-maxInt = sys.maxsize
-__import__('pysqlite3')
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+# Helper function for streaming CSV processing
+def stream_csv(filename):
+    with open(filename, newline='', encoding='utf-8-sig') as csvfile:
+        csv_reader = csv.DictReader(csvfile)
+        for row in csv_reader:
+            yield row
+
+# DATA PROCESSING - Streaming CSV processing
+def process_documents(filename):
+    for row in stream_csv(filename):
+        to_metadata = {col: row[col] for col in columns_to_metadata if col in row}
+        values_to_embed = {k: row[k] for k in columns_to_embed if k in row}
+        to_embed = "\n".join(f"{k.strip()}: {v.strip()}" for k, v in values_to_embed.items())
+        newDoc = Document(page_content=to_embed, metadata=to_metadata)
+        yield newDoc
 
 app = Flask(__name__)
 
@@ -25,20 +38,16 @@ dotenv.load_dotenv()
 columns_to_embed = ['url','text']
 columns_to_metadata = ["url","text","date"]
 
-docs = []
-with open('UT Bot.csv', newline='', encoding='utf-8-sig') as csvfile:
-    csv_reader = csv.DictReader(csvfile)
-    for i, row in enumerate(csv_reader):
-        to_metadata = {col: row[col] for col in columns_to_metadata if col in row}
-        values_to_embed = {k: row[k] for k in columns_to_embed if k in row}
-        to_embed = "\n".join(f"{k.strip()}: {v.strip()}" for k, v in values_to_embed.items())
-        newDoc = Document(page_content=to_embed, metadata =to_metadata)
-        docs.append(newDoc)
+# Define the file path of your CSV file
+csv_filename = 'UT Bot.csv'
+
+# Process documents from the CSV file
+docs = list(process_documents(csv_filename))
 
 splitter = CharacterTextSplitter(separator="\n",
-                                 chunk_size = 8000,
-                                 chunk_overlap = 0,
-                                 length_function =len)
+                                 chunk_size=8000,
+                                 chunk_overlap=0,
+                                 length_function=len)
 documents = splitter.split_documents(docs)
 
 #DATA EMBEDDING
