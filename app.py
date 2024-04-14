@@ -38,7 +38,7 @@ dotenv.load_dotenv()
 
 # Define the splitter object
 splitter = CharacterTextSplitter(separator="\n",
-                                 chunk_size=4000,
+                                 chunk_size=12000,
                                  chunk_overlap=0,
                                  length_function=len)
 
