@@ -1,10 +1,8 @@
 from flask import Flask, render_template, request
-import sys
 from embedding import qa
 from bs4 import BeautifulSoup
 import re
-maxInt = sys.maxsize
-
+import sys
 __import__('pysqlite3')
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
