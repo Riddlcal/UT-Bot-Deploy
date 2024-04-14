@@ -43,17 +43,31 @@ columns_to_metadata = ["url","text","date"]
 # Define the file path of your CSV file
 csv_filename = 'UT Bot.csv'
 
-# Process documents from the CSV file
-docs = list(process_documents(csv_filename))
+# Define a function to process and embed documents in batches
+def process_and_embed_in_batches(filename, batch_size):
+    with open(filename, newline='', encoding='utf-8-sig') as csvfile:
+        csv_reader = csv.DictReader(csvfile)
+        batch = []
+        for row in csv_reader:
+            to_metadata = {col: row[col] for col in columns_to_metadata if col in row}
+            values_to_embed = {k: row[k] for k in columns_to_embed if k in row}
+            to_embed = "\n".join(f"{k.strip()}: {v.strip()}" for k, v in values_to_embed.items())
+            newDoc = Document(page_content=to_embed, metadata=to_metadata)
+            batch.append(newDoc)
+            if len(batch) == batch_size:
+                yield batch
+                batch = []
+        if batch:
+            yield batch
 
-splitter = CharacterTextSplitter(separator="\n",
-                                 chunk_size=8000,
-                                 chunk_overlap=0,
-                                 length_function=len)
-documents = splitter.split_documents(docs)
+# Process and embed documents in batches
+batch_size = 100  # Adjust the batch size as needed
+documents = []
+for batch_docs in process_and_embed_in_batches(csv_filename, batch_size):
+    split_docs = splitter.split_documents(batch_docs)
+    documents.extend(split_docs)
 
 #DATA EMBEDDING
-
 embeddings = OpenAIEmbeddings(model="text-embedding-3-large", show_progress_bar=True)
 
 db = Chroma.from_documents(documents, embeddings)
