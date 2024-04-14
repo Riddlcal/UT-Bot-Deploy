@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from embedding import qa
+from embedding.embedding import qa
 from bs4 import BeautifulSoup
 import re
 import sys
