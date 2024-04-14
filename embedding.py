@@ -9,6 +9,9 @@ from langchain.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, H
 import dotenv
 import csv
 import os
+import sys
+__import__('pysqlite3')
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 dotenv.load_dotenv()
 
