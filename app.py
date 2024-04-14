@@ -43,6 +43,13 @@ columns_to_metadata = ["url","text","date"]
 # Define the file path of your CSV file
 csv_filename = 'UT Bot.csv'
 
+# Process and embed documents in batches
+batch_size = 100  # Adjust the batch size as needed
+documents = []
+for batch_docs in process_and_embed_in_batches(csv_filename, batch_size):
+    split_docs = splitter.split_documents(batch_docs)
+    documents.extend(split_docs)
+
 # Define a function to process and embed documents in batches
 def process_and_embed_in_batches(filename, batch_size):
     with open(filename, newline='', encoding='utf-8-sig') as csvfile:
@@ -59,13 +66,6 @@ def process_and_embed_in_batches(filename, batch_size):
                 batch = []
         if batch:
             yield batch
-
-# Process and embed documents in batches
-batch_size = 100  # Adjust the batch size as needed
-documents = []
-for batch_docs in process_and_embed_in_batches(csv_filename, batch_size):
-    split_docs = splitter.split_documents(batch_docs)
-    documents.extend(split_docs)
 
 #DATA EMBEDDING
 embeddings = OpenAIEmbeddings(model="text-embedding-3-large", show_progress_bar=True)
