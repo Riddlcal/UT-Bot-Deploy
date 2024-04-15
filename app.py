@@ -12,6 +12,7 @@ import dotenv
 import csv
 import os
 import re
+import time
 import sys
 __import__('pysqlite3')
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
@@ -23,6 +24,25 @@ app = Flask(__name__)
 # Initialize db as None
 db = None
 
+MAX_RETRIES = 3
+INITIAL_DELAY = 1
+
+def exponential_backoff(func):
+    def wrapper(*args, **kwargs):
+        retries = 0
+        delay = INITIAL_DELAY
+        while retries < MAX_RETRIES:
+            try:
+                return func(*args, **kwargs)
+            except Exception as e:
+                print(f"Error occurred: {e}")
+                retries += 1
+                time.sleep(delay)
+                delay *= 2  # Exponential increase in delay
+        raise Exception("Max retries exceeded")
+    return wrapper
+
+@exponential_backoff
 # Function to embed data
 def embed_data():
     global db
