@@ -20,8 +20,12 @@ dotenv.load_dotenv()
 
 app = Flask(__name__)
 
+# Initialize db as None
+db = None
+
 # Function to embed data
 def embed_data():
+    global db
     # DATA PROCESSING
     columns_to_embed = ['url','text']
     columns_to_metadata = ["url","text","date"]
@@ -48,44 +52,46 @@ def embed_data():
 
     db = Chroma.from_documents(documents, embeddings)
 
-    return db
-
-# Embed the data when Flask app starts running
-db = embed_data()
-
 # CHATBOT SET UP
-retriever = db.as_retriever(search_type="similarity", search_kwargs={"k": 3})
-openai_api_key = os.getenv("OPENAI_API_KEY")
+def setup_chatbot():
+    retriever = db.as_retriever(search_type="similarity", search_kwargs={"k": 3})
+    openai_api_key = os.getenv("OPENAI_API_KEY")
 
-general_system_template = r"""
-You are a chatbot that answers questions about University of Texas at Tyler.
-You will answer questions from students, teachers, and staff. If you don't know the answer, say simply that you cannot help with the question and advise to contact the host directly.
----- {context} ----
+    general_system_template = r"""
+    You are a chatbot that answers questions about University of Texas at Tyler.
+    You will answer questions from students, teachers, and staff. If you don't know the answer, say simply that you cannot help with the question and advise to contact the host directly.
+    ---- {context} ----
 
-"""
+    """
 
-general_user_template = "Question:```{question}```"
+    general_user_template = "Question:```{question}```"
 
-messages = [
-            SystemMessagePromptTemplate.from_template(general_system_template),
-            HumanMessagePromptTemplate.from_template(general_user_template)
-]
+    messages = [
+                SystemMessagePromptTemplate.from_template(general_system_template),
+                HumanMessagePromptTemplate.from_template(general_user_template)
+    ]
 
-prompt = ChatPromptTemplate.from_messages(messages=messages)
+    prompt = ChatPromptTemplate.from_messages(messages=messages)
 
-memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True, output_key='answer')
+    memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True, output_key='answer')
 
-llm = ChatOpenAI(temperature=0,openai_api_key=openai_api_key,model_name="gpt-3.5-turbo-0125")
+    llm = ChatOpenAI(temperature=0,openai_api_key=openai_api_key,model_name="gpt-3.5-turbo-0125")
 
+    global qa
+    qa = ConversationalRetrievalChain.from_llm(
+        llm = llm,
+        retriever = retriever,
+        memory = memory,
+        combine_docs_chain_kwargs={'prompt': prompt},
+        chain_type="stuff",
+        return_source_documents=True,
+    )
 
-qa = ConversationalRetrievalChain.from_llm(
-    llm = llm,
-    retriever = retriever,
-    memory = memory,
-    combine_docs_chain_kwargs={'prompt': prompt},
-    chain_type="stuff",
-    return_source_documents=True,
-)
+# Lazy-load the embeddings when the Flask app receives its first request
+@app.before_first_request
+def lazy_load_embeddings():
+    embed_data()
+    setup_chatbot()
 
 ## RUN THE APPLICATION
 @app.route('/')
