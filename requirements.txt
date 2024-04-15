@@ -6,3 +6,4 @@ bs4==0.0.2
 chromadb==0.4.24
 gunicorn==21.2.0
 pysqlite3-binary==0.5.2.post3
+Werkzeug==2.0.3
