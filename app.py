@@ -12,6 +12,8 @@ import dotenv
 import csv
 import os
 import re
+import time
+import itertools
 import sys
 __import__('pysqlite3')
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
@@ -22,6 +24,22 @@ app = Flask(__name__)
 
 # Initialize db as None
 db = None
+
+# Define batch size
+BATCH_SIZE = 10
+
+# Function to batch documents
+def batch_documents(documents, batch_size):
+    return [documents[i:i+batch_size] for i in range(0, len(documents), batch_size)]
+
+# Function to embed batched data
+def embed_batched_data(embeddings_client, batched_documents):
+    embeddings = []
+    for batch in batched_documents:
+        texts = [doc.page_content for doc in batch]
+        batch_embeddings = embeddings_client.embed_documents(texts)
+        embeddings.extend(batch_embeddings)
+    return embeddings
 
 # Function to embed data
 def embed_data():
@@ -48,15 +66,12 @@ def embed_data():
 
     # Batch documents for embedding
     batch_size = 5  # Adjust batch size as needed
-    batches = [documents[i:i + batch_size] for i in range(0, len(documents), batch_size)]
+    batches = batch_documents(documents, batch_size)
 
     # DATA EMBEDDING
     embeddings = OpenAIEmbeddings(model="text-embedding-3-large", show_progress_bar=True)
 
-    embedded_documents = []
-    for batch in batches:
-        embeddings_batch = embeddings.embed_documents(batch)
-        embedded_documents.extend(embeddings_batch)
+    embedded_documents = embed_batched_data(embeddings, batches)
 
     # Create Chroma from embedded documents
     db = Chroma.from_documents(embedded_documents)
