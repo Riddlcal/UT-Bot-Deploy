@@ -8,3 +8,4 @@ gunicorn==21.2.0
 pysqlite3-binary==0.5.2.post3
 Werkzeug==2.0.3
 gevent==24.2.1
+pandas==2.2.2
