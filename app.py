@@ -27,8 +27,8 @@ db = None
 def embed_data():
     global db
     # DATA PROCESSING
-    columns_to_embed = ['url','text']
-    columns_to_metadata = ["url","text","date"]
+    columns_to_embed = ['url', 'text']
+    columns_to_metadata = ["url", "text", "date"]
 
     docs = []
     with open('UT Bot.csv', newline='', encoding='utf-8-sig') as csvfile:
@@ -37,20 +37,29 @@ def embed_data():
             to_metadata = {col: row[col] for col in columns_to_metadata if col in row}
             values_to_embed = {k: row[k] for k in columns_to_embed if k in row}
             to_embed = "\n".join(f"{k.strip()}: {v.strip()}" for k, v in values_to_embed.items())
-            newDoc = Document(page_content=to_embed, metadata =to_metadata)
+            newDoc = Document(page_content=to_embed, metadata=to_metadata)
             docs.append(newDoc)
 
     splitter = CharacterTextSplitter(separator="\n",
-                                     chunk_size = 8000,
-                                     chunk_overlap = 0,
-                                     length_function =len)
+                                     chunk_size=8000,
+                                     chunk_overlap=0,
+                                     length_function=len)
     documents = splitter.split_documents(docs)
 
-    #DATA EMBEDDING
+    # Batch documents for embedding
+    batch_size = 5  # Adjust batch size as needed
+    batches = [documents[i:i + batch_size] for i in range(0, len(documents), batch_size)]
 
+    # DATA EMBEDDING
     embeddings = OpenAIEmbeddings(model="text-embedding-3-large", show_progress_bar=True)
 
-    db = Chroma.from_documents(documents, embeddings)
+    embedded_documents = []
+    for batch in batches:
+        embeddings_batch = embeddings.embed_documents(batch)
+        embedded_documents.extend(embeddings_batch)
+
+    # Create Chroma from embedded documents
+    db = Chroma.from_documents(embedded_documents)
 
 # CHATBOT SET UP
 def setup_chatbot():
