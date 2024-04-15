@@ -24,7 +24,7 @@ dotenv.load_dotenv()
 
 
 
-CHROMA_PATH = 'chroma_data1'
+CHROMA_PATH = 'chroma_data'
 
 db = Chroma(
     persist_directory=CHROMA_PATH,
