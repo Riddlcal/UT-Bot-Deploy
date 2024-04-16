@@ -7,4 +7,4 @@ chromadb==0.4.24
 gunicorn==21.2.0
 pysqlite3-binary==0.5.2.post3
 Werkzeug==2.0.3
-gdown 5.1.0
+gdown==5.1.0
