@@ -14,18 +14,33 @@ import re
 import time
 import warnings
 import sys
-import sys
 __import__('pysqlite3')
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 maxInt = sys.maxsize
+
 # Suppress UserWarnings
 warnings.filterwarnings("ignore", category=UserWarning)
-app = Flask(__name__)
 
+app = Flask(__name__)
 
 dotenv.load_dotenv()
 
+import gdown
 
+# Function to download folder from Google Drive using gdown
+def download_folder(folder_id, output_path):
+    folder_url = f"https://drive.google.com/drive/folders/{folder_id}"
+    gdown.download_folder(folder_url, output=output_path)
+
+def main():
+    # Folder ID extracted from the URL
+    folder_id = "1uv0RVshZZgVycR6zlMgA15ViqmhNk7p8"
+    # Get the current directory where the Flask app is located
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+    # Specify the output path relative to the current directory
+    output_path = os.path.join(current_directory, "chroma_data")
+    download_folder(folder_id, output_path)
+    print("Folder downloaded successfully.")
 
 CHROMA_PATH = 'chroma_data'
 
@@ -63,7 +78,6 @@ prompt = ChatPromptTemplate.from_messages(messages=messages)
 memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True, output_key='answer')
 
 llm = ChatOpenAI(temperature=0,openai_api_key=openai_api_key,model_name="gpt-3.5-turbo-0125")
-
 
 qa = ConversationalRetrievalChain.from_llm(
     llm = llm,
