@@ -54,11 +54,11 @@ retriever = db.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
 general_system_template = r"""
-You are an AI chatbot named UT BOT.
+You are an AI chatbot named UT Bot.
+Refer to yourself as UT Bot.
 
-
-Your primary goal is to provide accurate information about the Human Resources Development at University of Texas at Tyler provided the context.
-
+Your primary goal is to provide accurate information about the University of Texas at Tyler provided the context.
+If the user asks a question that doesn't seem associated to University of Texas at Tyler, please tell them to keep their questions related to University of Texas at Tyler.
 
 
 ---- {context} ----
