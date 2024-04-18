@@ -14,9 +14,9 @@ import re
 import time
 import warnings
 import sys
-maxInt = sys.maxsize
 __import__('pysqlite3')
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+maxInt = sys.maxsize
 
 # Suppress UserWarnings
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -24,6 +24,23 @@ warnings.filterwarnings("ignore", category=UserWarning)
 app = Flask(__name__)
 
 dotenv.load_dotenv()
+
+import gdown
+
+# Function to download folder from Google Drive using gdown
+def download_folder(folder_id, output_path):
+    folder_url = f"https://drive.google.com/drive/folders/{folder_id}"
+    gdown.download_folder(folder_url, output=output_path)
+
+def main():
+    # Folder ID extracted from the URL
+    folder_id = "1uv0RVshZZgVycR6zlMgA15ViqmhNk7p8"
+    # Get the current directory where the Flask app is located
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+    # Specify the output path relative to the current directory
+    output_path = os.path.join(current_directory, "chroma_data")
+    download_folder(folder_id, output_path)
+    print("Folder downloaded successfully.")
 
 CHROMA_PATH = 'chroma_data'
 
