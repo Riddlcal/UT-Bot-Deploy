@@ -42,7 +42,7 @@ def main():
     download_folder(folder_id, output_path)
     print("Folder downloaded successfully.")
 
-CHROMA_PATH = 'chroma_data'
+CHROMA_PATH = 'chroma_csv_data'
 
 db = Chroma(
     persist_directory=CHROMA_PATH,
