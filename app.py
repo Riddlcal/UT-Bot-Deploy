@@ -34,7 +34,7 @@ def download_folder(folder_id, output_path):
 
 def main():
     # Folder ID extracted from the URL
-    folder_id = "1IqQPYPNHDny049jdNcYKNPQjNL8zjEwi"
+    folder_id = "1GpbN-FdfvzrH5J9tDLieDoMhyUjZtqac"
     # Get the current directory where the Flask app is located
     current_directory = os.path.dirname(os.path.abspath(__file__))
     # Specify the output path relative to the current directory
