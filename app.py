@@ -4,9 +4,7 @@ from langchain_community.vectorstores import Chroma
 from langchain_openai import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
-from langchain.prompts import (ChatPromptTemplate, 
-                               SystemMessagePromptTemplate, 
-                               HumanMessagePromptTemplate)
+from langchain.prompts import PromptTemplate
 from bs4 import BeautifulSoup
 import dotenv
 import os
