@@ -23,9 +23,6 @@ app = Flask(__name__)
 
 dotenv.load_dotenv()
 
-# Declare CHROMA_PATH as a global variable
-CHROMA_PATH = 'chroma_data'
-
 import gdown
 
 # Function to download folder from Google Drive using gdown
@@ -42,9 +39,8 @@ def main():
     output_path = os.path.join(current_directory, "chroma_data")
     download_folder(folder_id, output_path)
     print("Folder downloaded successfully.")
-    # Update CHROMA_PATH variable after downloading the folder
-    global CHROMA_PATH
-    CHROMA_PATH = output_path
+
+CHROMA_PATH = 'chroma_data'
 
 # Prompt template for our conversational retrieval chain
 custom_prompt_template = """
