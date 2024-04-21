@@ -34,15 +34,15 @@ def download_folder(folder_id, output_path):
 
 def main():
     # Folder ID extracted from the URL
-    folder_id = "10pPhF-pqXl4psrMVFxGUYDKU8UuCYJBD"
+    folder_id = "1GNTHgqXQv9oqMa-L2dCldqtwSFZd3NH2"
     # Get the current directory where the Flask app is located
     current_directory = os.path.dirname(os.path.abspath(__file__))
     # Specify the output path relative to the current directory
-    output_path = os.path.join(current_directory, "chroma_data")
+    output_path = os.path.join(current_directory, "chroma_data1")
     download_folder(folder_id, output_path)
     print("Folder downloaded successfully.")
 
-CHROMA_PATH = 'chroma_data'
+CHROMA_PATH = 'chroma_data1'
 
 db = Chroma(
     persist_directory=CHROMA_PATH,
