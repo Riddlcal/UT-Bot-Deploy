@@ -34,57 +34,58 @@ def download_folder(folder_id, output_path):
 
 def main():
     # Folder ID extracted from the URL
-    folder_id = "1GNTHgqXQv9oqMa-L2dCldqtwSFZd3NH2"
+    folder_id = "15DOKAmLyhTwrjr2ncAJwI1SjIWVy_n2l"
     # Get the current directory where the Flask app is located
     current_directory = os.path.dirname(os.path.abspath(__file__))
     # Specify the output path relative to the current directory
-    output_path = os.path.join(current_directory, "chroma_data1")
+    output_path = os.path.join(current_directory, "chroma_data")
     download_folder(folder_id, output_path)
     print("Folder downloaded successfully.")
 
-CHROMA_PATH = 'chroma_data1'
+CHROMA_PATH = 'chroma_data'
 
-db = Chroma(
-    persist_directory=CHROMA_PATH,
-    embedding_function=OpenAIEmbeddings(),
-)
+# Prompt template for our conversational retrieval chain
+custom_prompt_template = """
+You are an AI chatbot named UT BOT.
 
-# CHATBOT SET UP
-retriever = db.as_retriever(search_type="similarity", search_kwargs={"k": 3})
-openai_api_key = os.getenv("OPENAI_API_KEY")
+Use the following pieces of information to answer the user's question.
+Your primary goal is to provide accurate information about the Human Resources Development at University of Texas at Tyler provided the context.
+Be respectful, and format the answer well.
+If you don't know the answer, just say that you don't know and give them a helpful
+contact information that will help them or a link that will help, don't try to make up an answer.
 
-general_system_template = r"""
-You are an AI chatbot named UT Bot.
+Context: {context} 
+Question: {question}
 
-Your primary goal is to provide accurate information about the University of Texas at Tyler provided the context.
-
-
----- {context} ----
-
+Only return the helpful answer and nothing else.
+Helpful answer: 
 """
 
-general_user_template = "Question:```{question}```"
+## Creating our prompt
+prompt = PromptTemplate(template=custom_prompt_template,
+                            input_variables=['context', 'question'])
 
-messages = [
-            SystemMessagePromptTemplate.from_template(general_system_template),
-            HumanMessagePromptTemplate.from_template(general_user_template)
-]
-
-prompt = ChatPromptTemplate.from_messages(messages=messages)
-
+#  Initialize our LLM model
+llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0125")
+#  Memory for Chat History
 memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True, output_key='answer')
 
-llm = ChatOpenAI(temperature=0,openai_api_key=openai_api_key,model_name="gpt-3.5-turbo-0125")
+# Initialize embeddings
+embeddings = OpenAIEmbeddings(model='text-embedding-3-large', show_progress_bar=True)
 
+# Initialize our Chroma vector store
+vectorstore =  Chroma(persist_directory=CHROMA_PATH
+                ,embedding_function=embeddings)
 
-qa = ConversationalRetrievalChain.from_llm(
+# Create our conversational chain
+qa_chain = ConversationalRetrievalChain.from_llm(
     llm = llm,
-    retriever = retriever,
+    retriever = vectorstore.as_retriever(search_type="similarity",search_kwargs={'k': 2}),
     memory = memory,
     combine_docs_chain_kwargs={'prompt': prompt},
     chain_type="stuff",
     return_source_documents=True,
-)  
+    )  
 
 ## RUN THE APPLICATION
 @app.route('/')
