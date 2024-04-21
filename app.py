@@ -93,7 +93,7 @@ def home():
 @app.route('/ask', methods=['POST'])
 def ask():
     user_input = request.form['question']
-    result = qa.invoke({"question": user_input, "chat_history": {}})
+    result = qa_chain.invoke({"question": user_input, "chat_history": {}})
     bot_response = result['answer']
 
     # Remove labels like '[Label]' from the answer
