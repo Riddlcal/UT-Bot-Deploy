@@ -38,11 +38,11 @@ def main():
     # Get the current directory where the Flask app is located
     current_directory = os.path.dirname(os.path.abspath(__file__))
     # Specify the output path relative to the current directory
-    output_path = os.path.join(current_directory, "chroma_csv_data")
+    output_path = os.path.join(current_directory, "chroma_data")
     download_folder(folder_id, output_path)
     print("Folder downloaded successfully.")
 
-CHROMA_PATH = 'chroma_csv_data'
+CHROMA_PATH = 'chroma_data'
 
 db = Chroma(
     persist_directory=CHROMA_PATH,
