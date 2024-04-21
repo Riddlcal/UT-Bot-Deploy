@@ -23,6 +23,9 @@ app = Flask(__name__)
 
 dotenv.load_dotenv()
 
+# Declare CHROMA_PATH as a global variable
+CHROMA_PATH = 'chroma_data'
+
 import gdown
 
 # Function to download folder from Google Drive using gdown
