@@ -39,8 +39,9 @@ def main():
     output_path = os.path.join(current_directory, "chroma_data")
     download_folder(folder_id, output_path)
     print("Folder downloaded successfully.")
-
-CHROMA_PATH = 'chroma_data'
+    # Update CHROMA_PATH variable after downloading the folder
+    global CHROMA_PATH
+    CHROMA_PATH = output_path
 
 # Prompt template for our conversational retrieval chain
 custom_prompt_template = """
