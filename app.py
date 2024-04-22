@@ -23,23 +23,6 @@ app = Flask(__name__)
 
 dotenv.load_dotenv()
 
-import gdown
-
-# Function to download folder from Google Drive using gdown
-def download_folder(folder_id, output_path):
-    folder_url = f"https://drive.google.com/drive/folders/{folder_id}"
-    gdown.download_folder(folder_url, output=output_path)
-
-def main():
-    # Folder ID extracted from the URL
-    folder_id = "1_x_N4LE4ECmCKLSU4WEMyNeL4ydPAoh9"
-    # Get the current directory where the Flask app is located
-    current_directory = os.path.dirname(os.path.abspath(__file__))
-    # Specify the output path relative to the current directory
-    output_path = os.path.join(current_directory, "chroma_data")
-    download_folder(folder_id, output_path)
-    print("Folder downloaded successfully.")
-
 CHROMA_PATH = 'chroma_data'
 
 # Prompt template for our conversational retrieval chain
@@ -150,9 +133,6 @@ def ask():
             return bulleted_lines
         else:
             return answer_with_line_breaks
-
-# Call the main
-main()
 
 # Run the Flask app
 if __name__ == '__main__':
