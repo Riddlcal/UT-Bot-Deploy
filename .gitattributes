@@ -1,2 +1,0 @@
-chroma.sqlite3 filter=lfs diff=lfs merge=lfs -text
-data_level0.bin filter=lfs diff=lfs merge=lfs -text
