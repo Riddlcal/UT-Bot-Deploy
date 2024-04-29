@@ -10,3 +10,5 @@ How does it work?
 First we create embeddings of the text and place them into a vector database (like ChromaDB).
 
 ![rag_indexing-8160f90a90a33253d0154659cf7d453f](https://github.com/Riddlcal/UT-Bot/assets/127689960/6f951cdc-97b9-4c21-8116-9769be552936)
+
+Then when a user asks a question, UT Bot finds the most relevant answer to the query and returns it.
