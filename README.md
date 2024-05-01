@@ -19,9 +19,27 @@ bot.py - for local running
 # How to run UT Bot
 
 Clone the GitHub repo: https://github.com/Riddlcal/UT-Bot-Deploy
+
 Open Command Prompt
-Type and run: git clone https://github.com/Riddlcal/UT-Bot-Deploy
-Wait for cloning to finish, and then type and run: cd UT-Bot-Deploy
-Then to install dependencies, type and run: pip install -r .\requirements.txt
-After dependencies are installed, type and run: python bot.py
+
+Type and run:
+```bash
+git clone https://github.com/Riddlcal/UT-Bot-Deploy
+```
+
+Wait for cloning to finish, and then type and run:
+```bash
+cd UT-Bot-Deploy
+```
+
+Then to install dependencies, type and run:
+```bash
+pip install -r .\requirements.txt
+```
+
+After dependencies are installed, type and run:
+```bash
+python bot.py
+```
+
 Wait for Flask to start and open the localhost link
