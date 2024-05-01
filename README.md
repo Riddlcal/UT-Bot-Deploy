@@ -34,7 +34,7 @@ cd UT-Bot-Deploy
 
 Then to install dependencies, type and run:
 ```bash
-pip install -r .\requirements.txt
+pip install -r requirements.txt
 ```
 
 After dependencies are installed, type and run:
