@@ -14,6 +14,7 @@ First we create embeddings of the text and place them into a vector database (li
 Then when a user asks a question, UT Bot finds the most relevant answer to the query and returns it.
 
 app.py - for Render Deployment
+
 bot.py - for local running
 
 # How to run UT Bot
